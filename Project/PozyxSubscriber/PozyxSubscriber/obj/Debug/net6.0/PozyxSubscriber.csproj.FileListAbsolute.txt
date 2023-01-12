@@ -1,0 +1,5 @@
+C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.csproj.AssemblyReference.cache
+C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.AssemblyInfoInputs.cache
+C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.AssemblyInfo.cs
+C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.csproj.CoreCompileInputs.cache
