@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "b4u/0XcohAWOsY42XPDVFcdASxwX5gOy/Iu8VFW+1xjLlwmU+30QlsOVf818jg8uF4hgxHHV5VwllcizDfSH8Q==",
+  "dgSpecHash": "WkTlmlBA1kDVzW2S6jYJ4l7JI8trg2h1dK+3otG0PWhPuAg+7te4ahg2CqeCciwKwtZ5qiOphJBW8h3zQVQK3w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Grant\\Desktop\\School_ODU\\Senior_Spring\\Capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
+  "projectFilePath": "C:\\Users\\cmoor\\Desktop\\School\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Grant\\.nuget\\packages\\mqttnet\\4.1.4.563\\mqttnet.4.1.4.563.nupkg.sha512",
-    "C:\\Users\\Grant\\.nuget\\packages\\mqttnet.extensions.managedclient\\4.1.4.563\\mqttnet.extensions.managedclient.4.1.4.563.nupkg.sha512"
+    "C:\\Users\\cmoor\\.nuget\\packages\\mqttnet\\3.1.2\\mqttnet.3.1.2.nupkg.sha512"
   ],
   "logs": []
 }
