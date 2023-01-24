@@ -42,7 +42,7 @@ namespace mqtt_c
             this.mqttClient.UseConnectedHandler(ConnectedHandler);
             this.mqttClient.UseApplicationMessageReceivedHandler(MessageHandler);
             this.mqttClient.UseDisconnectedHandler(DisconnectedHandler);
-            this.mqttClient.UseApplicationMessageReceivedHandler(MessageRecieved);
+            this.mqttClient.PublishAsync()
         }
 
         public async void ConnectedHandler(MqttClientConnectedEventArgs e)
@@ -57,12 +57,6 @@ namespace mqtt_c
             Console.WriteLine("Disconnected from server");
         }
 
-        public void MessageRecieved(MqttApplicationMessageReceivedEventArgs e)
-        {
-
-            Console.WriteLine($"Recieved Message - {Encoding.UTF8.GetString(e.ApplicationMessage.Payload)}");
-
-        }
 
         public void MessageHandler(MqttApplicationMessageReceivedEventArgs eventArgs)
         {

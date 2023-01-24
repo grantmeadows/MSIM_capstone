@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1PxsG42HKwPU6pCeqDFSBaNQLkGhFFvUFZKnfJOi9z75pbWpexm7qJpvyPAAM7NDSDj6u962f1t6S/SIQz0wLg==",
+  "dgSpecHash": "dVikK91aLAV+g8y1Tywyf6w9C3oGl4Pqf7j8PRYMQZOjsFmkF5WBcLBA2UvJLIbgHUh6d4ZpUWrezk8dCva5yA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SpaticTech\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
+  "projectFilePath": "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\SpaticTech\\.nuget\\packages\\mqttnet\\3.1.2\\mqttnet.3.1.2.nupkg.sha512"
+    "C:\\Users\\cmoor\\.nuget\\packages\\mqttnet\\3.1.2\\mqttnet.3.1.2.nupkg.sha512"
   ],
   "logs": []
 }

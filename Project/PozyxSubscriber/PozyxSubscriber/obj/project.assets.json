@@ -52,23 +52,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SpaticTech\\.nuget\\packages\\": {},
+    "C:\\Users\\cmoor\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SpaticTech\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
+      "projectUniqueName": "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
       "projectName": "PozyxSubscriber",
-      "projectPath": "C:\\Users\\SpaticTech\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
-      "packagesPath": "C:\\Users\\SpaticTech\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SpaticTech\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\obj\\",
+      "projectPath": "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
+      "packagesPath": "C:\\Users\\cmoor\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\SpaticTech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cmoor\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
