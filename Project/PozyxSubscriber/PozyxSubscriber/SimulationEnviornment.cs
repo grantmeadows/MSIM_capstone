@@ -17,7 +17,7 @@ namespace SimulationEnviornment
         }
         public SimulationEnviornment(string host, int port, int numObjects, int numTags)
         {
-            _MqqtClient = new MqttClient(numTags);
+            _MqqtClient = new MqttClient(numTags, host);
             _host = host;
             _port = port;
 

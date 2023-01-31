@@ -13,15 +13,14 @@ namespace mqtt_c
 {
 
 
-    class MqttClient
+    public class MqttClient
     {
         private IMqttClient _mqttClient;
         private IMqttClientOptions _options;
         private string _topic;
 
-        public MqttClient(int _numTags)
+        public MqttClient(int _numTags, string host)
         {
-            var host = "192.168.1.27";
             var port = 1883;
             this._topic = "tags";
 
