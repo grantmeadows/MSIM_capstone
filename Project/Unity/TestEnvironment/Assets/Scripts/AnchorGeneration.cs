@@ -8,6 +8,7 @@ using UnityEngine;
 public class AnchorGeneration : MonoBehaviour
 {
     public GameObject AnchorObj;
+    public GameObject AnchorZero;
     public Vector3[] AnchorLoc;
 
     void Start()
@@ -16,6 +17,7 @@ public class AnchorGeneration : MonoBehaviour
         {
             GameObject a = Instantiate(AnchorObj);
             a.transform.position = AnchorLoc[i];
+            a.transform.parent = AnchorZero.transform;
         }
     }
 
