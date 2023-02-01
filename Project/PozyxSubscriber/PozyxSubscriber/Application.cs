@@ -8,14 +8,15 @@ using mqtt_c;
 
 namespace PozyxSubscriber
 {
-    internal class Program
+    public class Program
     {
         static public void Main(string[] args)
         {
             var host = "10.0.0.254";
+            var port = 1883;
             int numTags = 1;
 
-            mqtt_c.MqttClient MQ = new mqtt_c.MqttClient(numTags, host);
+            SimEnviornment sim = new SimEnviornment(host, port, 1, numTags);
 
         }
 

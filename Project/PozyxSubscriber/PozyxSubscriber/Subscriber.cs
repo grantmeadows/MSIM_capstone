@@ -3,6 +3,7 @@ using MQTTnet.Client;
 using MQTTnet.Client.Connecting;
 using MQTTnet.Client.Disconnecting;
 using MQTTnet.Client.Options;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Text;
 using System.Threading;
@@ -12,16 +13,23 @@ using SimulationEnviornment;
 namespace mqtt_c
 {
 
-
+    /// <summary>
+    /// Mqqt client for subscribing to pozyx broker
+    /// </summary>
     public class MqttClient
     {
         private IMqttClient _mqttClient;
         private IMqttClientOptions _options;
         private string _topic;
 
-        public MqttClient(int _numTags, string host)
+        /// <summary>
+        /// Initializes and begins asynch subscription to tag topic from pozyx broker
+        /// </summary>
+        /// <param name="_numTags">Number of tags to be tracked</param>
+        /// <param name="host">Host of the pozyx broker</param>
+        /// <param name="port">Port</param>
+        public MqttClient(int _numTags, string host, int port)
         {
-            var port = 1883;
             this._topic = "tags";
 
             this._options = new MqttClientOptionsBuilder()
@@ -52,9 +60,14 @@ namespace mqtt_c
 
         public void MessageHandler(MqttApplicationMessageReceivedEventArgs eventArgs)
         {
-            Console.WriteLine(Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload));
+            //Console.WriteLine(Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload));
 
-            //do parse, put 
+            var msg = Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload);
+            var msgData = JArray.Parse(msg);
+            var msgObj = JArray.Parse(msgData.ToString());
+
+
+
         }
 
         public async Task StartAsync()
