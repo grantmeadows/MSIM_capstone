@@ -21,6 +21,7 @@ namespace mqtt_c
         private IMqttClient _mqttClient;
         private IMqttClientOptions _options;
         private string _topic;
+        private SimulationEnviornment.SimEnviornment _sim;
 
         /// <summary>
         /// Initializes and begins asynch subscription to tag topic from pozyx broker
@@ -28,8 +29,10 @@ namespace mqtt_c
         /// <param name="_numTags">Number of tags to be tracked</param>
         /// <param name="host">Host of the pozyx broker</param>
         /// <param name="port">Port</param>
-        public MqttClient(int _numTags, string host, int port)
+        public MqttClient(int _numTags, string host, int port, SimulationEnviornment.SimEnviornment Sim)
         {
+            _sim = Sim;
+
             this._topic = "tags";
 
             this._options = new MqttClientOptionsBuilder()
@@ -42,7 +45,7 @@ namespace mqtt_c
             this._mqttClient.UseDisconnectedHandler(DisconnectedHandler);
 
             Task.Run(() => this.StartAsync());
-            Thread.Sleep(Timeout.Infinite);  
+            //Thread.Sleep(Timeout.Infinite);  
         }
 
         public async void ConnectedHandler(MqttClientConnectedEventArgs e)
@@ -61,13 +64,18 @@ namespace mqtt_c
         public void MessageHandler(MqttApplicationMessageReceivedEventArgs eventArgs)
         {
             //Console.WriteLine(Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload));
-
+           
             var msg = Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload);
+            File.WriteAllText("log.txt", msg.ToString());
+
             var msgData = JArray.Parse(msg);
             var msgObj = JArray.Parse(msgData.ToString());
 
-
-
+            _sim.PushData(msgObj);
+            var Pos = _sim.getAllPositions();
+            foreach (var pos in Pos) {
+                Console.WriteLine(pos.ToString());
+            }
         }
 
         public async Task StartAsync()
