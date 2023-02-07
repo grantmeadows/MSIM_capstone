@@ -15,10 +15,28 @@ namespace SimulationEnviornment
     /// <summary>
     /// Simulation enviornemnt
     /// </summary>
-    public class SimEnviornment
+    public sealed class SimEnviornment
     {
 
         private bool _mutex;
+        private static SimEnviornment? _instance = null;
+        private bool _connectedStatus;
+
+        public SimEnviornment()
+        {
+        }
+
+        public static SimEnviornment Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new SimEnviornment();
+                }
+                return _instance;
+            }
+        }
 
         /// <summary>
         /// Simulation Enviorntment Constructor, creates MqqtClient instance
@@ -28,15 +46,34 @@ namespace SimulationEnviornment
         /// <param name="port">Port</param>
         /// <param name="numObjects">Number of objects in enviornment</param>
         /// <param name="numTags">Number of tags in enviornment</param>
-        public SimEnviornment(string host, int port, int numObjects, int numTags)
+        public void Initialize(string host, int port, int numObjects, int numTags)
         {
             _objects = new List<SimObject>();
             _mutex = true;
             _host = host;
             _port = port;
             _MqqtClient = new MqttClient(numTags, host, port, this);
-            
         }
+
+
+        private static MqttClient? _MqqtClient;
+        List<SimObject> _objects;
+        Dictionary<string, Tag> _tags;
+        List<string> _tagIDs;
+
+        Dictionary<string, Anchor> _anchors;
+        List<string> _anchorIDs;
+
+        private string _host;
+        private int _port;
+
+        public bool ConnectedStatus
+        {
+            get { return _connectedStatus; }
+            set { _connectedStatus = value; }
+        }
+
+
 
         public void PushData(JArray msgdata)
         {
@@ -105,20 +142,7 @@ namespace SimulationEnviornment
         {
             _anchors["ID"] = anchor;
         }
-
-               
-
-        private static MqttClient? _MqqtClient;
-        List<SimObject> _objects;
-        Dictionary<string, Tag> _tags;
-        List<string> _tagIDs;
-
-        Dictionary<string, Anchor> _anchors;
-        List<string> _anchorIDs;
-
-        private string _host;
-        private int _port;
-
+                    
 
     }
 
@@ -183,7 +207,7 @@ namespace SimulationEnviornment
         public float x, y, z;
 
         /// <summary>
-        /// 
+        /// Create position data node with x, y, z coordinates
         /// </summary>
         /// <param name="_ID"></param>
         /// <param name="_x"></param>

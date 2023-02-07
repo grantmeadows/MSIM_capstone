@@ -16,8 +16,16 @@ namespace PozyxSubscriber
             var port = 1883;
             int numTags = 1;
 
-            SimEnviornment sim = new SimEnviornment(host, port, 1, numTags);
+            SimEnviornment sim = SimEnviornment.Instance;
 
+            sim.Initialize(host, port, 1, numTags);
+
+            while(sim.ConnectedStatus)
+            {
+                Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").x}");
+                Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").y}");
+                Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").z}");
+            }
         }
 
 

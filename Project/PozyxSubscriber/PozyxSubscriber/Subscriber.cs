@@ -53,11 +53,14 @@ namespace mqtt_c
             Console.WriteLine("Connected with server!");
             await this._mqttClient.SubscribeAsync(new MqttTopicFilterBuilder().WithTopic(this._topic).Build());
             Console.WriteLine("Subscribed to topic");
+
+            _sim.ConnectedStatus = true;
         }
 
         public void DisconnectedHandler(MqttClientDisconnectedEventArgs eventArgs)
         {
             Console.WriteLine("Disconnected from server");
+            _sim.ConnectedStatus = false;
         }
 
 
