@@ -35,7 +35,12 @@ namespace SimulationEnviornment
             _host = host;
             _port = port;
             _MqqtClient = new MqttClient(numTags, host, port, this);
-            
+            _tagIDs = new List<string>();
+            _tags = new Dictionary<string, Tag>();
+            _anchors = new Dictionary<string, Anchor>();
+            _anchorIDs = new List<string>();
+
+
         }
 
         public void PushData(JArray msgdata)
@@ -52,7 +57,7 @@ namespace SimulationEnviornment
                     PosData newData = new PosData(x, y, z);
 
                     
-                    if (_tags.ContainsKey(ID))
+                    if (_tagIDs.Contains(ID))
                         _tags[ID].AddData(newData);
                     else
                     {

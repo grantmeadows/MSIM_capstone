@@ -45,7 +45,7 @@ namespace mqtt_c
             this._mqttClient.UseDisconnectedHandler(DisconnectedHandler);
 
             Task.Run(() => this.StartAsync());
-            //Thread.Sleep(Timeout.Infinite);  
+            Thread.Sleep(Timeout.Infinite);  
         }
 
         public async void ConnectedHandler(MqttClientConnectedEventArgs e)
