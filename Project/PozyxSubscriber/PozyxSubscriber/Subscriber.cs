@@ -22,6 +22,7 @@ namespace mqtt_c
         private IMqttClientOptions _options;
         private string _topic;
         private SimulationEnviornment.SimEnviornment _sim;
+        private StringBuilder log = new StringBuilder();
 
         /// <summary>
         /// Initializes and begins asynch subscription to tag topic from pozyx broker
@@ -66,15 +67,23 @@ namespace mqtt_c
             //Console.WriteLine(Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload));
            
             var msg = Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload);
-            File.WriteAllText("log.txt", msg.ToString());
 
             var msgData = JArray.Parse(msg);
             var msgObj = JArray.Parse(msgData.ToString());
 
-            _sim.PushData(msgObj);
-            var Pos = _sim.getAllPositions();
-            foreach (var pos in Pos) {
-                Console.WriteLine(pos.ToString());
+            if (_sim.PushData(msgObj))
+            {
+                log.AppendLine(msg.ToString());
+                File.WriteAllText("log.txt", log.ToString());
+                PosData Pos = _sim.getLatestposition("7000");
+
+                Console.Write("X: ");
+                Console.Write(Pos.x);
+                Console.Write(" Y: ");
+                Console.Write(Pos.y);
+                Console.Write(" Z: ");
+                Console.WriteLine(Pos.z);
+
             }
         }
 

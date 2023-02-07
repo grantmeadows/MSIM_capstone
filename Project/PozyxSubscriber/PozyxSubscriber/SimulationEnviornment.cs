@@ -34,30 +34,30 @@ namespace SimulationEnviornment
             _mutex = true;
             _host = host;
             _port = port;
-            _MqqtClient = new MqttClient(numTags, host, port, this);
             _tagIDs = new List<string>();
             _tags = new Dictionary<string, Tag>();
             _anchors = new Dictionary<string, Anchor>();
             _anchorIDs = new List<string>();
-
+            _MqqtClient = new MqttClient(numTags, host, port, this);
 
         }
 
-        public void PushData(JArray msgdata)
+        public bool PushData(JArray msgdata)
         {
+            bool ret = false;
             foreach (var M in msgdata)
             {
-               
-                if (M["success"].Value<string>() == "true")
+                var v = M["success"].Value<bool>();
+                if (v)
                 {
                     string ID = M["tagId"].Value<string>();
                     float x = M["data"]["coordinates"]["x"].Value<float>();
                     float y = M["data"]["coordinates"]["y"].Value<float>();
                     float z = M["data"]["coordinates"]["z"].Value<float>();
                     PosData newData = new PosData(x, y, z);
-
                     
-                    if (_tagIDs.Contains(ID))
+                    
+                    if (_tagIDs != null ? _tagIDs.Contains(ID) : false)
                         _tags[ID].AddData(newData);
                     else
                     {
@@ -65,9 +65,11 @@ namespace SimulationEnviornment
                         _tags[ID] = new Tag(ID);
                         _tags[ID].AddData(newData);
                     }
-                    
+                    ret = true;
                 }
+                
             }
+            return ret;
         }
 
         private void MutexLock()
@@ -171,7 +173,7 @@ namespace SimulationEnviornment
 
         public PosData GetLatestPosData()
         {
-            return _tagdata.First();
+            return _tagdata.Last();
         }
 
         public void AddData(PosData data)
