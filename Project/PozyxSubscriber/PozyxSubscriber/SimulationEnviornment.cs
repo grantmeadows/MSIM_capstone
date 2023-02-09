@@ -85,8 +85,10 @@ namespace SimulationEnviornment
 
         public PosData getLatestposition(string ID)
         {
-            
-            return _tags[ID].GetLatestPosData();
+            if (_tagIDs.Contains(ID))
+                return _tags[ID].GetLatestPosData();
+            else
+                return new PosData(0, 0, 0);
            
         }
 

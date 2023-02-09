@@ -75,7 +75,7 @@ namespace mqtt_c
             {
                 log.AppendLine(msg.ToString());
                 File.WriteAllText("log.txt", log.ToString());
-                PosData Pos = _sim.getLatestposition("7000");
+                PosData Pos = _sim.getLatestposition("5772");
 
                 Console.Write("X: ");
                 Console.Write(Pos.x);
