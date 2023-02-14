@@ -44,7 +44,7 @@ namespace SimulationEnviornment
 
         public bool PushData(JArray msgdata)
         {
-            bool ret = false;
+            bool ret = true;
             foreach (var M in msgdata)
             {
                 var v = M["success"].Value<bool>();
@@ -115,7 +115,8 @@ namespace SimulationEnviornment
             _anchors["ID"] = anchor;
         }
 
-               
+        public List<string> GetTagIDs() { return _tagIDs; }
+
 
         private static MqttClient? _MqqtClient;
         List<SimObject> _objects;

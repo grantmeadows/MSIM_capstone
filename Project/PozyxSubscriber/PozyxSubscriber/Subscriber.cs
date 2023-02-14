@@ -46,7 +46,8 @@ namespace mqtt_c
             this._mqttClient.UseDisconnectedHandler(DisconnectedHandler);
 
             Task.Run(() => this.StartAsync());
-            Thread.Sleep(Timeout.Infinite);  
+            //Comment out sleep before finalization
+            Thread.Sleep(Timeout.Infinite);
         }
 
         public async void ConnectedHandler(MqttClientConnectedEventArgs e)
@@ -75,15 +76,20 @@ namespace mqtt_c
             {
                 log.AppendLine(msg.ToString());
                 File.WriteAllText("log.txt", log.ToString());
-                PosData Pos = _sim.getLatestposition("5772");
-
-                Console.Write("X: ");
-                Console.Write(Pos.x);
-                Console.Write(" Y: ");
-                Console.Write(Pos.y);
-                Console.Write(" Z: ");
-                Console.WriteLine(Pos.z);
-
+                Dictionary<string, PosData> Pos = _sim.getAllPositions();
+                foreach (var ID in _sim.GetTagIDs())
+                {
+                    Console.Write("[Tag ID: ");
+                    Console.Write(ID);
+                    Console.Write(": X: ");
+                    Console.Write(Pos[ID].x);
+                    Console.Write(" Y: ");
+                    Console.Write(Pos[ID].y);
+                    Console.Write(" Z: ");
+                    Console.Write(Pos[ID].z);
+                    Console.Write("] ");
+                }
+                Console.WriteLine(" ");
             }
         }
 
