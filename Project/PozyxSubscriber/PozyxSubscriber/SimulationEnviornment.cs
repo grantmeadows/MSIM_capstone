@@ -53,6 +53,10 @@ namespace SimulationEnviornment
             _host = host;
             _port = port;
             _MqqtClient = new MqttClient(numTags, host, port, this);
+            _tags = new Dictionary<string, Tag>();
+            _tagIDs = new List<string>();
+            _anchors = new Dictionary<string, Anchor>();
+            _anchorIDs = new List<string>();
         }
 
 
@@ -142,7 +146,12 @@ namespace SimulationEnviornment
         {
             _anchors["ID"] = anchor;
         }
-                    
+              
+        
+        public List<string> GetTagIDs()
+        {
+            return _tagIDs;
+        }
 
     }
 

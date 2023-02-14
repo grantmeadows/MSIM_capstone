@@ -75,25 +75,25 @@ namespace mqtt_c
             var msgData = JArray.Parse(msg);
             var msgObj = JArray.Parse(msgData.ToString());
 
-            if (_sim.PushData(msgObj))
+            _sim.PushData(msgObj);
+            
+            log.AppendLine(msg.ToString());
+            File.WriteAllText("log.txt", log.ToString());
+            Dictionary<string, PosData> Pos = _sim.getAllPositions();
+            foreach (var ID in _sim.GetTagIDs())
             {
-                log.AppendLine(msg.ToString());
-                File.WriteAllText("log.txt", log.ToString());
-                Dictionary<string, PosData> Pos = _sim.getAllPositions();
-                foreach (var ID in _sim.GetTagIDs())
-                {
-                    Console.Write("[Tag ID: ");
-                    Console.Write(ID);
-                    Console.Write(": X: ");
-                    Console.Write(Pos[ID].x);
-                    Console.Write(" Y: ");
-                    Console.Write(Pos[ID].y);
-                    Console.Write(" Z: ");
-                    Console.Write(Pos[ID].z);
-                    Console.Write("] ");
-                }
-                Console.WriteLine(" ");
+                Console.Write("[Tag ID: ");
+                Console.Write(ID);
+                Console.Write(": X: ");
+                Console.Write(Pos[ID].x);
+                Console.Write(" Y: ");
+                Console.Write(Pos[ID].y);
+                Console.Write(" Z: ");
+                Console.Write(Pos[ID].z);
+                Console.Write("] ");
             }
+            Console.WriteLine(" ");
+            
         }
 
         public async Task StartAsync()
