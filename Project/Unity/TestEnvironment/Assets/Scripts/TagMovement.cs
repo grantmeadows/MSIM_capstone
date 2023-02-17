@@ -1,18 +1,14 @@
-using JetBrains.Annotations;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor;
 using UnityEngine;
 using Newtonsoft.Json;
-using System.Runtime.Serialization;
+using System.Linq;
 
-public class TagObj
+public class Tag
 {
     public string version { get; set; }
     public string tagId { get; set; }
-    public float timestamp { get; set; }
+    public long timestamp { get; set; }
     public Data data { get; set; }
     public bool success { get; set; }
 }
@@ -53,6 +49,13 @@ public class Coordinates
     public int x { get; set; }
     public int y { get; set; }
     public int z { get; set; }
+
+    public Vector3 coord;
+
+    public Coordinates()
+    { 
+        coord = new Vector3(x / 100, y / 100, z / 100);
+    }
 }
 
 public class Anchordata
@@ -61,12 +64,21 @@ public class Anchordata
     public string anchorId { get; set; }
     public float rss { get; set; }
 }
+
 public class TagMovement : MonoBehaviour
 {
+    double simStart;
+    int count = 0;
+    public float SimulationSpeed;
 
     public GameObject TagPrefab;
+    GameObject temp;
+
     public string FileName;
     string FilePath;
+
+    List<Tag> tagData = new List<Tag>();
+    List<GameObject> tagList = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -76,15 +88,36 @@ public class TagMovement : MonoBehaviour
         {
             while (sr.Peek() >= 0)
             {
-                var tObj = JsonConvert.DeserializeObject<List<TagObj>>(sr.ReadLine());
-                Debug.Log(tObj);
+                var tObj = JsonConvert.DeserializeObject<List<Tag>>(sr.ReadLine());
+                System.DateTimeOffset dateTimeOff = System.DateTimeOffset.FromUnixTimeSeconds(tObj[0].timestamp);
+                Debug.Log(dateTimeOff);
+                tagData.Add(tObj[0]);
+            }
+            foreach (string id in tagData.Select(x => x.tagId).Distinct())
+            {
+                GameObject t = Instantiate(TagPrefab);
+                t.transform.parent = this.transform;
+                t.name = id;
+                t.SetActive(false);
+                tagList.Add(t);
             }
         }
+        Time.timeScale = SimulationSpeed;
+        simStart = tagData[0].timestamp;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        if (Time.fixedTimeAsDouble + simStart >= tagData[count].timestamp)
+        {
+            temp = tagList.Find(x => x.name == tagData[count].tagId);
+            if (temp.activeSelf == false)
+            {
+                temp.SetActive(true);
+            }
+            temp.transform.position = tagData[count].data.coordinates.coord;
+            Debug.Log(count++);
+        }
     }
 }

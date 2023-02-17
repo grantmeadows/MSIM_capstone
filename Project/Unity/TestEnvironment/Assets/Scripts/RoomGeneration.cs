@@ -1,14 +1,10 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ProBuilder;
 
 
 public class RoomGeneration : MonoBehaviour
 {
-    public GameObject AnchorObj;
-    public GameObject AnchorZero;
+    public GameObject AnchorPrefab;
     public Vector3[] AnchorLoc;
     public Material RoomMaterial;
 
@@ -17,9 +13,10 @@ public class RoomGeneration : MonoBehaviour
         // Anchor Placement
         for (int i = 0; i < AnchorLoc.Length; i++)
         {
-            GameObject a = Instantiate(AnchorObj);
+            GameObject a = Instantiate(AnchorPrefab);
             a.transform.position = AnchorLoc[i];
-            a.transform.parent = AnchorZero.transform;
+            a.transform.parent = this.transform;
+            a.name = "Anchor " + i;
         }
 
         // Floor Placement
@@ -31,9 +28,11 @@ public class RoomGeneration : MonoBehaviour
                 new Vector3(AnchorLoc[2].x, 0f, AnchorLoc[2].z),
                 new Vector3(AnchorLoc[3].x, 0f, AnchorLoc[3].z)
             },
-            new Face[] { new Face(new int[] { 0, 1, 2, 1, 3, 2 }) }
+            new Face[] { new Face(new int[] { 0, 1, 2, 0, 2, 3 }) }
             );
         quad.GetComponent<MeshRenderer>().material = RoomMaterial;
+        quad.transform.parent = this.transform;
+        quad.name = "Floor";
     }
 
     // Update is called once per frame
