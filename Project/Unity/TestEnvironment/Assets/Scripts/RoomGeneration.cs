@@ -14,6 +14,7 @@ public class RoomGeneration : MonoBehaviour
 
     void Start()
     {
+        // Anchor Placement
         for (int i = 0; i < AnchorLoc.Length; i++)
         {
             GameObject a = Instantiate(AnchorObj);
@@ -21,6 +22,7 @@ public class RoomGeneration : MonoBehaviour
             a.transform.parent = AnchorZero.transform;
         }
 
+        // Floor Placement
         ProBuilderMesh quad = ProBuilderMesh.Create(
             new Vector3[]
             {
@@ -37,6 +39,6 @@ public class RoomGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

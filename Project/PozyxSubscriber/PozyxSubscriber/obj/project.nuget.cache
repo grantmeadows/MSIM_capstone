@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vn2bhQZX/t3GHCM1nCyKJW9XEIE88DnuU11N2951K2UR/LATwSD6n+x41anemFnrUrzNWV6NKztpJhTupzYYbQ==",
+  "dgSpecHash": "L3pgGE/JP81YT1AYvNZE6jX1mMMFgaG08S0sWSNuyjz/NGLzDUtJSl4hBBod4PLGlsD3E+Pkmck3jxifBPIdLQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Grant\\Desktop\\School_ODU\\Senior_Spring\\Capstone\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
+  "projectFilePath": "D:\\Github\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Grant\\.nuget\\packages\\mqttnet\\3.1.2\\mqttnet.3.1.2.nupkg.sha512",
-    "C:\\Users\\Grant\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+    "C:\\Users\\Daniel Conrad\\.nuget\\packages\\mqttnet\\3.1.2\\mqttnet.3.1.2.nupkg.sha512",
+    "C:\\Users\\Daniel Conrad\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
   ],
   "logs": []
 }
