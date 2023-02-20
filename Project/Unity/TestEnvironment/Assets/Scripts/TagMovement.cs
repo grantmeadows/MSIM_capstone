@@ -46,16 +46,18 @@ public class Tagdata
 
 public class Coordinates
 {
-    public int x { get; set; }
-    public int y { get; set; }
-    public int z { get; set; }
+    public float x { get; set; }
+    public float y { get; set; }
+    public float z { get; set; }
 
+    /*
     public Vector3 coord;
 
     public Coordinates()
-    { 
+    {
         coord = new Vector3(x / 100, y / 100, z / 100);
     }
+    */
 }
 
 public class Anchordata
@@ -109,15 +111,27 @@ public class TagMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Time.fixedTimeAsDouble + simStart >= tagData[count].timestamp)
+        if (count < tagData.Count)
         {
-            temp = tagList.Find(x => x.name == tagData[count].tagId);
-            if (temp.activeSelf == false)
+            if (Time.fixedTimeAsDouble + simStart >= tagData[count].timestamp)
             {
-                temp.SetActive(true);
+                temp = tagList.Find(x => x.name == tagData[count].tagId);
+                if (temp.activeSelf == false)
+                {
+                    temp.SetActive(true);
+                }
+                temp.transform.position = new Vector3(
+                    tagData[count].data.coordinates.x / 1000,
+                    tagData[count].data.coordinates.z / 1000,
+                    tagData[count].data.coordinates.y / 1000
+                    );
+                count++;
+                Debug.Log(
+                    tagData[count].tagId.ToString() + " " +
+                    (tagData[count].data.coordinates.x / 1000).ToString() + " " +
+                    (tagData[count].data.coordinates.z / 1000).ToString() + " " +
+                    (tagData[count].data.coordinates.y / 1000).ToString() + " ");
             }
-            temp.transform.position = tagData[count].data.coordinates.coord;
-            Debug.Log(count++);
         }
     }
 }
