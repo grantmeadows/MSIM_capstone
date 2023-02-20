@@ -16,9 +16,10 @@ namespace PozyxSubscriber
             var port = 1883;
             int numTags = 1;
 
-            SimEnviornment sim = SimEnviornment.Instance;
+            SimEnvironment sim = SimEnvironment.Instance;
 
-            sim.Initialize(host, port, 1, numTags);
+           // sim.Initialize(host, port, 1, numTags);
+            sim.Initialize("TestlogStandardWithFails.txt");
 
             while(sim.ConnectedStatus)
             {

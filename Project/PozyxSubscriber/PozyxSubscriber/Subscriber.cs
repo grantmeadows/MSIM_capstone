@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using SimulationEnviornment;
 
+
 namespace mqtt_c
 {
 
@@ -21,7 +22,7 @@ namespace mqtt_c
         private IMqttClient _mqttClient;
         private IMqttClientOptions _options;
         private string _topic;
-        private SimulationEnviornment.SimEnviornment _sim;
+        private SimulationEnviornment.SimEnvironment _sim;
         private StringBuilder log = new StringBuilder();
 
         /// <summary>
@@ -30,7 +31,7 @@ namespace mqtt_c
         /// <param name="_numTags">Number of tags to be tracked</param>
         /// <param name="host">Host of the pozyx broker</param>
         /// <param name="port">Port</param>
-        public MqttClient(int _numTags, string host, int port, SimulationEnviornment.SimEnviornment Sim)
+        public MqttClient(int _numTags, string host, int port, SimulationEnviornment.SimEnvironment Sim)
         {
             _sim = Sim;
 

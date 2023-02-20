@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using mqtt_c;
 using Newtonsoft.Json.Linq;
+using filereader;
 
 namespace SimulationEnviornment
 {
@@ -15,24 +16,24 @@ namespace SimulationEnviornment
     /// <summary>
     /// Simulation enviornemnt
     /// </summary>
-    public sealed class SimEnviornment
+    public sealed class SimEnvironment
     {
 
         private bool _mutex;
-        private static SimEnviornment? _instance = null;
+        private static SimEnvironment? _instance = null;
         private bool _connectedStatus;
 
-        public SimEnviornment()
+        public SimEnvironment()
         {
         }
 
-        public static SimEnviornment Instance
+        public static SimEnvironment Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new SimEnviornment();
+                    _instance = new SimEnvironment();
                 }
                 return _instance;
             }
@@ -56,11 +57,27 @@ namespace SimulationEnviornment
             _tagIDs = new List<string>();
             _anchors = new Dictionary<string, Anchor>();
             _anchorIDs = new List<string>();
+            _reader = null;
             _MqqtClient = new MqttClient(numTags, host, port, this);
 
         }
 
+        public void Initialize(string filename)
+        {
+            _objects = new List<SimObject>();
+            _mutex = true;
+            _host = "";
+            _port = 0;
+            _tags = new Dictionary<string, Tag>();
+            _tagIDs = new List<string>();
+            _anchors = new Dictionary<string, Anchor>();
+            _anchorIDs = new List<string>();
+            _reader = new filereader.Reader(filename, this);
 
+        }
+
+
+        filereader.Reader? _reader;
         private static MqttClient? _MqqtClient;
         List<SimObject> _objects;
         Dictionary<string, Tag> _tags;
@@ -84,19 +101,19 @@ namespace SimulationEnviornment
         {
             foreach (var M in msgdata)
             {
-
-                if (M["success"].Value<string>() == "true")
+                float x = 0;
+                float y = 0;
+                float z = 0;
+                string ID = M["tagId"].Value<string>();
+                if (M["success"].Value<bool>())
                 {
-                    string ID = M["tagId"].Value<string>();
-                    float x = M["data"]["coordinates"]["x"].Value<float>();
-                    float y = M["data"]["coordinates"]["y"].Value<float>();
-                    float z = M["data"]["coordinates"]["z"].Value<float>();
-                    PosData newData = new PosData(x, y, z);
+                    
+                    x = M["data"]["coordinates"]["x"].Value<float>();
+                    y = M["data"]["coordinates"]["y"].Value<float>();
+                    z = M["data"]["coordinates"]["z"].Value<float>();
                 }
-                else {
-                    PosData newData = new PosData();
-                    string ID = M["tagId"].Value<string>();
-                    newData.Acceleration = M["data"]["tagData"]["accelerometer"].Value<List<List<float>>>();
+                PosData newData = new PosData(x, y, z);
+                newData.good = M["success"].Value<bool>();
 
                     if (_tags.ContainsKey(ID))
                         _tags[ID].AddData(newData);
@@ -107,7 +124,7 @@ namespace SimulationEnviornment
                         _tags[ID].AddData(newData);
                     }
                     
-                }
+                
             }
         }
 
@@ -165,19 +182,6 @@ namespace SimulationEnviornment
 
     }
 
-    public class SimObject
-    {
-        private List<Tag> _tags;
-        private PosData _posData;
-
-        public SimObject()
-        {
-            _tags = new List<Tag>();
-            _posData = new PosData();
-        }
-
-    }
-
     public class Tag
     {
         List<PosData> _tagdata;
@@ -192,7 +196,7 @@ namespace SimulationEnviornment
 
         public PosData GetLatestPosData()
         {
-            return _tagdata.First();
+            return _tagdata.Last();
         }
 
         public void AddData(PosData data)
@@ -232,6 +236,48 @@ namespace SimulationEnviornment
             z = 0;
             Acceleration = null;
         }
+    }
+
+
+
+
+
+
+
+
+
+    public class SimObject
+    {
+        private List<Tag> _tags;
+        private float x, y, z;
+        private float Rotx, Roty, Rotz;
+
+        public SimObject()
+        {
+            _tags = new List<Tag>();
+        }
+
+
+        public void AddTag(Tag tag) { _tags.Add(tag); }
+
+        public List<float> getPosition()
+        {
+            List<float> position = new List<float>();
+            position.Add(x);
+            position.Add(y);
+            position.Add(z);
+            return position;
+        }
+
+        public List<float> getOrientation()
+        {
+            List<float> Orientation = new List<float>();
+            Orientation.Add(Rotx);
+            Orientation.Add(Roty);
+            Orientation.Add(Rotz);
+            return Orientation;
+        }
+
     }
 
 
