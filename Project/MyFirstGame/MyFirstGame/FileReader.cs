@@ -5,7 +5,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using SimulationEnviornment;
 using Microsoft.VisualBasic;
-
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
 
 namespace filereader
 {
@@ -30,7 +34,7 @@ namespace filereader
             _sim = S;
             _filename = filename;
             Task.Run(() => this.StartAsync());
-            Thread.Sleep(Timeout.Infinite);
+            //Thread.Sleep(Timeout.Infinite);
         }
 
         public async Task StartAsync()

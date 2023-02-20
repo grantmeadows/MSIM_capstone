@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using mqtt_c;
+using System.Threading;
 using Newtonsoft.Json.Linq;
 using filereader;
-using System.Threading;
 
 namespace SimulationEnviornment
 {
@@ -112,9 +112,8 @@ namespace SimulationEnviornment
                     x = M["data"]["coordinates"]["x"].Value<float>();
                     y = M["data"]["coordinates"]["y"].Value<float>();
                     z = M["data"]["coordinates"]["z"].Value<float>();
-                }
-                PosData newData = new PosData(x, y, z);
-                newData.good = M["success"].Value<bool>();
+                    PosData newData = new PosData(x, y, z);
+                    newData.good = M["success"].Value<bool>();
 
                     if (_tags.ContainsKey(ID))
                         _tags[ID].AddData(newData);
@@ -124,8 +123,10 @@ namespace SimulationEnviornment
                         _tags[ID] = new Tag(ID);
                         _tags[ID].AddData(newData);
                     }
-                    
-                
+
+                }
+
+
             }
         }
 
@@ -140,7 +141,7 @@ namespace SimulationEnviornment
         }
 
 
-        public PosData getLatestposition(string ID){ return _tags[ID].GetLatestPosData(); }
+        public PosData getLatestposition(string ID){ if (_tags.ContainsKey(ID)) return _tags[ID].GetLatestPosData(); else return new PosData(0, 0, 0); }
 
         public Dictionary<string, PosData> getAllPositions()
         {
