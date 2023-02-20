@@ -55,7 +55,7 @@ public class Coordinates
 
     public Coordinates()
     {
-        coord = new Vector3(x / 100, y / 100, z / 100);
+        coord = new Vector3(x / 100, z / 100, y / 100);
     }
     */
 }
@@ -92,7 +92,6 @@ public class TagMovement : MonoBehaviour
             {
                 var tObj = JsonConvert.DeserializeObject<List<Tag>>(sr.ReadLine());
                 System.DateTimeOffset dateTimeOff = System.DateTimeOffset.FromUnixTimeSeconds(tObj[0].timestamp);
-                Debug.Log(dateTimeOff);
                 tagData.Add(tObj[0]);
             }
             foreach (string id in tagData.Select(x => x.tagId).Distinct())
@@ -125,13 +124,19 @@ public class TagMovement : MonoBehaviour
                     tagData[count].data.coordinates.z / 1000,
                     tagData[count].data.coordinates.y / 1000
                     );
-                count++;
+
                 Debug.Log(
                     tagData[count].tagId.ToString() + " " +
                     (tagData[count].data.coordinates.x / 1000).ToString() + " " +
                     (tagData[count].data.coordinates.z / 1000).ToString() + " " +
                     (tagData[count].data.coordinates.y / 1000).ToString() + " ");
+
+                count++;
             }
+        }
+        else
+        {
+            Debug.Break();
         }
     }
 }
