@@ -52,11 +52,12 @@ namespace SimulationEnviornment
             _mutex = true;
             _host = host;
             _port = port;
-            _MqqtClient = new MqttClient(numTags, host, port, this);
             _tags = new Dictionary<string, Tag>();
             _tagIDs = new List<string>();
             _anchors = new Dictionary<string, Anchor>();
             _anchorIDs = new List<string>();
+            _MqqtClient = new MqttClient(numTags, host, port, this);
+
         }
 
 
@@ -83,7 +84,7 @@ namespace SimulationEnviornment
         {
             foreach (var M in msgdata)
             {
-               
+
                 if (M["success"].Value<string>() == "true")
                 {
                     string ID = M["tagId"].Value<string>();
@@ -91,8 +92,12 @@ namespace SimulationEnviornment
                     float y = M["data"]["coordinates"]["y"].Value<float>();
                     float z = M["data"]["coordinates"]["z"].Value<float>();
                     PosData newData = new PosData(x, y, z);
+                }
+                else {
+                    PosData newData = new PosData();
+                    string ID = M["tagId"].Value<string>();
+                    newData.Acceleration = M["data"]["tagData"]["accelerometer"].Value<List<List<float>>>();
 
-                    
                     if (_tags.ContainsKey(ID))
                         _tags[ID].AddData(newData);
                     else
@@ -117,12 +122,7 @@ namespace SimulationEnviornment
         }
 
 
-        public PosData getLatestposition(string ID)
-        {
-            
-            return _tags[ID].GetLatestPosData();
-           
-        }
+        public PosData getLatestposition(string ID){ return _tags[ID].GetLatestPosData(); }
 
         public Dictionary<string, PosData> getAllPositions()
         {
@@ -135,23 +135,15 @@ namespace SimulationEnviornment
             return ret;
         }
 
-        public Anchor getAnchor(string ID)
-        {
-            return _anchors[ID];
-        }
+        public Anchor getAnchor(string ID) {  return _anchors[ID]; }
 
         public Tag GetTag(string ID) { return _tags[ID]; }
 
-        public void SetAnchor(string ID, Anchor anchor)
-        {
-            _anchors["ID"] = anchor;
-        }
+        public void SetAnchor(string ID, Anchor anchor) { _anchors["ID"] = anchor; }
+        
               
         
-        public List<string> GetTagIDs()
-        {
-            return _tagIDs;
-        }
+        public List<string> GetTagIDs(){ return _tagIDs; }
 
     }
 
@@ -181,6 +173,7 @@ namespace SimulationEnviornment
         public SimObject()
         {
             _tags = new List<Tag>();
+            _posData = new PosData();
         }
 
     }
@@ -213,8 +206,9 @@ namespace SimulationEnviornment
     /// </summary>
     public struct PosData
     {
-        public float x, y, z;
-
+        public float? x, y ,z;
+        public bool good;
+        public List<List<float>>? Acceleration;
         /// <summary>
         /// Create position data node with x, y, z coordinates
         /// </summary>
@@ -224,10 +218,21 @@ namespace SimulationEnviornment
         /// <param name="_z"></param>
         public PosData(float _x, float _y, float _z)
         {
+            good = true;
             x = _x;
             y = _y;
             z = _z;
+            Acceleration = null;
+        }
+        public PosData()
+        {
+            good = false;
+            x = 0;
+            y = 0;
+            z = 0;
+            Acceleration = null;
         }
     }
+
 
 }
