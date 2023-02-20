@@ -115,21 +115,34 @@ public class TagMovement : MonoBehaviour
             if (Time.fixedTimeAsDouble + simStart >= tagData[count].timestamp)
             {
                 temp = tagList.Find(x => x.name == tagData[count].tagId);
-                if (temp.activeSelf == false)
-                {
-                    temp.SetActive(true);
-                }
-                temp.transform.position = new Vector3(
-                    tagData[count].data.coordinates.x / 1000,
-                    tagData[count].data.coordinates.z / 1000,
-                    tagData[count].data.coordinates.y / 1000
-                    );
 
-                Debug.Log(
-                    tagData[count].tagId.ToString() + " " +
-                    (tagData[count].data.coordinates.x / 1000).ToString() + " " +
-                    (tagData[count].data.coordinates.z / 1000).ToString() + " " +
-                    (tagData[count].data.coordinates.y / 1000).ToString() + " ");
+                if (tagData[count].success == true)
+                {
+                    if (temp.activeSelf == false)
+                    {
+                        temp.SetActive(true);
+                    }
+
+                    temp.transform.position = new Vector3(
+                        tagData[count].data.coordinates.x / 1000,
+                        tagData[count].data.coordinates.z / 1000,
+                        tagData[count].data.coordinates.y / 1000
+                        );
+                    
+                    temp.GetComponent<Renderer>().material.color = Color.green;
+
+                    Debug.Log(
+                        tagData[count].tagId.ToString() + " " +
+                        (tagData[count].data.coordinates.x / 1000).ToString() + " " +
+                        (tagData[count].data.coordinates.z / 1000).ToString() + " " +
+                        (tagData[count].data.coordinates.y / 1000).ToString() + " ");
+                }
+                else
+                {
+                    temp.GetComponent<Renderer>().material.color = Color.red;
+
+                    Debug.Log(tagData[count].tagId.ToString() + " Count: " + count.ToString() + " Failure.");
+                }
 
                 count++;
             }

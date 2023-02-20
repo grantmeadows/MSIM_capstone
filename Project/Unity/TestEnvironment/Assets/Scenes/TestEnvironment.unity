@@ -398,4 +398,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimulationSpeed: 1
   TagPrefab: {fileID: 4656374199788638134, guid: b3a69fa79f2f1ee4db658ee2196a18e1, type: 3}
-  FileName: SuccessRun
+  FileName: FailureRun
