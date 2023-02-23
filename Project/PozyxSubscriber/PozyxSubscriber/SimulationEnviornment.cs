@@ -7,9 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using mqtt_c;
+using System.Threading;
 using Newtonsoft.Json.Linq;
 using filereader;
-using System.Threading;
+using System.Data;
 
 namespace SimulationEnviornment
 {
@@ -108,13 +109,12 @@ namespace SimulationEnviornment
                 string ID = M["tagId"].Value<string>();
                 if (M["success"].Value<bool>())
                 {
-                    
+
                     x = M["data"]["coordinates"]["x"].Value<float>();
                     y = M["data"]["coordinates"]["y"].Value<float>();
                     z = M["data"]["coordinates"]["z"].Value<float>();
-                }
-                PosData newData = new PosData(x, y, z);
-                newData.good = M["success"].Value<bool>();
+                    PosData newData = new PosData(x, y, z);
+                    newData.good = M["success"].Value<bool>();
 
                     if (_tags.ContainsKey(ID))
                         _tags[ID].AddData(newData);
@@ -124,8 +124,10 @@ namespace SimulationEnviornment
                         _tags[ID] = new Tag(ID);
                         _tags[ID].AddData(newData);
                     }
-                    
-                
+
+                }
+
+
             }
         }
 
@@ -140,7 +142,7 @@ namespace SimulationEnviornment
         }
 
 
-        public PosData getLatestposition(string ID){ return _tags[ID].GetLatestPosData(); }
+        public PosData getLatestposition(string ID) { if (_tags.ContainsKey(ID)) return _tags[ID].GetLatestPosData(); else return new PosData(0, 0, 0); }
 
         public Dictionary<string, PosData> getAllPositions()
         {
@@ -149,19 +151,19 @@ namespace SimulationEnviornment
             {
                 ret[T] = _tags[T].GetLatestPosData();
             }
-           
+
             return ret;
         }
 
-        public Anchor getAnchor(string ID) {  return _anchors[ID]; }
+        public Anchor getAnchor(string ID) { return _anchors[ID]; }
 
         public Tag GetTag(string ID) { return _tags[ID]; }
 
         public void SetAnchor(string ID, Anchor anchor) { _anchors["ID"] = anchor; }
-        
-              
-        
-        public List<string> GetTagIDs(){ return _tagIDs; }
+
+
+
+        public List<string> GetTagIDs() { return _tagIDs; }
 
     }
 
@@ -183,15 +185,38 @@ namespace SimulationEnviornment
 
     }
 
+
+    public struct Vector3D
+    {
+        public float x, y, z;
+        public Vector3D()
+        {
+            x = 0;
+            y = 0;
+            z = 0;
+        }
+    }
+
     public class Tag
     {
         List<PosData> _tagdata;
+        Vector3D position;
+        Vector3D velocity;
+        Vector3D down;
+
+        int refreshRate;
+
         private string _id;
         public Tag(string ID)
         {
             _id = ID;
             _tagdata = new List<PosData>();
+            position = new Vector3D();
+            velocity = new Vector3D();
+            refreshRate = 1;
         }
+
+        public void setRefreshRate(int i) { refreshRate = i; }
 
         public string getID() { return _id; }
 
@@ -200,9 +225,40 @@ namespace SimulationEnviornment
             return _tagdata.Last();
         }
 
+        public List<float> getPosition()
+        {
+            List<float> ret = new List<float>();
+            ret.Add(position.x);
+            ret.Add(position.y);
+            ret.Add(position.z);
+            return ret;
+        }
+
         public void AddData(PosData data)
         {
             _tagdata.Add(data);
+            //Vector3D Accel = new Vector3D();
+            //foreach (var A in data.Acceleration)
+            //{
+            //    Accel.x += A[0];
+            //    Accel.y += A[1];
+            //    Accel.z += A[2];
+            //}
+            //float delta = 1.0f / (float)refreshRate;
+
+            //Accel.x = (Accel.x * data.Acceleration.Count()) / delta;
+            //Accel.y = (Accel.y * data.Acceleration.Count()) / delta;
+            //Accel.z = (Accel.z * data.Acceleration.Count()) / delta;
+
+            //velocity.x += Accel.x;
+            //velocity.y += Accel.y;
+            //velocity.z += Accel.z;
+            //if (!data.good)
+            //{
+            //    position.x += velocity.x;
+            //    position.y += velocity.y;
+            //    position.z += velocity.z;
+            //}
         }
     }
 
@@ -211,7 +267,7 @@ namespace SimulationEnviornment
     /// </summary>
     public struct PosData
     {
-        public float? x, y ,z;
+        public float? x, y, z;
         public bool good;
         public List<List<float>>? Acceleration;
         /// <summary>
@@ -243,10 +299,6 @@ namespace SimulationEnviornment
 
 
 
-
-
-
-
     public class SimObject
     {
         private List<Tag> _tags;
@@ -256,6 +308,12 @@ namespace SimulationEnviornment
         public SimObject()
         {
             _tags = new List<Tag>();
+            x = 0;
+            y = 0;
+            z = 0;
+            Rotx = 0;
+            Roty = 0;
+            Rotz = 0;
         }
 
 
@@ -279,6 +337,24 @@ namespace SimulationEnviornment
             return Orientation;
         }
 
+        public void Update()
+        {
+            x = 0;
+            y = 0;
+            z = 0;
+            int count = 0;
+            foreach (Tag tag in _tags)
+            {
+                PosData pos = tag.GetLatestPosData();
+                x += (float)pos.x;
+                y += (float)pos.y;
+                z += (float)pos.z;
+                count++;
+            }
+            x /= count;
+            y /= count;
+            z /= count;
+        }
     }
 
 

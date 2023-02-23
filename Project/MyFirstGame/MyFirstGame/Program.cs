@@ -20,12 +20,12 @@ namespace MyFirstGame
             int numTags = 1;
 
             //Comment out for real ltime tracking
-            // sim.Initialize(host, port, 1, numTags);
+            sim.Initialize(host, port, 1, numTags);
 
-            sim.Initialize("TestlogStandardWithFails.txt");
+            //sim.Initialize("TestlogStandardWithFails.txt");
 
             //id of tag to track
-            string TAGID = "6985";
+            string TAGID = "5772";
 
             using (var game = new Game1(sim, TAGID))
                 game.Run();
