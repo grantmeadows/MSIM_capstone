@@ -79,7 +79,7 @@ namespace mqtt_c
             _sim.PushData(msgObj);
             
             log.AppendLine(msg.ToString());
-            File.WriteAllText("log.txt", log.ToString());
+            File.WriteAllText("log2.txt", log.ToString());
             Dictionary<string, PosData> Pos = _sim.getAllPositions();
             foreach (var ID in _sim.GetTagIDs())
             {
