@@ -41,21 +41,29 @@ namespace filereader
             var msgObj = JArray.Parse(file[L]);
             var msgData = JArray.Parse(msgObj.ToString());
 
-            time = msgData[0]["timestamp"].Value<int>();
+            string s = msgData[0]["timestamp"].Value<string>();
+            s = s.Remove(0, 5);
+            double d = Convert.ToDouble(s);
+            time = (int)d * 1000;
             _sim.PushData(msgData);
             L++;
             msgObj = JArray.Parse(file[L]);
             msgData = JArray.Parse(msgObj.ToString());
-            int next = msgData[0]["timestamp"].Value<int>();
+            s = msgData[0]["timestamp"].Value<string>();
+            s = s.Remove(0, 5);
+            d = Convert.ToDouble(s);
+            int next = (int)d * 1000;
             while (L < file.Length)
             {
-                while(time > next)
-                {
                     _sim.PushData(msgData);
                     L++;
                     msgObj = JArray.Parse(file[L]);
                     msgData = JArray.Parse(msgObj.ToString());
-                    next = msgData[0]["timestamp"].Value<int>();
+                    s = msgData[0]["timestamp"].Value<string>();
+                    s = s.Remove(0, 5);
+                     d = Convert.ToDouble(s);
+                     next = (int)d * 1000;
+                next = msgData[0]["timestamp"].Value<int>();
 
                     Dictionary<string, PosData> Pos = _sim.getAllPositions();
                     foreach (var ID in _sim.GetTagIDs())
@@ -72,9 +80,10 @@ namespace filereader
                     }
                     Console.WriteLine(" ");
 
-                }
-                Thread.Sleep(1000);
-                time += 1;
+                     int sleep = (next - time);
+                    time = next;
+                    Thread.Sleep(sleep);
+                    
 
             }
         }
