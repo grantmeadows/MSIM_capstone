@@ -74,6 +74,7 @@ public class TagMovement : MonoBehaviour
     public float SimulationSpeed;
 
     public GameObject TagPrefab;
+    public GameObject TagMarker;
     GameObject temp;
 
     public string FileName;
@@ -85,6 +86,8 @@ public class TagMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var tHistory = new GameObject("TagHistory");
+
         FilePath = "Assets/Data/" + FileName + ".txt";
         using (var sr = new StreamReader(FilePath))
         {
@@ -99,15 +102,20 @@ public class TagMovement : MonoBehaviour
                 GameObject t = Instantiate(TagPrefab);
                 t.transform.parent = this.transform;
                 t.name = id;
+                t.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
                 t.SetActive(false);
                 tagList.Add(t);
+
+                temp = new GameObject(id + "_History");
+                temp.transform.parent = tHistory.transform;
             }
         }
+
         Time.timeScale = SimulationSpeed;
         simStart = tagData[0].timestamp;
     }
 
-    // Update is called once per frame
+    // FixedUpdate can be called multiple times per frame
     void FixedUpdate()
     {
         if (count < tagData.Count)
@@ -122,14 +130,20 @@ public class TagMovement : MonoBehaviour
                     {
                         temp.SetActive(true);
                     }
+                    else 
+                    {
+                        GameObject th = Instantiate(TagMarker);
+                        th.transform.position = temp.transform.position;
+                        th.GetComponent<Renderer>().material.color = temp.GetComponent<Renderer>().material.GetColor("_Color");
+                        th.name = temp.name + "_" + count.ToString();
+                        th.transform.parent = GameObject.Find("/TagHistory/" + temp.name + "_History").transform;
+                    }
 
                     temp.transform.position = new Vector3(
                         tagData[count].data.coordinates.x / 1000,
                         tagData[count].data.coordinates.z / 1000,
                         tagData[count].data.coordinates.y / 1000
                         );
-                    
-                    temp.GetComponent<Renderer>().material.color = Color.green;
 
                     Debug.Log(
                         tagData[count].tagId.ToString() + " " +
@@ -139,8 +153,6 @@ public class TagMovement : MonoBehaviour
                 }
                 else
                 {
-                    temp.GetComponent<Renderer>().material.color = Color.red;
-
                     Debug.Log(tagData[count].tagId.ToString() + " Count: " + count.ToString() + " Failure.");
                 }
 
