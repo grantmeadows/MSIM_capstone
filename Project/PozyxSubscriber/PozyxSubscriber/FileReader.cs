@@ -17,7 +17,7 @@ namespace filereader
     {
         private SimulationEnviornment.SimEnvironment _sim;
         private string _filename;
-        private int time;
+        private float time;
 
         /// <summary>
         /// Initializes and begins asynch subscription to tag topic from pozyx broker
@@ -44,7 +44,7 @@ namespace filereader
             string s = msgData[0]["timestamp"].Value<string>();
             s = s.Remove(0, 5);
             double d = Convert.ToDouble(s);
-            time = (int)d * 1000;
+            time = (float)d * 1000;
             _sim.PushData(msgData);
             L++;
             msgObj = JArray.Parse(file[L]);
@@ -52,7 +52,7 @@ namespace filereader
             s = msgData[0]["timestamp"].Value<string>();
             s = s.Remove(0, 5);
             d = Convert.ToDouble(s);
-            int next = (int)d * 1000;
+            float next = (float)d * 1000;
             while (L < file.Length)
             {
                     _sim.PushData(msgData);
@@ -62,8 +62,8 @@ namespace filereader
                     s = msgData[0]["timestamp"].Value<string>();
                     s = s.Remove(0, 5);
                      d = Convert.ToDouble(s);
-                     next = (int)d * 1000;
-                next = msgData[0]["timestamp"].Value<int>();
+                     next = (float)d * 1000;
+                   
 
                     Dictionary<string, PosData> Pos = _sim.getAllPositions();
                     foreach (var ID in _sim.GetTagIDs())
@@ -80,7 +80,8 @@ namespace filereader
                     }
                     Console.WriteLine(" ");
 
-                     int sleep = (next - time);
+                     int sleep = (int)(next - time);
+                if (sleep < 0) sleep = 0;
                     time = next;
                     Thread.Sleep(sleep);
                     
