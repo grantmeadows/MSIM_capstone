@@ -22,7 +22,7 @@ namespace MyFirstGame
             //Comment out for real ltime tracking
             //sim.Initialize(host, port, 1, numTags);
 
-            sim.Initialize("Feb23.txt");
+            sim.Initialize("March2nd1.txt");
 
             //id of tag to track
             string TAGID = "5772";

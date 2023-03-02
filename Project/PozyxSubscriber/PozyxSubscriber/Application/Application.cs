@@ -22,8 +22,13 @@ namespace PozyxSubscriber.Application
             sim.Initialize("TestlogStandardWithFails.txt");
 =======
             
+<<<<<<< HEAD:Project/PozyxSubscriber/PozyxSubscriber/Application/Application.cs
             sim.Initialize(host, port, 1, numTags, "March2nd1.txt");
             //sim.Initialize("log.txt");
+>>>>>>> Master:Project/PozyxSubscriber/PozyxSubscriber/Application.cs
+=======
+            //sim.Initialize(host, port, 1, numTags, "March2nd5.txt");
+            sim.Initialize("March2nd1.txt");
 >>>>>>> Master:Project/PozyxSubscriber/PozyxSubscriber/Application.cs
 
             while (sim.ConnectedStatus)
