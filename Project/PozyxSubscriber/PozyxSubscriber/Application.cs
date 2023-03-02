@@ -19,7 +19,7 @@ namespace PozyxSubscriber
            SimEnvironment sim = SimEnvironment.Instance;
 
            //sim.Initialize(host, port, 1, numTags);
-           sim.Initialize("TestlogStandardWithFails.txt");
+           sim.Initialize("log.txt");
 
             while(sim.ConnectedStatus)
             {
