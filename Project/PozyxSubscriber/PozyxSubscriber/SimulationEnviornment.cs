@@ -49,7 +49,7 @@ namespace SimulationEnviornment
         /// <param name="port">Port</param>
         /// <param name="numObjects">Number of objects in enviornment</param>
         /// <param name="numTags">Number of tags in enviornment</param>
-        public void Initialize(string host, int port, int numObjects, int numTags)
+        public void Initialize(string host, int port, int numObjects, int numTags, string filename)
         {
             _objects = new List<SimObject>();
             _mutex = true;
@@ -60,7 +60,7 @@ namespace SimulationEnviornment
             _anchors = new Dictionary<string, Anchor>();
             _anchorIDs = new List<string>();
             _reader = null;
-            _MqqtClient = new MqttClient(numTags, host, port, this);
+            _MqqtClient = new MqttClient(numTags, host, port, this, filename);
 
         }
 
