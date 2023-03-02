@@ -18,8 +18,8 @@ namespace PozyxSubscriber
 
             SimEnvironment sim = SimEnvironment.Instance;
             
-            sim.Initialize(host, port, 1, numTags, "March2nd1.txt");
-            //sim.Initialize("log.txt");
+            //sim.Initialize(host, port, 1, numTags, "March2nd5.txt");
+            sim.Initialize("March2nd1.txt");
 
             while(sim.ConnectedStatus)
             {
