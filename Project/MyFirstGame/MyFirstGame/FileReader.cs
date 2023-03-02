@@ -11,6 +11,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
 
+
 namespace filereader
 {
 
@@ -21,7 +22,7 @@ namespace filereader
     {
         private SimulationEnviornment.SimEnvironment _sim;
         private string _filename;
-        private int time;
+        private float time;
 
         /// <summary>
         /// Initializes and begins asynch subscription to tag topic from pozyx broker
@@ -41,44 +42,38 @@ namespace filereader
         {
             int L = 0;
             string[] file = File.ReadAllLines(_filename);
-            
+
             var msgObj = JArray.Parse(file[L]);
             var msgData = JArray.Parse(msgObj.ToString());
 
-            time = msgData[0]["timestamp"].Value<int>();
+            string s = msgData[0]["timestamp"].Value<string>();
+            s = s.Remove(0, 5);
+            double d = Convert.ToDouble(s);
+            time = (float)d * 1000;
             _sim.PushData(msgData);
             L++;
             msgObj = JArray.Parse(file[L]);
             msgData = JArray.Parse(msgObj.ToString());
-            int next = msgData[0]["timestamp"].Value<int>();
+            s = msgData[0]["timestamp"].Value<string>();
+            s = s.Remove(0, 5);
+            d = Convert.ToDouble(s);
+            float next = (float)d * 1000;
             while (L < file.Length)
             {
-                while(time > next)
-                {
-                    _sim.PushData(msgData);
-                    L++;
-                    msgObj = JArray.Parse(file[L]);
-                    msgData = JArray.Parse(msgObj.ToString());
-                    next = msgData[0]["timestamp"].Value<int>();
+                _sim.PushData(msgData);
+                L++;
+                msgObj = JArray.Parse(file[L]);
+                msgData = JArray.Parse(msgObj.ToString());
+                s = msgData[0]["timestamp"].Value<string>();
+                s = s.Remove(0, 5);
+                d = Convert.ToDouble(s);
+                next = (float)d * 1000;
 
-                    Dictionary<string, PosData> Pos = _sim.getAllPositions();
-                    foreach (var ID in _sim.GetTagIDs())
-                    {
-                        Console.Write("[Tag ID: ");
-                        Console.Write(ID);
-                        Console.Write(": X: ");
-                        Console.Write(Pos[ID].x);
-                        Console.Write(" Y: ");
-                        Console.Write(Pos[ID].y);
-                        Console.Write(" Z: ");
-                        Console.Write(Pos[ID].z);
-                        Console.Write("] ");
-                    }
-                    Console.WriteLine(" ");
+                int sleep = (int)(next - time);
+                if (sleep < 0) sleep = 0;
+                time = next;
+                Thread.Sleep(sleep);
 
-                }
-                Thread.Sleep(1000);
-                time += 1;
 
             }
         }

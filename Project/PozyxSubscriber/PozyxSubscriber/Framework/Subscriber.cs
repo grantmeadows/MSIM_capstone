@@ -24,17 +24,27 @@ namespace PozyxSubscriber.Framework
         private SimEnvironment _sim;
         private StringBuilder log = new StringBuilder();
 
+        private string _filename;
+
         /// <summary>
         /// Initializes and begins asynch subscription to tag topic from pozyx broker
         /// </summary>
         /// <param name="_numTags">Number of tags to be tracked</param>
         /// <param name="host">Host of the pozyx broker</param>
         /// <param name="port">Port</param>
+<<<<<<< HEAD:Project/PozyxSubscriber/PozyxSubscriber/Framework/Subscriber.cs
         public MqttClient(int _numTags, string host, int port, SimEnvironment Sim)
         {
             _sim = Sim;
 
             _topic = "tags";
+=======
+        public MqttClient(int _numTags, string host, int port, SimulationEnviornment.SimEnvironment Sim, string filename)
+        {
+            _sim = Sim;
+            _filename = filename;
+            this._topic = "tags";
+>>>>>>> Master:Project/PozyxSubscriber/PozyxSubscriber/Subscriber.cs
 
             _options = new MqttClientOptionsBuilder()
                 .WithTcpServer(host, port)
@@ -78,7 +88,7 @@ namespace PozyxSubscriber.Framework
             _sim.PushData(msgObj);
 
             log.AppendLine(msg.ToString());
-            File.WriteAllText("log2.txt", log.ToString());
+            File.WriteAllText(_filename, log.ToString());
             Dictionary<string, PosData> Pos = _sim.getAllPositions();
             foreach (var ID in _sim.GetTagIDs())
             {

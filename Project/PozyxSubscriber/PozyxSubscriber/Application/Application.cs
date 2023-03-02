@@ -16,9 +16,15 @@ namespace PozyxSubscriber.Application
             int numTags = 1;
 
             SimEnvironment sim = SimEnvironment.Instance;
+<<<<<<< HEAD:Project/PozyxSubscriber/PozyxSubscriber/Application/Application.cs
 
             //sim.Initialize(host, port, 1, numTags);
             sim.Initialize("TestlogStandardWithFails.txt");
+=======
+            
+            sim.Initialize(host, port, 1, numTags, "March2nd1.txt");
+            //sim.Initialize("log.txt");
+>>>>>>> Master:Project/PozyxSubscriber/PozyxSubscriber/Application.cs
 
             while (sim.ConnectedStatus)
             {
