@@ -9,8 +9,9 @@ using Microsoft.VisualBasic;
 using System.Threading;
 using Newtonsoft.Json.Linq;
 using System.Data;
+using PozyxSubscriber.Framework;
 
-namespace PozyxSubscriber.Framework
+namespace PozyxSubscriber
 {
 
     /// <summary>
@@ -47,7 +48,7 @@ namespace PozyxSubscriber.Framework
         /// <param name="port">Port</param>
         /// <param name="numObjects">Number of objects in enviornment</param>
         /// <param name="numTags">Number of tags in enviornment</param>
-        public void Initialize(string host, int port, int numObjects, int numTags)
+        public void Initialize(string host, int port, int numObjects, int numTags, string filename)
         {
             _objects = new List<SimObject>();
             _mutex = true;
@@ -58,7 +59,7 @@ namespace PozyxSubscriber.Framework
             _anchors = new Dictionary<string, Anchor>();
             _anchorIDs = new List<string>();
             _reader = null;
-            _MqqtClient = new MqttClient(numTags, host, port, this);
+            _MqqtClient = new MqttClient(numTags, host, port, this, filename);
 
         }
 
@@ -94,6 +95,7 @@ namespace PozyxSubscriber.Framework
             get { return _connectedStatus; }
             set { _connectedStatus = value; }
         }
+
 
 
         public void PushData(JArray msgdata)
@@ -157,6 +159,8 @@ namespace PozyxSubscriber.Framework
         public Tag GetTag(string ID) { return _tags[ID]; }
 
         public void SetAnchor(string ID, Anchor anchor) { _anchors["ID"] = anchor; }
+
+
 
         public List<string> GetTagIDs() { return _tagIDs; }
 

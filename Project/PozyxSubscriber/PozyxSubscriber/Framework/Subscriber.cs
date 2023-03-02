@@ -32,19 +32,19 @@ namespace PozyxSubscriber.Framework
         /// <param name="_numTags">Number of tags to be tracked</param>
         /// <param name="host">Host of the pozyx broker</param>
         /// <param name="port">Port</param>
-<<<<<<< HEAD:Project/PozyxSubscriber/PozyxSubscriber/Framework/Subscriber.cs
+
         public MqttClient(int _numTags, string host, int port, SimEnvironment Sim)
         {
             _sim = Sim;
 
             _topic = "tags";
-=======
-        public MqttClient(int _numTags, string host, int port, SimulationEnviornment.SimEnvironment Sim, string filename)
+        } 
+        public MqttClient(int _numTags, string host, int port, SimEnvironment Sim, string filename)
         {
             _sim = Sim;
             _filename = filename;
             this._topic = "tags";
->>>>>>> Master:Project/PozyxSubscriber/PozyxSubscriber/Subscriber.cs
+
 
             _options = new MqttClientOptionsBuilder()
                 .WithTcpServer(host, port)
