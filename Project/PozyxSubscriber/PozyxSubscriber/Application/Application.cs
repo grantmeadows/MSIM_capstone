@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SimulationEnviornment;
-using mqtt_c;
 
-namespace PozyxSubscriber
+namespace PozyxSubscriber.Application
 {
     public class Program
     {
@@ -17,11 +15,16 @@ namespace PozyxSubscriber
             int numTags = 1;
 
             SimEnvironment sim = SimEnvironment.Instance;
-            
-            //sim.Initialize(host, port, 1, numTags, "March2nd5.txt");
-            sim.Initialize("March2nd1.txt");
 
-            while(sim.ConnectedStatus)
+
+            //sim.Initialize(host, port, 1, numTags);
+            sim.Initialize("TestlogStandardWithFails.txt");
+            
+            //sim.Initialize(host, port, 1, numTags, "March2nd1.txt");
+            //sim.Initialize("log.txt");
+
+
+            while (sim.ConnectedStatus)
             {
                 Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").x}");
                 Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").y}");
