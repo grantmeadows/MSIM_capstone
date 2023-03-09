@@ -11,9 +11,9 @@ namespace PozyxSubscriber.Framework
     /// </summary>
     public struct PosData
     {
-        public float? x, y, z;
+        public Vector3D pos;
         public bool good;
-        public List<List<float>>? Acceleration;
+        public List<Vector3D>? Acceleration;
         /// <summary>
         /// Create position data node with x, y, z coordinates
         /// </summary>
@@ -24,17 +24,17 @@ namespace PozyxSubscriber.Framework
         public PosData(float _x, float _y, float _z)
         {
             good = true;
-            x = _x;
-            y = _y;
-            z = _z;
+            pos.x = _x;
+            pos.y = _y;
+            pos.z = _z;
             Acceleration = null;
         }
         public PosData()
         {
             good = false;
-            x = 0;
-            y = 0;
-            z = 0;
+            pos.x = 0;
+            pos.y = 0;
+            pos.z = 0;
             Acceleration = null;
         }
     }

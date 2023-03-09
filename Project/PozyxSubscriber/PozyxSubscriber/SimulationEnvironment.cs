@@ -106,16 +106,42 @@ namespace PozyxSubscriber
                 float y = 0;
                 float z = 0;
                 string ID = M["tagId"].Value<string>();
-                if (M["success"].Value<bool>())
+                bool Success = M["success"].Value<bool>();
+                if (Success)
                 {
-
                     x = M["data"]["coordinates"]["x"].Value<float>();
                     y = M["data"]["coordinates"]["y"].Value<float>();
                     z = M["data"]["coordinates"]["z"].Value<float>();
-                    PosData newData = new PosData(x, y, z);
-                    newData.good = M["success"].Value<bool>();
+                }
+                else
+                {
+                    x = 0; y = 0; z = 0;
+                }
+                PosData newData = new PosData(x, y, z);
+                newData.good = Success;
+                var Accel = M["data"]["tagData"]["accelerometer"];
+                if (Accel.Count() > 0)
+                {
+                    var temp = Accel.First();
+                    newData.Acceleration = new List<Vector3D>();
+                    for (int i = 0; i < Accel.Count(); i++)
+                    {
+                        Vector3D vect;
+                        vect.x = temp[0].Value<float>();
+                        vect.y = temp[1].Value<float>();
+                        vect.z = temp[2].Value<float>();
+                        newData.Acceleration.Add(vect);
+                        temp = temp.Next;
+                    }
+                }
+                else
+                {
+                    newData.Acceleration = new List<Vector3D>();
+                    newData.Acceleration.Add(new Vector3D());
+                }
 
-                    if (_tags.ContainsKey(ID))
+
+                if (_tags.ContainsKey(ID))
                         _tags[ID].AddData(newData);
                     else
                     {
@@ -124,7 +150,7 @@ namespace PozyxSubscriber
                         _tags[ID].AddData(newData);
                     }
 
-                }
+                
 
 
             }
@@ -143,14 +169,13 @@ namespace PozyxSubscriber
 
         public PosData getLatestposition(string ID) { if (_tags.ContainsKey(ID)) return _tags[ID].GetLatestPosData(); else return new PosData(0, 0, 0); }
 
-        public Dictionary<string, PosData> getAllPositions()
+        public Dictionary<string, Vector3D> getAllPositions()
         {
-            Dictionary<string, PosData> ret = new Dictionary<string, PosData>();
+            Dictionary<string, Vector3D> ret = new Dictionary<string, Vector3D>();
             foreach (var T in _tagIDs)
             {
-                ret[T] = _tags[T].GetLatestPosData();
+                ret[T] = _tags[T].getPosition();
             }
-
             return ret;
         }
 

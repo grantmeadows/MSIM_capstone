@@ -64,7 +64,7 @@ namespace PozyxSubscriber.Framework
                 next = (float)d * 1000;
 
 
-                Dictionary<string, PosData> Pos = _sim.getAllPositions();
+                Dictionary<string, Vector3D> Pos = _sim.getAllPositions();
                 foreach (var ID in _sim.GetTagIDs())
                 {
                     Console.Write("[Tag ID: ");

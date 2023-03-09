@@ -89,7 +89,7 @@ namespace PozyxSubscriber.Framework
 
             log.AppendLine(msg.ToString());
             File.WriteAllText(_filename, log.ToString());
-            Dictionary<string, PosData> Pos = _sim.getAllPositions();
+            Dictionary<string, Vector3D> Pos = _sim.getAllPositions();
             foreach (var ID in _sim.GetTagIDs())
             {
                 Console.Write("[Tag ID: ");

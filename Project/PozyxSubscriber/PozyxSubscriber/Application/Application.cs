@@ -18,7 +18,7 @@ namespace PozyxSubscriber.Application
 
 
             //sim.Initialize(host, port, 1, numTags);
-            sim.Initialize("TestlogStandardWithFails.txt");
+            sim.Initialize("March2nd1.txt");
             
             //sim.Initialize(host, port, 1, numTags, "March2nd1.txt");
             //sim.Initialize("log.txt");
@@ -26,9 +26,9 @@ namespace PozyxSubscriber.Application
 
             while (sim.ConnectedStatus)
             {
-                Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").x}");
-                Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").y}");
-                Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").z}");
+                Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").pos.x}");
+                Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").pos.y}");
+                Console.WriteLine($"Tag 0 X position: {sim.getLatestposition("0").pos.z}");
             }
         }
 
