@@ -3,6 +3,7 @@ using System.IO;
 using UnityEngine;
 using Newtonsoft.Json;
 using System.Linq;
+using Cinemachine;
 
 public class Tag
 {
@@ -87,6 +88,7 @@ public class TagMovement : MonoBehaviour
     void Start()
     {
         var tHistory = new GameObject("TagHistory");
+        var targetGroup = GameObject.Find("TargetGroup").GetComponent<CinemachineTargetGroup>();
 
         FilePath = "Assets/Data/" + FileName + ".txt";
         using (var sr = new StreamReader(FilePath))
@@ -105,6 +107,8 @@ public class TagMovement : MonoBehaviour
                 t.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
                 t.SetActive(false);
                 tagList.Add(t);
+
+                targetGroup.AddMember(t.transform, 1, 0.25f);
 
                 temp = new GameObject(id + "_History");
                 temp.transform.parent = tHistory.transform;

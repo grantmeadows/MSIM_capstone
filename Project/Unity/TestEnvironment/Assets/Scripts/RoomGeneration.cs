@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.ProBuilder;
 
@@ -10,6 +11,8 @@ public class RoomGeneration : MonoBehaviour
 
     void Start()
     {
+        var targetGroup = GameObject.Find("TargetGroup").GetComponent<CinemachineTargetGroup>();
+
         // Anchor Placement
         for (int i = 0; i < AnchorLoc.Length; i++)
         {
@@ -17,6 +20,8 @@ public class RoomGeneration : MonoBehaviour
             a.transform.position = AnchorLoc[i];
             a.transform.parent = this.transform;
             a.name = "Anchor " + i;
+
+            targetGroup.AddMember(a.transform, 1, 0.25f);
         }
 
         // Floor Placement
@@ -31,6 +36,7 @@ public class RoomGeneration : MonoBehaviour
             new Face[] { new Face(new int[] { 0, 1, 2, 0, 2, 3 }) }
             );
         quad.GetComponent<MeshRenderer>().material = RoomMaterial;
+        quad.GetComponent<MeshRenderer>().receiveShadows = false;
         quad.transform.parent = this.transform;
         quad.name = "Floor";
     }
