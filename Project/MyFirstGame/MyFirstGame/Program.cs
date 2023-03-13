@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SimulationEnviornment;
-using mqtt_c;
+using PozyxSubscriber;
+using PozyxSubscriber.Framework;
 
 namespace MyFirstGame
 {
@@ -19,14 +19,16 @@ namespace MyFirstGame
             var port = 1883;
             int numTags = 1;
 
+            int tagRefreshRate = 24;
+
             //Comment out for real ltime tracking
             //sim.Initialize(host, port, 1, numTags);
 
-            sim.Initialize("March2nd1.txt");
+            sim.Initialize("March2nd5.txt", tagRefreshRate);
 
             //id of tag to track
             string TAGID = "5772";
-
+            sim.newTag(TAGID, tagRefreshRate);
             using (var game = new Game1(sim, TAGID))
                 game.Run();
         }

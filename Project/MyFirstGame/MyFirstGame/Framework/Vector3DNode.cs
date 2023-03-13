@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Graphics.PackedVector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -41,6 +42,6 @@ namespace PozyxSubscriber.Framework
 => new Vector3D((a.x * b), (a.y * b), (a.z * b));
     }
 
-
+    
 
 }

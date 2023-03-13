@@ -3,16 +3,13 @@ using System;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using SimulationEnviornment;
 using Microsoft.VisualBasic;
 using System.IO;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Security.Cryptography;
 
 
-namespace filereader
+
+namespace PozyxSubscriber.Framework
 {
 
     /// <summary>
@@ -20,7 +17,7 @@ namespace filereader
     /// </summary>
     public class Reader
     {
-        private SimulationEnviornment.SimEnvironment _sim;
+        private SimEnvironment _sim;
         private string _filename;
         private float time;
 
@@ -30,11 +27,11 @@ namespace filereader
         /// <param name="_numTags">Number of tags to be tracked</param>
         /// <param name="host">Host of the pozyx broker</param>
         /// <param name="port">Port</param>
-        public Reader(string filename, SimulationEnviornment.SimEnvironment S)
+        public Reader(string filename, SimEnvironment S)
         {
             _sim = S;
             _filename = filename;
-            Task.Run(() => this.StartAsync());
+            Task.Run(() => StartAsync());
             //Thread.Sleep(Timeout.Infinite);
         }
 
@@ -68,6 +65,22 @@ namespace filereader
                 s = s.Remove(0, 5);
                 d = Convert.ToDouble(s);
                 next = (float)d * 1000;
+
+
+                Dictionary<string, Vector3D> Pos = _sim.getAllPositions();
+                foreach (var ID in _sim.GetTagIDs())
+                {
+                    Console.Write("[Tag ID: ");
+                    Console.Write(ID);
+                    Console.Write(": X: ");
+                    Console.Write(Pos[ID].x);
+                    Console.Write(" Y: ");
+                    Console.Write(Pos[ID].y);
+                    Console.Write(" Z: ");
+                    Console.Write(Pos[ID].z);
+                    Console.Write("] ");
+                }
+                Console.WriteLine(" ");
 
                 int sleep = (int)(next - time);
                 if (sleep < 0) sleep = 0;

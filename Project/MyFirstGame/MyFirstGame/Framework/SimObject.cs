@@ -61,7 +61,7 @@ namespace PozyxSubscriber.Framework
                 int v = _tagdata.Count() - refreshRate;
                 for (int i = _tagdata.Count() - 1; i > (_tagdata.Count() - refreshRate - 1); i--)
                 {
-                    if (_tagdata[i].good)
+                    if (_tagdata[i].good && (int)_tagdata[i].pos.x != 0)
                     {
                         Data[count] = _tagdata[i].pos;
                         sum += _tagdata[i].pos;
@@ -75,6 +75,7 @@ namespace PozyxSubscriber.Framework
                 }
                 position = normalize(Data, count, sum);
                 velocity = (position - previousPosition);
+
             }
         }
 
@@ -87,7 +88,7 @@ namespace PozyxSubscriber.Framework
             {
                 STD += ((P[i] - mean) * (P[i] - mean));
             }
-            STD = STD / (sampleSize - 1);
+            STD = STD / (sampleSize);
 
             Vector3D[] Z = new Vector3D[sampleSize];
             float DataSumx = 0;
@@ -100,17 +101,17 @@ namespace PozyxSubscriber.Framework
             for (int i = 0; i < sampleSize; i++)
             {
                 Z[i] = (P[i] - mean) / STD;
-                if (Z[i].x > 0.002)
+                if(Math.Abs(Z[i].x) > 0.003)
                 {
                     DataSumx += P[i].x;
                     DataSumxC++;
                 }
-                if (Z[i].y > 0.002)
+                if (Math.Abs(Z[i].y) > 0.003)
                 {
                     DataSumy += P[i].y;
                     DataSumyC++;
                 }
-                if (Z[i].z > 0.002)
+                if (Math.Abs(Z[i].z) > 0.003)
                 {
                     DataSumz += P[i].z;
                     DataSumzC++;

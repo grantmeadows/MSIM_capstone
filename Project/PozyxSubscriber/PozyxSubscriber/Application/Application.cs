@@ -14,12 +14,15 @@ namespace PozyxSubscriber.Application
             var port = 1883;
             int numTags = 1;
 
+            int tagRefreshRate = 5;
+
             SimEnvironment sim = SimEnvironment.Instance;
 
 
             //sim.Initialize(host, port, 1, numTags);
-            sim.Initialize("March2nd1.txt");
-            
+            sim.Initialize("March2nd4.txt", tagRefreshRate);
+            string TAGID = "5772";
+            sim.newTag(TAGID, tagRefreshRate);
             //sim.Initialize(host, port, 1, numTags, "March2nd1.txt");
             //sim.Initialize("log.txt");
 

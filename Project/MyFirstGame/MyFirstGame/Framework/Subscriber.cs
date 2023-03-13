@@ -8,12 +8,10 @@ using System;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using SimulationEnviornment;
 using System.Collections.Generic;
 using System.IO;
 
-
-namespace mqtt_c
+namespace PozyxSubscriber.Framework
 {
 
     /// <summary>
@@ -24,8 +22,10 @@ namespace mqtt_c
         private IMqttClient _mqttClient;
         private IMqttClientOptions _options;
         private string _topic;
-        private SimulationEnviornment.SimEnvironment _sim;
+        private SimEnvironment _sim;
         private StringBuilder log = new StringBuilder();
+
+        private string _filename;
 
         /// <summary>
         /// Initializes and begins asynch subscription to tag topic from pozyx broker
@@ -33,22 +33,30 @@ namespace mqtt_c
         /// <param name="_numTags">Number of tags to be tracked</param>
         /// <param name="host">Host of the pozyx broker</param>
         /// <param name="port">Port</param>
-        public MqttClient(int _numTags, string host, int port, SimulationEnviornment.SimEnvironment Sim)
+
+        public MqttClient(int _numTags, string host, int port, SimEnvironment Sim)
         {
             _sim = Sim;
 
+            _topic = "tags";
+        } 
+        public MqttClient(int _numTags, string host, int port, SimEnvironment Sim, string filename)
+        {
+            _sim = Sim;
+            _filename = filename;
             this._topic = "tags";
 
-            this._options = new MqttClientOptionsBuilder()
+
+            _options = new MqttClientOptionsBuilder()
                 .WithTcpServer(host, port)
                 .Build();
 
-            this._mqttClient = new MqttFactory().CreateMqttClient();
-            this._mqttClient.UseConnectedHandler(ConnectedHandler);
-            this._mqttClient.UseApplicationMessageReceivedHandler(MessageHandler);
-            this._mqttClient.UseDisconnectedHandler(DisconnectedHandler);
+            _mqttClient = new MqttFactory().CreateMqttClient();
+            _mqttClient.UseConnectedHandler(ConnectedHandler);
+            _mqttClient.UseApplicationMessageReceivedHandler(MessageHandler);
+            _mqttClient.UseDisconnectedHandler(DisconnectedHandler);
 
-            Task.Run(() => this.StartAsync());
+            Task.Run(() => StartAsync());
             //Comment out sleep before finalization
             //Thread.Sleep(Timeout.Infinite);
         }
@@ -56,7 +64,7 @@ namespace mqtt_c
         public async void ConnectedHandler(MqttClientConnectedEventArgs e)
         {
             Console.WriteLine("Connected with server!");
-            await this._mqttClient.SubscribeAsync(new MqttTopicFilterBuilder().WithTopic(this._topic).Build());
+            await _mqttClient.SubscribeAsync(new MqttTopicFilterBuilder().WithTopic(_topic).Build());
             Console.WriteLine("Subscribed to topic");
 
             _sim.ConnectedStatus = true;
@@ -72,22 +80,36 @@ namespace mqtt_c
         public void MessageHandler(MqttApplicationMessageReceivedEventArgs eventArgs)
         {
             //Console.WriteLine(Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload));
-           
+
             var msg = Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload);
 
             var msgData = JArray.Parse(msg);
             var msgObj = JArray.Parse(msgData.ToString());
 
             _sim.PushData(msgObj);
-            
+
             log.AppendLine(msg.ToString());
-            //File.WriteAllText("log.txt", log.ToString());
-            
+            File.WriteAllText(_filename, log.ToString());
+            Dictionary<string, Vector3D> Pos = _sim.getAllPositions();
+            foreach (var ID in _sim.GetTagIDs())
+            {
+                Console.Write("[Tag ID: ");
+                Console.Write(ID);
+                Console.Write(": X: ");
+                Console.Write(Pos[ID].x);
+                Console.Write(" Y: ");
+                Console.Write(Pos[ID].y);
+                Console.Write(" Z: ");
+                Console.Write(Pos[ID].z);
+                Console.Write("] ");
+            }
+            Console.WriteLine(" ");
+
         }
 
         public async Task StartAsync()
         {
-            await this._mqttClient.ConnectAsync(this._options, CancellationToken.None);
+            await _mqttClient.ConnectAsync(_options, CancellationToken.None);
         }
     }
 }

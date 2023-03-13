@@ -78,8 +78,6 @@ namespace PozyxSubscriber
         }
 
 
-
-
         Reader? _reader;
         private static MqttClient? _MqqtClient;
         List<SimObject> _objects;
@@ -160,13 +158,6 @@ namespace PozyxSubscriber
             }
         }
 
-        public void newTag(string ID, int refreshRate)
-        {
-            _tagIDs.Add(ID);
-            _tags[ID] = new Tag(ID, _refreshRate);
-            _tags[ID].AddData(new PosData());
-        }
-
         private void MutexLock()
         {
             while (_mutex) Thread.Sleep(100);
@@ -188,6 +179,12 @@ namespace PozyxSubscriber
                 ret[T] = _tags[T].getPosition();
             }
             return ret;
+        }
+
+        public void newTag(string ID, int refreshRate)
+        {
+            _tagIDs.Add(ID);
+            _tags[ID] = new Tag(ID, _refreshRate);
         }
 
         public Anchor getAnchor(string ID) { return _anchors[ID]; }
