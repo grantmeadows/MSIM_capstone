@@ -77,6 +77,7 @@ public class TagMovement : MonoBehaviour
     public GameObject TagPrefab;
     public GameObject TagMarker;
     GameObject temp;
+    GameObject baseObj;
 
     public string FileName;
     string FilePath;
@@ -87,7 +88,6 @@ public class TagMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var tHistory = new GameObject("TagHistory");
         var targetGroup = GameObject.Find("TargetGroup").GetComponent<CinemachineTargetGroup>();
 
         FilePath = "Assets/Data/" + FileName + ".txt";
@@ -101,8 +101,9 @@ public class TagMovement : MonoBehaviour
             }
             foreach (string id in tagData.Select(x => x.tagId).Distinct())
             {
+                baseObj = new GameObject(id);
                 GameObject t = Instantiate(TagPrefab);
-                t.transform.parent = this.transform;
+                t.transform.parent = baseObj.transform;
                 t.name = id;
                 t.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
                 t.SetActive(false);
@@ -111,7 +112,7 @@ public class TagMovement : MonoBehaviour
                 targetGroup.AddMember(t.transform, 1, 0.25f);
 
                 temp = new GameObject(id + "_History");
-                temp.transform.parent = tHistory.transform;
+                temp.transform.parent = baseObj.transform;
             }
         }
 
@@ -140,7 +141,7 @@ public class TagMovement : MonoBehaviour
                         th.transform.position = temp.transform.position;
                         th.GetComponent<Renderer>().material.color = temp.GetComponent<Renderer>().material.GetColor("_Color");
                         th.name = temp.name + "_" + count.ToString();
-                        th.transform.parent = GameObject.Find("/TagHistory/" + temp.name + "_History").transform;
+                        th.transform.parent = GameObject.Find(temp.name + "_History").transform;
                     }
 
                     temp.transform.position = new Vector3(
