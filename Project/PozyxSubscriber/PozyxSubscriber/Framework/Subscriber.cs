@@ -96,11 +96,11 @@ namespace PozyxSubscriber.Framework
                 Console.Write("[Tag ID: ");
                 Console.Write(ID);
                 Console.Write(": X: ");
-                Console.Write(Pos[ID].x);
-                Console.Write(" Y: ");
-                Console.Write(Pos[ID].y);
-                Console.Write(" Z: ");
-                Console.Write(Pos[ID].z);
+                Console.Write((int)Pos[ID].x);
+                Console.Write("  Y: ");
+                Console.Write((int)Pos[ID].y);
+                Console.Write("  Z: ");
+                Console.Write((int)Pos[ID].z);
                 Console.Write("] ");
             }
             Console.WriteLine(" ");

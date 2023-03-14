@@ -19,16 +19,19 @@ namespace MyFirstGame
             var port = 1883;
             int numTags = 1;
 
-            int tagRefreshRate = 24;
+            int tagRefreshRate = 15;
 
             //Comment out for real ltime tracking
-            //sim.Initialize(host, port, 1, numTags);
+            //sim.Initialize(host, port, 1, numTags, "Dat.txt", tagRefreshRate);
 
-            sim.Initialize("March2nd5.txt", tagRefreshRate);
+            sim.Initialize("rotation1.txt", tagRefreshRate);
 
             //id of tag to track
-            string TAGID = "5772";
-            sim.newTag(TAGID, tagRefreshRate);
+            string[] TAGID = new string[2];
+            TAGID[0] = "5772";
+            TAGID[1] = "7012";
+            sim.newTag(TAGID[0], tagRefreshRate);
+            sim.newTag(TAGID[1], tagRefreshRate);
             using (var game = new Game1(sim, TAGID))
                 game.Run();
         }
