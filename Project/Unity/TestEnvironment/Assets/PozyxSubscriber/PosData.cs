@@ -30,5 +30,15 @@ namespace PozyxSubscriber.Framework
             pos.z = _z;
             Acceleration = new List<Vector3D>(); ;
         }
+        /*
+        public PosData()
+        {
+            good = false;
+            pos.x = 0;
+            pos.y = 0;
+            pos.z = 0;
+            Acceleration = new List<Vector3D>();
+        }
+        */
     }
 }

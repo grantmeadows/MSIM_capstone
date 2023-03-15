@@ -146,18 +146,24 @@ namespace PozyxSubscriber
                         _tags[ID] = new Tag(ID, _refreshRate);
                         _tags[ID].AddData(newData);
                     }
-
-                
-
-
             }
         }
 
-        public void newTag(string ID, int refreshRate)
+        public void NewTag(string ID, int refreshRate)
         {
             _tagIDs.Add(ID);
             _tags[ID] = new Tag(ID, _refreshRate);
             _tags[ID].AddData(new PosData());
+        }
+
+        public void NewObj(List<Tag> tagList)
+        {
+            var obj = new SimObject();
+            foreach (Tag tag in tagList) 
+            {
+                obj.AddTag(tag);
+            }
+            _objects.Add(obj);
         }
 
         private void MutexLock()
