@@ -23,6 +23,8 @@ public class Tag_Live : MonoBehaviour
 
     public GameObject TagPrefab;
     public GameObject TagMarker;
+    List<GameObject> tagList = new List<GameObject>();
+
     GameObject temp;
     GameObject baseObj;
 
@@ -37,15 +39,6 @@ public class Tag_Live : MonoBehaviour
         var port = 1883;
 
         sim.Initialize(host, port, objects.Length, numTags, "Dat.txt", tagRefreshRate);
-
-        if (sim.ConnectedStatus == false)
-        { 
-            Debug.Break();
-        }
-        else
-        {
-            Debug.Log("Connected");
-        }
 
         foreach (var obj in objects)
         {
@@ -62,6 +55,7 @@ public class Tag_Live : MonoBehaviour
                 t.name = tagID;
                 t.GetComponent<Renderer>().material.color = color;
                 t.SetActive(false);
+                tagList.Add(t);
 
                 // Cinemachine camera tracking
                 targetGroup.AddMember(t.transform, 1, 0.25f);
@@ -69,8 +63,6 @@ public class Tag_Live : MonoBehaviour
                 // Empty game object to organize history
                 temp = new GameObject(tagID + "_History");
                 temp.transform.parent = baseObj.transform;
-
-                numTags++;
             }
         }
     }
@@ -82,8 +74,10 @@ public class Tag_Live : MonoBehaviour
         {
             count++;
             var position = sim.getLatestposition(id);
+
             if (position.good == true)
             {
+                temp = tagList.Find(x => x.name == id);
                 //Activate tag
                 if (temp.activeSelf == false)
                 {
@@ -98,7 +92,7 @@ public class Tag_Live : MonoBehaviour
                 th.transform.parent = GameObject.Find(temp.name + "_History").transform;
 
                 // Move tag
-                temp.transform.position = new Vector3(position.pos.x, position.pos.z, position.pos.y);
+                temp.transform.position = new Vector3(position.pos.x /1000, position.pos.z /1000, position.pos.y / 1000);
             }
         }
                 

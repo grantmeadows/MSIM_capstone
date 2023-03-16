@@ -10,7 +10,7 @@ namespace PozyxSubscriber.Framework
     /// <summary>
     /// Contains a set of position data
     /// </summary>
-    public struct PosData
+    public class PosData
     {
         public Vector3D pos;
         public bool good;
@@ -30,7 +30,7 @@ namespace PozyxSubscriber.Framework
             pos.z = _z;
             Acceleration = new List<Vector3D>(); ;
         }
-        /*
+        
         public PosData()
         {
             good = false;
@@ -39,6 +39,6 @@ namespace PozyxSubscriber.Framework
             pos.z = 0;
             Acceleration = new List<Vector3D>();
         }
-        */
+        
     }
 }
