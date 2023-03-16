@@ -14,7 +14,7 @@ namespace PozyxSubscriber
     {
 
         private bool _mutex;
-        private static SimEnvironment? _instance;
+        private static SimEnvironment _instance;
         private bool _connectedStatus;
 
         public SimEnvironment()
@@ -73,8 +73,8 @@ namespace PozyxSubscriber
 
 
 
-        Reader? _reader;
-        private static MqttClient? _MqqtClient;
+        Reader _reader;
+        private static MqttClient _MqqtClient;
         List<SimObject> _objects;
         Dictionary<string, Tag> _tags;
         List<string> _tagIDs;

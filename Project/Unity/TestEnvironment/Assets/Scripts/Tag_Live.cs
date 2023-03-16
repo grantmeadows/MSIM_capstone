@@ -9,16 +9,17 @@ using UnityEngine;
 
 public class Tag_Live : MonoBehaviour
 {
+    public int numTags;
     public int tagRefreshRate;
 
-    [Serializable]
+    [System.Serializable]
     public class TagIDs
     {
         public string[] tagIDList;
     }
     public TagIDs[] objects;
 
-    SimEnvironment sim = SimEnvironment.Instance;
+    public SimEnvironment sim = SimEnvironment.Instance;
 
     public GameObject TagPrefab;
     public GameObject TagMarker;
@@ -34,9 +35,9 @@ public class Tag_Live : MonoBehaviour
 
         var host = "10.0.0.254";
         var port = 1883;
-        var numTags = 0;
 
         sim.Initialize(host, port, objects.Length, numTags, "Dat.txt", tagRefreshRate);
+
         if (sim.ConnectedStatus == false)
         { 
             Debug.Break();
@@ -51,7 +52,10 @@ public class Tag_Live : MonoBehaviour
             var color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
             foreach (var tagID in obj.tagIDList)
             {
+                // Add tag to framework
                 sim.NewTag(tagID, tagRefreshRate);
+
+                // Add tag to Unity
                 baseObj = new GameObject(tagID);
                 GameObject t = Instantiate(TagPrefab);
                 t.transform.parent = baseObj.transform;
@@ -59,8 +63,10 @@ public class Tag_Live : MonoBehaviour
                 t.GetComponent<Renderer>().material.color = color;
                 t.SetActive(false);
 
+                // Cinemachine camera tracking
                 targetGroup.AddMember(t.transform, 1, 0.25f);
 
+                // Empty game object to organize history
                 temp = new GameObject(tagID + "_History");
                 temp.transform.parent = baseObj.transform;
 
@@ -78,17 +84,20 @@ public class Tag_Live : MonoBehaviour
             var position = sim.getLatestposition(id);
             if (position.good == true)
             {
+                //Activate tag
                 if (temp.activeSelf == false)
                 {
                     temp.SetActive(true);
                 }
 
+                // Place a marker
                 GameObject th = Instantiate(TagMarker);
                 th.transform.position = temp.transform.position;
                 th.GetComponent<Renderer>().material.color = temp.GetComponent<Renderer>().material.GetColor("_Color");
                 th.name = temp.name + "_" + count.ToString();
                 th.transform.parent = GameObject.Find(temp.name + "_History").transform;
 
+                // Move tag
                 temp.transform.position = new Vector3(position.pos.x, position.pos.z, position.pos.y);
             }
         }

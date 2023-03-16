@@ -35,7 +35,7 @@ namespace PozyxSubscriber.Framework
             Thread.Sleep(Timeout.Infinite);
         }
 
-        public async Task StartAsync()
+        public Task StartAsync()
         {
             int L = 0;
             string[] file = File.ReadAllLines(_filename);
@@ -89,6 +89,8 @@ namespace PozyxSubscriber.Framework
 
 
             }
+
+            return Task.CompletedTask;
         }
     }
 }

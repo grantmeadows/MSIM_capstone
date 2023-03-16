@@ -590,6 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52864b63828b52a479efd29f6b1d47e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numTags: 1
   tagRefreshRate: 15
   objects:
   - tagIDList:
