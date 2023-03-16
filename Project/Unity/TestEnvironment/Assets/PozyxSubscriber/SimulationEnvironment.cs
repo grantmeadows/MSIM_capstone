@@ -1,7 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 using System.Threading;
 using Newtonsoft.Json.Linq;
+using System.Data;
 using PozyxSubscriber.Framework;
 
 namespace PozyxSubscriber
@@ -14,7 +20,7 @@ namespace PozyxSubscriber
     {
 
         private bool _mutex;
-        private static SimEnvironment _instance;
+        private static SimEnvironment? _instance = null;
         private bool _connectedStatus;
 
         public SimEnvironment()

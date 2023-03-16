@@ -52,7 +52,7 @@ namespace PozyxSubscriber.Framework
 
             Task.Run(() => StartAsync());
             //Comment out sleep before finalization
-            Thread.Sleep(Timeout.Infinite);
+            //Thread.Sleep(Timeout.Infinite);
         }
 
         public async void ConnectedHandler(MqttClientConnectedEventArgs e)

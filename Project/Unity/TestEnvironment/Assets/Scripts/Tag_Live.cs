@@ -19,7 +19,7 @@ public class Tag_Live : MonoBehaviour
     }
     public TagIDs[] objects;
 
-    public SimEnvironment sim = SimEnvironment.Instance;
+    SimEnvironment sim = SimEnvironment.Instance;
 
     public GameObject TagPrefab;
     public GameObject TagMarker;

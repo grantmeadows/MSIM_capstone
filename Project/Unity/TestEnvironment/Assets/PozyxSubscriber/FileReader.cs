@@ -32,7 +32,7 @@ namespace PozyxSubscriber.Framework
             _sim = S;
             _filename = filename;
             Task.Run(() => StartAsync());
-            Thread.Sleep(Timeout.Infinite);
+            //Thread.Sleep(Timeout.Infinite);
         }
 
         public Task StartAsync()
