@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using System.IO;
 using System.Collections.Generic;
-
-
+using MQTTnet.Client.Publishing;
 
 namespace PozyxSubscriber.Framework
 {
@@ -31,8 +30,11 @@ namespace PozyxSubscriber.Framework
         {
             _sim = S;
             _filename = filename;
+        }
+
+        public void Begin()
+        {
             Task.Run(() => StartAsync());
-            Thread.Sleep(Timeout.Infinite);
         }
 
         public async Task StartAsync()
@@ -42,7 +44,7 @@ namespace PozyxSubscriber.Framework
 
             var msgObj = JArray.Parse(file[L]);
             var msgData = JArray.Parse(msgObj.ToString());
-
+            _sim.ConnectedStatus = true;
             string s = msgData[0]["timestamp"].Value<string>();
             s = s.Remove(0, 5);
             double d = Convert.ToDouble(s);
@@ -67,20 +69,20 @@ namespace PozyxSubscriber.Framework
                 next = (float)d * 1000;
 
 
-                Dictionary<string, Vector3D> Pos = _sim.getAllPositions();
-                foreach (var ID in _sim.GetTagIDs())
-                {
-                    Console.Write("[Tag ID: ");
-                    Console.Write(ID);
-                    Console.Write(": X: ");
-                    Console.Write(Pos[ID].x);
-                    Console.Write(" Y: ");
-                    Console.Write(Pos[ID].y);
-                    Console.Write(" Z: ");
-                    Console.Write(Pos[ID].z);
-                    Console.Write("] ");
-                }
-                Console.WriteLine(" ");
+                //foreach (var ID in _sim.TagIDs)
+                //{
+                //    Vector3D pos = _sim.GetTag(ID).Position;
+                //    Console.Write("[Tag ID: ");
+                //    Console.Write(ID);
+                //    Console.Write(": X: ");
+                //    Console.Write(pos.x);
+                //    Console.Write(" Y: ");
+                //    Console.Write(pos.y);
+                //    Console.Write(" Z: ");
+                //    Console.Write(pos.z);
+                //    Console.Write("] ");
+                //}
+                //Console.WriteLine(" ");
 
                 int sleep = (int)(next - time);
                 if (sleep < 0) sleep = 0;
@@ -89,6 +91,7 @@ namespace PozyxSubscriber.Framework
 
 
             }
+            _sim.ConnectedStatus = false;
         }
     }
 }

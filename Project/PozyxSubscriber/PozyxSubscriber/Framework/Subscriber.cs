@@ -56,9 +56,12 @@ namespace PozyxSubscriber.Framework
             _mqttClient.UseApplicationMessageReceivedHandler(MessageHandler);
             _mqttClient.UseDisconnectedHandler(DisconnectedHandler);
 
-            Task.Run(() => StartAsync());
             //Comment out sleep before finalization
-            Thread.Sleep(Timeout.Infinite);
+        }
+
+        public void Begin()
+        {
+            Task.Run(() => StartAsync());
         }
 
         public async void ConnectedHandler(MqttClientConnectedEventArgs e)
@@ -90,20 +93,21 @@ namespace PozyxSubscriber.Framework
 
             log.AppendLine(msg.ToString());
             File.WriteAllText(_filename, log.ToString());
-            Dictionary<string, Vector3D> Pos = _sim.getAllPositions();
-            foreach (var ID in _sim.GetTagIDs())
-            {
-                Console.Write("[Tag ID: ");
-                Console.Write(ID);
-                Console.Write(": X: ");
-                Console.Write((int)Pos[ID].x);
-                Console.Write("  Y: ");
-                Console.Write((int)Pos[ID].y);
-                Console.Write("  Z: ");
-                Console.Write((int)Pos[ID].z);
-                Console.Write("] ");
-            }
-            Console.WriteLine(" ");
+
+            //foreach (var ID in _sim.TagIDs)
+            //{
+            //    Vector3D pos = _sim.GetTag(ID).Position;
+            //    Console.Write("[Tag ID: ");
+            //    Console.Write(ID);
+            //    Console.Write(": X: ");
+            //    Console.Write(pos.x);
+            //    Console.Write("  Y: ");
+            //    Console.Write(pos.y);
+            //    Console.Write("  Z: ");
+            //    Console.Write(pos.z);
+            //    Console.Write("] ");
+            //}
+            //Console.WriteLine(" ");
 
         }
 

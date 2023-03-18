@@ -24,7 +24,7 @@ namespace MyFirstGame
             //Comment out for real ltime tracking
             //sim.Initialize(host, port, 1, numTags, "Dat.txt", tagRefreshRate);
 
-            sim.Initialize("rotation1.txt", tagRefreshRate);
+            sim.Initialize("rotation.txt", tagRefreshRate);
 
             //id of tag to track
             string[] TAGID = new string[2];

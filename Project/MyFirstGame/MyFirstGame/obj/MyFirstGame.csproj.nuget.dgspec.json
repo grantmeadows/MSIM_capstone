@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\MyFirstGame\\MyFirstGame\\MyFirstGame.csproj": {}
+    "C:\\Users\\SpaticTech\\Documents\\GitHub\\MSIM_capstone\\Project\\MyFirstGame\\MyFirstGame\\MyFirstGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\MyFirstGame\\MyFirstGame\\MyFirstGame.csproj": {
+    "C:\\Users\\SpaticTech\\Documents\\GitHub\\MSIM_capstone\\Project\\MyFirstGame\\MyFirstGame\\MyFirstGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\MyFirstGame\\MyFirstGame\\MyFirstGame.csproj",
+        "projectUniqueName": "C:\\Users\\SpaticTech\\Documents\\GitHub\\MSIM_capstone\\Project\\MyFirstGame\\MyFirstGame\\MyFirstGame.csproj",
         "projectName": "MyFirstGame",
-        "projectPath": "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\MyFirstGame\\MyFirstGame\\MyFirstGame.csproj",
-        "packagesPath": "C:\\Users\\cmoor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\MyFirstGame\\MyFirstGame\\obj\\",
+        "projectPath": "C:\\Users\\SpaticTech\\Documents\\GitHub\\MSIM_capstone\\Project\\MyFirstGame\\MyFirstGame\\MyFirstGame.csproj",
+        "packagesPath": "C:\\Users\\SpaticTech\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SpaticTech\\Documents\\GitHub\\MSIM_capstone\\Project\\MyFirstGame\\MyFirstGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\cmoor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SpaticTech\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

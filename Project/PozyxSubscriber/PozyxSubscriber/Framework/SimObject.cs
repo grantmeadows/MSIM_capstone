@@ -5,61 +5,79 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Collections.Specialized;
+using System.Data.SqlTypes;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+
+
+
+[assembly: InternalsVisibleTo("SimEnvironment")]
+
 
 namespace PozyxSubscriber.Framework
 {
+
     public class Tag
     {
+        
         List<PosData> _tagdata;
-        Vector3D position;
-        Vector3D velocity;
-        Vector3D down; //The down vector of the tag in estimated magnitude and direction
+        Vector3D _position;
+        Vector3D _velocity;
+        Vector3D _down; //The down vector of the tag in estimated magnitude and direction
 
-        private int refreshRate;
+        private bool _calibrated;
 
-        private int prevIndx;
+        private int _refreshRate;
 
-        private Stopwatch watch;
+        private int _prevIndx;
 
         private string _id;
-        public Tag(string ID, int RefreshRate)
+        internal Tag(string ID, int RefreshRate)
         {
-            watch = new Stopwatch();
-            watch.Start();
             _id = ID;
             _tagdata = new List<PosData>();
-            position = new Vector3D();
-            velocity = new Vector3D();
-            refreshRate = RefreshRate;
-            prevIndx = 0;
+            _position = new Vector3D();
+            _velocity = new Vector3D();
+            _refreshRate = RefreshRate;
+            _calibrated = false;
+            _prevIndx = 0;
         }
 
-        public void setRefreshRate(int i) { refreshRate = i; }
+        public string ID { get { return _id; } }
 
-        public string getID() { return _id; }
+        public Vector3D Position { get { return _position; } }
 
-        public PosData GetLatestPosData()
+        public bool isCalibrated
+        {
+            get { return _calibrated; }
+            set { _calibrated = value; }
+        }
+
+
+        public void setRefreshRate(int i) { _refreshRate = i; }
+
+
+        private PosData GetLatestPosData()
         {
             return _tagdata.Last();
         }
 
-        public Vector3D getPosition()
-        {
-            return position;
-        }
+
 
         public void AddData(PosData data)
         {
             _tagdata.Add(data);
-            if (_tagdata.Count() >= refreshRate)
+            if (_tagdata.Count() >= _refreshRate)
             {
+                _calibrated = true;
                 bool usedV = false;
                 int count = 0;
                 Vector3D sum = new Vector3D();
-                Vector3D previousPosition = position;
-                Vector3D[] Data = new Vector3D[refreshRate];
-                int v = _tagdata.Count() - refreshRate;
-                for (int i = _tagdata.Count() - 1; i > (_tagdata.Count() - refreshRate - 1); i--)
+                Vector3D previousPosition = _position;
+                Vector3D[] Data = new Vector3D[_refreshRate];
+                int v = _tagdata.Count() - _refreshRate;
+                for (int i = _tagdata.Count() - 1; i > (_tagdata.Count() - _refreshRate - 1); i--)
                 {
                     if (_tagdata[i].good)
                     {
@@ -70,11 +88,11 @@ namespace PozyxSubscriber.Framework
                 }
                 if (count == 0)
                 {
-                    Data[count] += velocity;
+                    Data[count] += _velocity;
                     count++;
                 }
-                position = normalize(Data, count, sum);
-                velocity = (position - previousPosition);
+                _position = normalize(Data, count, sum);
+                _velocity = (_position - previousPosition);
             }
         }
 
@@ -128,61 +146,130 @@ namespace PozyxSubscriber.Framework
 
     }
 
+
+
     public class SimObject
     {
-        private List<Tag> _tags;
-        private float x, y, z;
-        private float Rotx, Roty, Rotz;
 
-        public SimObject()
+        private List<Tag> _tags;
+        private string _id;
+        private Vector3D _position;
+        private Vector3D _orientation;
+        private List<Vector3D> O_Vectors;
+        private Vector3D O_Vector;
+       
+
+        public SimObject(string iD)
         {
             _tags = new List<Tag>();
-            x = 0;
-            y = 0;
-            z = 0;
-            Rotx = 0;
-            Roty = 0;
-            Rotz = 0;
+            _position = new Vector3D(0, 0, 0);
+            _orientation = new Vector3D(0, 0, 0);
+            O_Vector = new Vector3D();
+            O_Vectors = new List<Vector3D>();
+            _id = iD;
+            _tags = new List<Tag>();
+            
+        }
+
+        public string ID { get { return _id; } }
+        public Vector3D Position
+        {
+            get
+            {
+                Update();
+                return _position;
+            }
+        }
+
+        public Vector3D Orientation
+        {
+            get
+            {
+                Update();
+                return _orientation;
+            }
         }
 
 
         public void AddTag(Tag tag) { _tags.Add(tag); }
 
-        public List<float> getPosition()
+        public void Calibrate()
         {
-            List<float> position = new List<float>();
-            position.Add(x);
-            position.Add(y);
-            position.Add(z);
-            return position;
-        }
-
-        public List<float> getOrientation()
-        {
-            List<float> Orientation = new List<float>();
-            Orientation.Add(Rotx);
-            Orientation.Add(Roty);
-            Orientation.Add(Rotz);
-            return Orientation;
-        }
-
-        public void Update()
-        {
-            x = 0;
-            y = 0;
-            z = 0;
-            int count = 0;
-            foreach (Tag tag in _tags)
+            Console.Write("Calibrating..  ");
+            if (_tags.Count > 0)
             {
-                PosData pos = tag.GetLatestPosData();
-                x += (float)pos.pos.x;
-                y += (float)pos.pos.y;
-                z += (float)pos.pos.z;
-                count++;
+                bool ready = false;
+                while (!ready)
+                {
+                    ready = true;
+                    foreach (Tag t in _tags)
+                    {
+                        if (!t.isCalibrated)
+                        {
+                           ready = false;
+                        }
+                    }
+                }
+
+
+                if (_tags.Count > 1)
+                {
+                    Vector3D v = new Vector3D();
+                    v = _tags[0].Position - _tags[_tags.Count - 1].Position;
+                    O_Vectors.Add(v);
+
+                    Vector3D sum = new Vector3D();
+                    int count = 0;
+                    foreach (Vector3D vect in O_Vectors)
+                    {
+                        sum += vect;
+                        count++;
+                    }
+                    O_Vector = sum / count;
+
+                    _orientation = new Vector3D();
+                    _position = new Vector3D();
+                    Console.WriteLine(_orientation.z);
+                }
             }
-            x /= count;
-            y /= count;
-            z /= count;
+            Console.WriteLine("Calibration Complete..");
+        }
+
+        private void Update()
+        {
+            Vector3D temp = new Vector3D();
+            int count = 0;
+            if (_tags.Count > 0)
+            {
+                foreach (Tag tag in _tags)
+                {
+                    temp += tag.Position;
+                    count++;
+                }
+                _position = temp / count;
+                if (_tags.Count > 1)
+                {
+                    List<Vector3D> T = new List<Vector3D>();
+                    for (int i = 1; i < _tags.Count; i++)
+                    {
+                        Vector3D v = _tags[0].Position - _tags[i].Position;
+                        T.Add(v);
+                    }
+                    Vector3D sum = new Vector3D();
+                    count = 0;
+                    foreach (Vector3D vect in T)
+                    {
+                        sum += vect;
+                        count++;
+
+                    }
+                    Vector3D final = sum / count;
+
+                    _orientation.z = Vector3D.getAngleZ(O_Vector, final);
+
+
+                }
+            }
         }
     }
 }

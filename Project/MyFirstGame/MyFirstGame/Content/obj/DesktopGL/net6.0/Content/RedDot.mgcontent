@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/RedDot.png</SourceFile>
-  <SourceTime>2023-03-14T10:53:16.6532081-04:00</SourceTime>
-  <DestFile>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/RedDot.xnb</DestFile>
-  <DestTime>2023-03-14T10:54:11.9617925-04:00</DestTime>
+  <SourceFile>C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/RedDot.png</SourceFile>
+  <SourceTime>2023-03-18T11:49:05.3171956-04:00</SourceTime>
+  <DestFile>C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/RedDot.xnb</DestFile>
+  <DestTime>2023-03-18T11:49:45.0172029-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
