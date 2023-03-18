@@ -20,6 +20,7 @@ namespace PozyxSubscriber.Framework
         private string _filename;
         private float time;
 
+
         /// <summary>
         /// Initializes and begins asynch subscription to tag topic from pozyx broker
         /// </summary>

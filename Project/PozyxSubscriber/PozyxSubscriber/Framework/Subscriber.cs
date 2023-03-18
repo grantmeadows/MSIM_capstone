@@ -24,7 +24,6 @@ namespace PozyxSubscriber.Framework
         private string _topic;
         private SimEnvironment _sim;
         private StringBuilder log = new StringBuilder();
-
         private string _filename;
 
         /// <summary>
