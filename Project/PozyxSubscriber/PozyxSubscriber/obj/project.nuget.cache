@@ -1,11 +1,20 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "L3pgGE/JP81YT1AYvNZE6jX1mMMFgaG08S0sWSNuyjz/NGLzDUtJSl4hBBod4PLGlsD3E+Pkmck3jxifBPIdLQ==",
   "success": true,
   "projectFilePath": "D:\\Github\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Daniel Conrad\\.nuget\\packages\\mqttnet\\3.1.2\\mqttnet.3.1.2.nupkg.sha512",
     "C:\\Users\\Daniel Conrad\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+=======
+  "dgSpecHash": "T+I38b4CwV9a8yAiLR7JdBz37vwQE9TONLV4Y81Xm67Q2H5OEleJLA2IWpHIBtczHBpyTrkpYsYhWSscqS8YjA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\SpaticTech\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SpaticTech\\.nuget\\packages\\mqttnet\\3.1.2\\mqttnet.3.1.2.nupkg.sha512",
+    "C:\\Users\\SpaticTech\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+>>>>>>> Master
   ],
   "logs": []
 }

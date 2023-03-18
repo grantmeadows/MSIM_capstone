@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/Grant/Desktop/School_ODU/Senior_Spring/gamedevelopment/ProgramAssignments/P2/Pong 2/Pong 2/Content/soundEffects/backgroundMusic.mp3</SourceFile>
+  <SourceTime>2023-02-04T16:17:52.8650775-05:00</SourceTime>
+  <DestFile>C:/Users/Grant/Desktop/School_ODU/Senior_Spring/gamedevelopment/ProgramAssignments/P2/Pong 2/Pong 2/Content/bin/DesktopGL/soundEffects/backgroundMusic.xnb</DestFile>
+  <DestTime>2023-02-09T15:04:53.446671-05:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/Grant/Desktop/School_ODU/Senior_Spring/gamedevelopment/ProgramAssignments/P2/Pong 2/Pong 2/Content/bin/DesktopGL/soundEffects/backgroundMusic.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>

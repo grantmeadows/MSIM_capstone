@@ -1,0 +1,110 @@
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.exe
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.deps.json
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.runtimeconfig.json
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.dll
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.pdb
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MonoGame.Framework.dll
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.AssemblyReference.cache
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.AssemblyInfoInputs.cache
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.AssemblyInfo.cs
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.CoreCompileInputs.cache
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.CopyComplete
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.dll
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\refint\MyFirstGame.dll
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.pdb
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.genruntimeconfig.cache
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\ref\MyFirstGame.dll
+C:\Users\yshen\Documents\Courses\MSIM 408\Lectures\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\Content\mytexture.xnb
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\Content\mytexture.xnb
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.exe
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.deps.json
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.runtimeconfig.json
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.dll
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.pdb
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MonoGame.Framework.dll
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.AssemblyReference.cache
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.AssemblyInfoInputs.cache
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.AssemblyInfo.cs
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.CoreCompileInputs.cache
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.CopyComplete
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.dll
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\refint\MyFirstGame.dll
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.pdb
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.genruntimeconfig.cache
+C:\Users\Yuzhong Shen\Documents\Courses\MSIM 408\Lectures\2D Games\MonoGame\MyFirstGame\MyFirstGame\obj\Debug\net6.0\ref\MyFirstGame.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.AssemblyReference.cache
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.AssemblyInfoInputs.cache
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.AssemblyInfo.cs
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.CoreCompileInputs.cache
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\refint\MyFirstGame.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.pdb
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\Content\mytexture.xnb
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.exe
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.deps.json
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.runtimeconfig.json
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.pdb
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MonoGame.Framework.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MQTTnet.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.CopyComplete
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.genruntimeconfig.cache
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\ref\MyFirstGame.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.AssemblyReference.cache
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.AssemblyInfoInputs.cache
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.AssemblyInfo.cs
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.CoreCompileInputs.cache
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\refint\MyFirstGame.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.pdb
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\Content\mytexture.xnb
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.exe
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.deps.json
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.runtimeconfig.json
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MyFirstGame.pdb
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MonoGame.Framework.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\MQTTnet.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.csproj.CopyComplete
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\MyFirstGame.genruntimeconfig.cache
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\ref\MyFirstGame.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\Content\RedDot.xnb
+C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\Content\RedDot.xnb

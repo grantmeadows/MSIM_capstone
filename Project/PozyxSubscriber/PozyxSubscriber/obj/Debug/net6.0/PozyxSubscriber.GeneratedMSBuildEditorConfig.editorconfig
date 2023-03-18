@@ -8,4 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PozyxSubscriber
+<<<<<<< HEAD
 build_property.ProjectDir = D:\Github\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\
+=======
+build_property.ProjectDir = C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\
+>>>>>>> Master
