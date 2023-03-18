@@ -28,7 +28,7 @@ namespace PozyxSubscriber.Framework
             pos.x = _x;
             pos.y = _y;
             pos.z = _z;
-            Acceleration = new List<Vector3D>();
+            Acceleration = new List<Vector3D>(); ;
         }
         public PosData()
         {

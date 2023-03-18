@@ -32,6 +32,7 @@ namespace MyFirstGame
             TAGID[1] = "7012";
             sim.newTag(TAGID[0], tagRefreshRate);
             sim.newTag(TAGID[1], tagRefreshRate);
+            sim.StartEnvironment();
             using (var game = new Game1(sim, TAGID))
                 game.Run();
         }

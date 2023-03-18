@@ -152,26 +152,23 @@ namespace PozyxSubscriber.Framework
     {
 
         private List<Tag> _tags;
-        private string _id;
         private Vector3D _position;
         private Vector3D _orientation;
         private List<Vector3D> O_Vectors;
         private Vector3D O_Vector;
        
 
-        public SimObject(string iD)
+        public SimObject()
         {
             _tags = new List<Tag>();
             _position = new Vector3D(0, 0, 0);
             _orientation = new Vector3D(0, 0, 0);
             O_Vector = new Vector3D();
             O_Vectors = new List<Vector3D>();
-            _id = iD;
             _tags = new List<Tag>();
             
         }
 
-        public string ID { get { return _id; } }
         public Vector3D Position
         {
             get

@@ -1,3 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 "C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/mytexture.tga","C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/mytexture.xnb","TextureProcessor","Texture2DContent",30826,65621,0.1738192
-"C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/RedDot.png","C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/RedDot.xnb","TextureProcessor","Texture2DContent",42925,4194389,0.1047069
+"C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/RedDot.png","C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/RedDot.xnb","TextureProcessor","Texture2DContent",42925,4194389,0.2152828

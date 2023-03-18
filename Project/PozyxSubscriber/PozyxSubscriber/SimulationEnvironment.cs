@@ -20,7 +20,6 @@ namespace PozyxSubscriber
     public sealed class SimEnvironment
     {
 
-        private bool _mutex;
         private static SimEnvironment? _instance = null;
         private bool _connectedStatus;
 
@@ -55,7 +54,6 @@ namespace PozyxSubscriber
             //_objects = new Dictionary<string, SimObject>();
             //_objectIDs = new List<string>();
             reader = false;
-            _mutex = true;
             _host = host;
             _port = port;
             _tags = new Dictionary<string, Tag>();
@@ -70,7 +68,6 @@ namespace PozyxSubscriber
             reader = true;
             //_objects = new Dictionary<string, SimObject>();
             //_objectIDs = new List<string>();
-            _mutex = true;
             _host = "";
             _port = 0;
             _tags = new Dictionary<string, Tag>();

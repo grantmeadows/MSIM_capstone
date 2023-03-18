@@ -32,7 +32,7 @@ namespace PozyxSubscriber.Application
             Tag T1 = sim.newTag("5772", 15);
             Tag T2 = sim.newTag("7012", 15);
 
-            SimObject S = new SimObject("Cat");
+            SimObject S = new SimObject();
             S.AddTag(T1);
             S.AddTag(T2);
 
@@ -43,9 +43,8 @@ namespace PozyxSubscriber.Application
             {
                 Vector3D pos = S.Position;
                 Vector3D o  = S.Orientation;
-                    Console.Write("[ID: ");
-                    Console.Write(S.ID);
-                    Console.Write(": X: ");
+                    Console.Write("Cat: [");
+                    Console.Write(" X: ");
                     Console.Write((int)pos.x);
                     Console.Write("  Y: ");
                     Console.Write((int)pos.y);

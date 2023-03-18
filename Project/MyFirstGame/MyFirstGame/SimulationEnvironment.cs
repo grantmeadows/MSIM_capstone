@@ -20,9 +20,11 @@ namespace PozyxSubscriber
     public sealed class SimEnvironment
     {
 
-        private bool _mutex;
+
         private static SimEnvironment? _instance = null;
         private bool _connectedStatus;
+
+        private bool reader;
 
         public SimEnvironment()
         {
@@ -50,14 +52,13 @@ namespace PozyxSubscriber
         /// <param name="numTags">Number of tags in enviornment</param>
         public void Initialize(string host, int port, int numObjects, int numTags, string filename, int refreshRate)
         {
-            _objects = new List<SimObject>();
-            _mutex = true;
+            //_objects = new Dictionary<string, SimObject>();
+            //_objectIDs = new List<string>();
+            reader = false;
             _host = host;
             _port = port;
             _tags = new Dictionary<string, Tag>();
             _tagIDs = new List<string>();
-            _anchors = new Dictionary<string, Anchor>();
-            _anchorIDs = new List<string>();
             _reader = null;
             _refreshRate = refreshRate;
             _MqqtClient = new MqttClient(numTags, host, port, this, filename);       
@@ -65,27 +66,29 @@ namespace PozyxSubscriber
 
         public void Initialize(string filename, int refreshRate)
         {
-            _objects = new List<SimObject>();
-            _mutex = true;
+            reader = true;
+            //_objects = new Dictionary<string, SimObject>();
+            //_objectIDs = new List<string>();
             _host = "";
             _port = 0;
             _tags = new Dictionary<string, Tag>();
             _tagIDs = new List<string>();
-            _anchors = new Dictionary<string, Anchor>();
-            _anchorIDs = new List<string>();
             _refreshRate = refreshRate;
             _reader = new Reader(filename, this);
+        }
+
+        public void StartEnvironment()
+        {
+            if (reader) _reader.Begin();
+            else _MqqtClient.Begin();
         }
 
 
         Reader? _reader;
         private static MqttClient? _MqqtClient;
-        List<SimObject> _objects;
+        
         Dictionary<string, Tag> _tags;
         List<string> _tagIDs;
-
-        Dictionary<string, Anchor> _anchors;
-        List<string> _anchorIDs;
 
         private string _host;
         private int _port;
@@ -158,44 +161,57 @@ namespace PozyxSubscriber
             }
         }
 
-        private void MutexLock()
+        public Tag newTag(string ID, int refreshRate)
         {
-            while (_mutex) Thread.Sleep(100);
-            _mutex = true;
-        }
-        private void MutexUnlock()
-        {
-            _mutex = false;
-        }
-
-
-        public PosData getLatestposition(string ID) { if (_tags.ContainsKey(ID)) return _tags[ID].GetLatestPosData(); else return new PosData(0, 0, 0); }
-
-        public Dictionary<string, Vector3D> getAllPositions()
-        {
-            Dictionary<string, Vector3D> ret = new Dictionary<string, Vector3D>();
-            foreach (var T in _tagIDs)
+            if (_tags.ContainsKey(ID))
             {
-                ret[T] = _tags[T].getPosition();
+                throw new Exception("ID declared twice within Pozyx Environment");
             }
-            return ret;
-        }
-
-        public void newTag(string ID, int refreshRate)
-        {
             _tagIDs.Add(ID);
-            _tags[ID] = new Tag(ID, _refreshRate);
+            _tags[ID] = new Tag(ID, refreshRate);
+            _tags[ID].AddData(new PosData());
+            return _tags[ID];
         }
 
-        public Anchor getAnchor(string ID) { return _anchors[ID]; }
+        //public void newTag(Tag T)
+        //{
+        //    string ID = T.ID;
+        //    _tagIDs.Add(ID);
+        //    _tags[ID] = T;
+        //    _tags[ID].AddData(new PosData());
+        //}
+
+        public Tag RemoveTag(string ID)
+        {
+            Tag T = _tags[ID];
+            _tagIDs.Remove(ID);
+            _tags.Remove(ID);
+            return T;
+        }
+
+
+        //public void newObject(SimObject S)
+        //{
+        //    string ID = S.ID;
+        //    _objectIDs.Add(ID);
+        //    _objects[ID] = S;
+        //}
+
+        //public SimObject createObject(string ID)
+        //{
+        //    SimObject S = new SimObject(ID);
+        //    _objectIDs.Add(ID);
+        //    _objects[ID] = S;
+        //    return S;
+        //}
 
         public Tag GetTag(string ID) { return _tags[ID]; }
 
-        public void SetAnchor(string ID, Anchor anchor) { _anchors["ID"] = anchor; }
+        //public SimObject getObject(string ID) { return _objects[ID];}
 
+        public List<string> TagIDs { get { return _tagIDs; } }
+        //public List<string> ObjectIDs { get { return _objectIDs; } }
 
-
-        public List<string> GetTagIDs() { return _tagIDs; }
 
     }
 
