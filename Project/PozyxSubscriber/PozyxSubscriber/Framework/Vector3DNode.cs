@@ -54,11 +54,28 @@ namespace PozyxSubscriber.Framework
         }
 
 
-        public static float getAngleZ(PozyxVector a, PozyxVector b)
+        public static PozyxVector getAngleZ(PozyxVector a, PozyxVector b)
         {
+            PozyxVector r = new PozyxVector();
             float Denom1 = (float)(Math.Sqrt((a.x * a.x) + (a.y * a.y)));
             float Denom2 = (float)Math.Sqrt((b.x * b.x) + (b.y * b.y));
-            float r = (float)Math.Acos(((a.x * b.x) + (a.y * b.y)) / (Denom1 * Denom2)) * (float)(180 / Math.PI);
+            r.z = (float)Math.Acos(((a.x * b.x) + (a.y * b.y)) / (Denom1 * Denom2));
+
+
+            Denom1 = (float)(Math.Sqrt((a.z * a.z) + (a.y * a.y)));
+            Denom2 = (float)Math.Sqrt((b.z * b.z) + (b.y * b.y));
+            r.x = (float)Math.Acos(((a.z * b.z) + (a.y * b.y)) / (Denom1 * Denom2));
+
+
+
+            Denom1 = (float)(Math.Sqrt((a.z * a.z) + (a.x * a.x)));
+            Denom2 = (float)Math.Sqrt((b.z * b.z) + (b.x * b.x));
+            r.y = (float)Math.Acos(((a.z * b.z) + (a.x * b.x)) / (Denom1 * Denom2));
+
+
+
+
+
 
             return r;
 

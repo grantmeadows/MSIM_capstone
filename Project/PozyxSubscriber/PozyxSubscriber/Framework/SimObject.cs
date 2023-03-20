@@ -9,8 +9,7 @@ using System.Collections.Specialized;
 using System.Data.SqlTypes;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-
-
+using System.Runtime.InteropServices;
 
 [assembly: InternalsVisibleTo("SimEnvironment")]
 
@@ -291,11 +290,9 @@ namespace PozyxSubscriber.Framework
                         count++;
                     }
                     O_Vector = sum / count;
-                    Update();
-                    _posoffset = _position;
-                    _orientation = new PozyxVector();
-                    _position = new PozyxVector();
                 }
+                Update();
+                _posoffset = _position;
             }
             Console.WriteLine("Calibration Complete..");
         }
@@ -330,7 +327,12 @@ namespace PozyxSubscriber.Framework
                     }
                     PozyxVector final = sum / count;
 
-                    _orientation.z = PozyxVector.getAngleZ(O_Vector, final);
+                    _orientation = PozyxVector.getAngleZ(O_Vector, final);
+
+                    if (final.x < 0) { _orientation.z *= -1; }
+                    if (final.x < 0) { _orientation.y *= -1; }
+                    if (final.y < 0) { _orientation.x *= -1; }
+
 
 
                 }

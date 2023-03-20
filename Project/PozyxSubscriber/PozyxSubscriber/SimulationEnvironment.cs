@@ -10,6 +10,7 @@ using System.Threading;
 using Newtonsoft.Json.Linq;
 using System.Data;
 using PozyxSubscriber.Framework;
+using System.Linq.Expressions;
 
 namespace PozyxSubscriber
 {
@@ -131,7 +132,11 @@ namespace PozyxSubscriber
                 {
                     x = M["data"]["coordinates"]["x"].Value<float>();
                     y = M["data"]["coordinates"]["y"].Value<float>();
-                    z = M["data"]["coordinates"]["z"].Value<float>();
+                    try
+                    {
+                        z = M["data"]["coordinates"]["z"].Value<float>();
+                    }
+                    catch { z = 0; }
                 }
                 else
                 {
@@ -146,10 +151,12 @@ namespace PozyxSubscriber
                     newData.Acceleration = new List<PozyxVector>();
                     for (int i = 0; i < Accel.Count(); i++)
                     {
-                        PozyxVector vect;
+                        PozyxVector vect = new PozyxVector();
                         vect.x = temp[0].Value<float>();
                         vect.y = temp[1].Value<float>();
-                        vect.z = temp[2].Value<float>();
+                        try { vect.z = temp[2].Value<float>(); }
+                        catch { vect.z = 0; }
+
                         newData.Acceleration.Add(vect);
                         temp = temp.Next;
                     }

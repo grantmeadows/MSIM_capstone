@@ -264,6 +264,10 @@ namespace PozyxSubscriber.Framework
 
                     _orientation.z = Vector3D.getAngleZ(O_Vector, final);
 
+                    if (final.x < 0) { _orientation.z *= -1; }
+                    if (final.x < 0) { _orientation.y *= -1; }
+                    if (final.y < 0) { _orientation.x *= -1; }
+
 
                 }
             }

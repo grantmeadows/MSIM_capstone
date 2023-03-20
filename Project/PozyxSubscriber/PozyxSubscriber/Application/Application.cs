@@ -12,6 +12,10 @@ namespace PozyxSubscriber.Application
         static public void Main(string[] args)
         {
             int tagRefreshRate = 15;
+
+            string tag1 = "5772";
+            string tag2 = "7012";
+
             SimEnvironment sim = SimEnvironment.Instance;
             //var host = "10.0.0.254";
             //var port = 1883;
@@ -21,8 +25,8 @@ namespace PozyxSubscriber.Application
 
             sim.Initialize("rotation.txt", tagRefreshRate);
 
-            Tag T1 = sim.newTag("5772", 15);
-            Tag T2 = sim.newTag("7012", 15);
+            Tag T1 = sim.newTag(tag1, tagRefreshRate);
+            Tag T2 = sim.newTag(tag2, tagRefreshRate);
             SimObject S = new SimObject();
 
             S.AddTag(T1);
@@ -44,8 +48,13 @@ namespace PozyxSubscriber.Application
                     Console.Write("  Z: ");
                     Console.Write((int)pos.z);
                     Console.Write("]      ");
-                    Console.Write("Orientation: ");
-                    Console.Write((int)o.z);
+                    Console.Write("Orientation: [ X: ");
+                    Console.Write((int)(o.x * (180/Math.PI)));
+                    Console.Write("  Y: ");
+                    Console.Write((int)(o.y * (180 / Math.PI)));
+                    Console.Write("  Z: ");
+                    Console.Write((int)(o.z * (180 / Math.PI)));
+                    Console.Write("]");
                 Console.WriteLine();
 
                 Thread.Sleep(1000);
