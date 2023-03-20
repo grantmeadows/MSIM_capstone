@@ -33,13 +33,13 @@ namespace PozyxSubscriber.Framework
         /// <param name="host">Host of the pozyx broker</param>
         /// <param name="port">Port</param>
 
-        public MqttClient(int _numTags, string host, int port, SimEnvironment Sim)
+        public MqttClient(string host, int port, SimEnvironment Sim)
         {
             _sim = Sim;
 
             _topic = "tags";
         } 
-        public MqttClient(int _numTags, string host, int port, SimEnvironment Sim, string filename)
+        public MqttClient(string host, int port, SimEnvironment Sim, string filename)
         {
             _sim = Sim;
             _filename = filename;
@@ -54,8 +54,6 @@ namespace PozyxSubscriber.Framework
             _mqttClient.UseConnectedHandler(ConnectedHandler);
             _mqttClient.UseApplicationMessageReceivedHandler(MessageHandler);
             _mqttClient.UseDisconnectedHandler(DisconnectedHandler);
-
-            //Comment out sleep before finalization
         }
 
         public void Begin()
@@ -81,8 +79,6 @@ namespace PozyxSubscriber.Framework
 
         public void MessageHandler(MqttApplicationMessageReceivedEventArgs eventArgs)
         {
-            //Console.WriteLine(Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload));
-
             var msg = Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload);
 
             var msgData = JArray.Parse(msg);
@@ -92,22 +88,6 @@ namespace PozyxSubscriber.Framework
 
             log.AppendLine(msg.ToString());
             File.WriteAllText(_filename, log.ToString());
-
-            //foreach (var ID in _sim.TagIDs)
-            //{
-            //    Vector3D pos = _sim.GetTag(ID).Position;
-            //    Console.Write("[Tag ID: ");
-            //    Console.Write(ID);
-            //    Console.Write(": X: ");
-            //    Console.Write(pos.x);
-            //    Console.Write("  Y: ");
-            //    Console.Write(pos.y);
-            //    Console.Write("  Z: ");
-            //    Console.Write(pos.z);
-            //    Console.Write("] ");
-            //}
-            //Console.WriteLine(" ");
-
         }
 
         public async Task StartAsync()

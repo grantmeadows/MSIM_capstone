@@ -21,12 +21,6 @@ namespace PozyxSubscriber.Framework
         private float time;
 
 
-        /// <summary>
-        /// Initializes and begins asynch subscription to tag topic from pozyx broker
-        /// </summary>
-        /// <param name="_numTags">Number of tags to be tracked</param>
-        /// <param name="host">Host of the pozyx broker</param>
-        /// <param name="port">Port</param>
         public Reader(string filename, SimEnvironment S)
         {
             _sim = S;
@@ -68,22 +62,6 @@ namespace PozyxSubscriber.Framework
                 s = s.Remove(0, 5);
                 d = Convert.ToDouble(s);
                 next = (float)d * 1000;
-
-
-                //foreach (var ID in _sim.TagIDs)
-                //{
-                //    Vector3D pos = _sim.GetTag(ID).Position;
-                //    Console.Write("[Tag ID: ");
-                //    Console.Write(ID);
-                //    Console.Write(": X: ");
-                //    Console.Write(pos.x);
-                //    Console.Write(" Y: ");
-                //    Console.Write(pos.y);
-                //    Console.Write(" Z: ");
-                //    Console.Write(pos.z);
-                //    Console.Write("] ");
-                //}
-                //Console.WriteLine(" ");
 
                 int sleep = (int)(next - time);
                 if (sleep < 0) sleep = 0;

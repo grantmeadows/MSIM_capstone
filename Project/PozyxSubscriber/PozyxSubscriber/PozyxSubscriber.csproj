@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Framework\Anchor.cs" />
     <Compile Remove="SimulationEnviornment.cs" />
   </ItemGroup>
 

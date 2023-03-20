@@ -11,38 +11,31 @@ namespace PozyxSubscriber.Application
     {
         static public void Main(string[] args)
         {
-            var host = "10.0.0.254";
-            var port = 1883;
-            int numTags = 1;
-
             int tagRefreshRate = 15;
-
             SimEnvironment sim = SimEnvironment.Instance;
+            //var host = "10.0.0.254";
+            //var port = 1883;
+            //int numTags = 1;
+            //sim.Initialize(host, port, "log.txt", tagRefreshRate);
 
 
-            //sim.Initialize(host, port, 1, numTags);
             sim.Initialize("rotation.txt", tagRefreshRate);
-            //string TAGID = "5772";
-            //sim.newTag(TAGID, tagRefreshRate);
-            //sim.Initialize(host, port, 1, numTags, "rotation1.txt", tagRefreshRate);
-            //sim.Initialize("log.txt");
-
-
 
             Tag T1 = sim.newTag("5772", 15);
             Tag T2 = sim.newTag("7012", 15);
-
             SimObject S = new SimObject();
+
             S.AddTag(T1);
             S.AddTag(T2);
-
             sim.StartEnvironment();
-            S.Calibrate();
-            Console.WriteLine(S.Orientation.z);
+
+            while (!sim.ConnectedStatus) ;
+            S.Calibrate(sim);
+
             while (sim.ConnectedStatus)
             {
-                Vector3D pos = S.Position;
-                Vector3D o  = S.Orientation;
+                PozyxVector pos = S.Position;
+                PozyxVector o  = S.Orientation;
                     Console.Write("Cat: [");
                     Console.Write(" X: ");
                     Console.Write((int)pos.x);
@@ -57,12 +50,6 @@ namespace PozyxSubscriber.Application
 
                 Thread.Sleep(1000);
             }
-            
-
-
-            
         }
-
-
     }
 }

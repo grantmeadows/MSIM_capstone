@@ -20,11 +20,15 @@ namespace PozyxSubscriber.Framework
 
     public class Tag
     {
-        
-        List<PosData> _tagdata;
-        Vector3D _position;
-        Vector3D _velocity;
-        Vector3D _down; //The down vector of the tag in estimated magnitude and direction
+        /// <summary>
+        /// A tag object that is tracked using the Pozyx environment
+        /// </summary>
+        /// 
+
+        private List<PosData> _tagdata;
+        private PozyxVector _position;
+        private PozyxVector _velocity;
+        private PozyxVector _down; 
 
         private bool _calibrated;
 
@@ -33,20 +37,32 @@ namespace PozyxSubscriber.Framework
         private int _prevIndx;
 
         private string _id;
+
+        /// <summary>
+        /// Tag Constructor
+        /// </summary>
         internal Tag(string ID, int RefreshRate)
         {
             _id = ID;
             _tagdata = new List<PosData>();
-            _position = new Vector3D();
-            _velocity = new Vector3D();
+            _position = new PozyxVector();
+            _velocity = new PozyxVector();
             _refreshRate = RefreshRate;
             _calibrated = false;
             _prevIndx = 0;
         }
 
+
+        /// <summary>
+        /// the ID of the tag
+        /// </summary>
         public string ID { get { return _id; } }
 
-        public Vector3D Position { get { return _position; } }
+
+        /// <summary>
+        /// the current position of the tag
+        /// </summary>
+        public PozyxVector Position { get { return _position; } }
 
         public bool isCalibrated
         {
@@ -54,17 +70,26 @@ namespace PozyxSubscriber.Framework
             set { _calibrated = value; }
         }
 
-
-        public void setRefreshRate(int i) { _refreshRate = i; }
-
-
-        private PosData GetLatestPosData()
+        /// <summary>
+        /// The refresh rate of the tag
+        /// </summary>
+        public int refreshRate
         {
-            return _tagdata.Last();
+            get { return _refreshRate; }
+            set { _refreshRate = value; }
         }
 
+        /// <summary>
+        /// the last positional data of this tag
+        /// </summary>
+        private PozyxVector LastPosData { get { return _tagdata.Last().pos; } }
 
 
+        /// <summary>
+        /// Adds data to this tag's positional data list, normalizes the data. 
+        /// Then calculates the best possible realtime position
+        /// </summary>
+        /// <param name="data"> the PosData to add to the list</param>
         public void AddData(PosData data)
         {
             _tagdata.Add(data);
@@ -73,9 +98,9 @@ namespace PozyxSubscriber.Framework
                 _calibrated = true;
                 bool usedV = false;
                 int count = 0;
-                Vector3D sum = new Vector3D();
-                Vector3D previousPosition = _position;
-                Vector3D[] Data = new Vector3D[_refreshRate];
+                PozyxVector sum = new PozyxVector();
+                PozyxVector previousPosition = _position;
+                PozyxVector[] Data = new PozyxVector[_refreshRate];
                 int v = _tagdata.Count() - _refreshRate;
                 for (int i = _tagdata.Count() - 1; i > (_tagdata.Count() - _refreshRate - 1); i--)
                 {
@@ -96,10 +121,11 @@ namespace PozyxSubscriber.Framework
             }
         }
 
-        private Vector3D normalize(Vector3D[] P, int sampleSize, Vector3D sum)
+
+        private PozyxVector normalize(PozyxVector[] P, int sampleSize, PozyxVector sum)
         {
-            Vector3D STD = new Vector3D();
-            Vector3D mean = sum / sampleSize;
+            PozyxVector STD = new PozyxVector();
+            PozyxVector mean = sum / sampleSize;
 
             for (int i = 0; i < sampleSize; i++)
             {
@@ -107,7 +133,7 @@ namespace PozyxSubscriber.Framework
             }
             STD = STD / (sampleSize - 1);
 
-            Vector3D[] Z = new Vector3D[sampleSize];
+            PozyxVector[] Z = new PozyxVector[sampleSize];
             float DataSumx = 0;
             float DataSumxC = 0;
             float DataSumy = 0;
@@ -134,7 +160,7 @@ namespace PozyxSubscriber.Framework
                     DataSumzC++;
                 }
             }
-            Vector3D ret = new Vector3D((DataSumx / DataSumxC),
+            PozyxVector ret = new PozyxVector((DataSumx / DataSumxC),
                                         (DataSumy / DataSumyC),
                                         (DataSumz / DataSumzC));
 
@@ -151,34 +177,49 @@ namespace PozyxSubscriber.Framework
     public class SimObject
     {
 
-        private List<Tag> _tags;
-        private Vector3D _position;
-        private Vector3D _orientation;
-        private List<Vector3D> O_Vectors;
-        private Vector3D O_Vector;
-       
+        /// <summary>
+        /// an object that can be represented by the simulation environment
+        /// </summary>
 
+        private List<Tag> _tags;
+        private PozyxVector _position;
+        private PozyxVector _orientation;
+        private List<PozyxVector> O_Vectors;
+        private PozyxVector O_Vector;
+        private PozyxVector _posoffset;
+
+        /// <summary>
+        /// SimObject Constructor
+        /// </summary>
         public SimObject()
         {
             _tags = new List<Tag>();
-            _position = new Vector3D(0, 0, 0);
-            _orientation = new Vector3D(0, 0, 0);
-            O_Vector = new Vector3D();
-            O_Vectors = new List<Vector3D>();
+            _position = new PozyxVector(0, 0, 0);
+            _orientation = new PozyxVector(0, 0, 0);
+            O_Vector = new PozyxVector();
+            O_Vectors = new List<PozyxVector>();
             _tags = new List<Tag>();
             
         }
 
-        public Vector3D Position
+
+        /// <summary>
+        /// PozyxVector: The Position of the current Simobject
+        /// </summary>
+        public PozyxVector Position
         {
             get
             {
                 Update();
-                return _position;
+                return _position - _posoffset;
             }
         }
 
-        public Vector3D Orientation
+
+        /// <summary>
+        /// PozyxVector: The Orientation of the current Simobject
+        /// </summary>
+        public PozyxVector Orientation
         {
             get
             {
@@ -188,11 +229,38 @@ namespace PozyxSubscriber.Framework
         }
 
 
-        public void AddTag(Tag tag) { _tags.Add(tag); }
+        /// <summary>
+        /// Checks to see if this SimObject has a specific tag attached to it
+        /// </summary>
+        /// <param name="tag"> The tag to check </param>
+        /// <returns> True if tag is attached </returns>
+        public bool Contains(Tag tag)
+        {
+            return _tags.Contains(tag);
+        }
 
-        public void Calibrate()
+
+
+        /// <summary>
+        /// attaches a tag to this object for tracking, maximum of 2 tags must be attached for orientation measurements
+        /// </summary>
+        /// <param name="tag"> The tag to attach to the object </param>
+        public void AddTag(Tag tag)
+        {
+            if (_tags.Contains(tag))
+                throw new Exception("Tag already attached to this Object");
+            else _tags.Add(tag); 
+        }
+
+
+        /// <summary>
+        /// sets the SimObject's current position and orientation in the real world be the default 0, and reinitializes its coordinate readings.
+        /// Must be done after attaching tags to a SimObject, SimulationEnvironment must be running
+        /// </summary>
+        public void Calibrate(SimEnvironment S)
         {
             Console.Write("Calibrating..  ");
+            if (!S.ConnectedStatus) { throw new Exception("Cannot calibrate if Sim environment is not connected or running"); }
             if (_tags.Count > 0)
             {
                 bool ready = false;
@@ -211,22 +279,22 @@ namespace PozyxSubscriber.Framework
 
                 if (_tags.Count > 1)
                 {
-                    Vector3D v = new Vector3D();
+                    PozyxVector v = new PozyxVector();
                     v = _tags[0].Position - _tags[_tags.Count - 1].Position;
                     O_Vectors.Add(v);
 
-                    Vector3D sum = new Vector3D();
+                    PozyxVector sum = new PozyxVector();
                     int count = 0;
-                    foreach (Vector3D vect in O_Vectors)
+                    foreach (PozyxVector vect in O_Vectors)
                     {
                         sum += vect;
                         count++;
                     }
                     O_Vector = sum / count;
-
-                    _orientation = new Vector3D();
-                    _position = new Vector3D();
-                    Console.WriteLine(_orientation.z);
+                    Update();
+                    _posoffset = _position;
+                    _orientation = new PozyxVector();
+                    _position = new PozyxVector();
                 }
             }
             Console.WriteLine("Calibration Complete..");
@@ -234,7 +302,7 @@ namespace PozyxSubscriber.Framework
 
         private void Update()
         {
-            Vector3D temp = new Vector3D();
+            PozyxVector temp = new PozyxVector();
             int count = 0;
             if (_tags.Count > 0)
             {
@@ -246,23 +314,23 @@ namespace PozyxSubscriber.Framework
                 _position = temp / count;
                 if (_tags.Count > 1)
                 {
-                    List<Vector3D> T = new List<Vector3D>();
+                    List<PozyxVector> T = new List<PozyxVector>();
                     for (int i = 1; i < _tags.Count; i++)
                     {
-                        Vector3D v = _tags[0].Position - _tags[i].Position;
+                        PozyxVector v = _tags[0].Position - _tags[i].Position;
                         T.Add(v);
                     }
-                    Vector3D sum = new Vector3D();
+                    PozyxVector sum = new PozyxVector();
                     count = 0;
-                    foreach (Vector3D vect in T)
+                    foreach (PozyxVector vect in T)
                     {
                         sum += vect;
                         count++;
 
                     }
-                    Vector3D final = sum / count;
+                    PozyxVector final = sum / count;
 
-                    _orientation.z = Vector3D.getAngleZ(O_Vector, final);
+                    _orientation.z = PozyxVector.getAngleZ(O_Vector, final);
 
 
                 }
