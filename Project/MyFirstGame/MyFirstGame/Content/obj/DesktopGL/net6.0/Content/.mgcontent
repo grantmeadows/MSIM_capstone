@@ -4,8 +4,8 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/mytexture.tga</File>
-    <File>C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/RedDot.png</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/mytexture.tga</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/MyFirstGame/MyFirstGame/Content/RedDot.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

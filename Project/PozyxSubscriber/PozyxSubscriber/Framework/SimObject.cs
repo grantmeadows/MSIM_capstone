@@ -314,6 +314,7 @@ namespace PozyxSubscriber.Framework
             _posoffset += P;
         }
 
+
         private void Update()
         {
             PozyxVector temp = new PozyxVector();
