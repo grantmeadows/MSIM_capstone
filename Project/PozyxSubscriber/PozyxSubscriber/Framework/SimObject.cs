@@ -254,6 +254,17 @@ namespace PozyxSubscriber.Framework
 
 
         /// <summary>
+        /// removes a tag from this object 
+        /// </summary>
+        /// <param name="tag"> The tag to remove </param>
+        public void removeTag(Tag tag)
+        {
+            if (_tags.Contains(tag))
+                _tags.Remove(tag);
+        }
+
+
+        /// <summary>
         /// sets the SimObject's current position and orientation in the real world be the default 0, and reinitializes its coordinate readings.
         /// Must be done after attaching tags to a SimObject, SimulationEnvironment must be running
         /// </summary>

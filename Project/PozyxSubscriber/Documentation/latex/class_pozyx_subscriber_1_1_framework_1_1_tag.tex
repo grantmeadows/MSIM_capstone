@@ -1,0 +1,181 @@
+\hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag}{}\section{Pozyx\+Subscriber.\+Framework.\+Tag Class Reference}
+\label{class_pozyx_subscriber_1_1_framework_1_1_tag}\index{Pozyx\+Subscriber.\+Framework.\+Tag@{Pozyx\+Subscriber.\+Framework.\+Tag}}
+
+
+Collaboration diagram for Pozyx\+Subscriber.\+Framework.\+Tag\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a3d46f90b9f7f701bda3a25639c31d392}{Add\+Data} (\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pos_data}{Pos\+Data} data)
+\begin{DoxyCompactList}\small\item\em Adds data to this tag\textquotesingle{}s positional data list, normalizes the data. Then calculates the best possible realtime position \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a0452cd07da18e2f11ca7f3e14831f94a}{ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the ID of the tag \end{DoxyCompactList}\item 
+\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a74a78a7dddc3e41bbb1b8dcdc4d2077e}{Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the current position of the tag \end{DoxyCompactList}\item 
+bool \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_aaf8eae6b4234cd24e9aa7ec97cd7f21f}{is\+Calibrated}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_aa577a04657d16985adfd75898003324d}{refresh\+Rate}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The refresh rate of the tag \end{DoxyCompactList}\item 
+\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a174d82951696d1da13ec68f003f98bcf}{Last\+Pos\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em the last positional data of this tag \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a937d43773dc3cbfa6a227fd933d015bd}{normalize} (\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\mbox{[}$\,$\mbox{]} P, int sample\+Size, \hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} sum)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pos_data}{Pos\+Data} $>$ \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a8e3301483ad33c81388eacda51e39f3b}{\+\_\+tagdata}
+\begin{DoxyCompactList}\small\item\em A tag object that is tracked using the Pozyx environment \end{DoxyCompactList}\item 
+\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_ae4d79a68e001e62340cc5f6184f46f82}{\+\_\+position}
+\item 
+\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a56ff41dd3c5a612ab390ef2d6c2eacdb}{\+\_\+velocity}
+\item 
+\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a8524031ef74735540ef02c6a144eac01}{\+\_\+down}
+\item 
+bool \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a3239688e001844a24284b8add4bda133}{\+\_\+calibrated}
+\item 
+int \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_acd3b551104408fd60eea0a868e1fafe2}{\+\_\+refresh\+Rate}
+\item 
+int \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a10e9b6ccc424f24caeb65a05a268d10a}{\+\_\+prev\+Indx}
+\item 
+string \hyperlink{class_pozyx_subscriber_1_1_framework_1_1_tag_a0971d6d25e87cc52ca66e956a67ca583}{\+\_\+id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a3d46f90b9f7f701bda3a25639c31d392}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a3d46f90b9f7f701bda3a25639c31d392}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!Add\+Data@{Add\+Data}}
+\index{Add\+Data@{Add\+Data}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{Add\+Data()}{AddData()}}
+{\footnotesize\ttfamily void Pozyx\+Subscriber.\+Framework.\+Tag.\+Add\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pos_data}{Pos\+Data}}]{data }\end{DoxyParamCaption})}
+
+
+
+Adds data to this tag\textquotesingle{}s positional data list, normalizes the data. Then calculates the best possible realtime position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & the \hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pos_data}{Pos\+Data} to add to the list\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a937d43773dc3cbfa6a227fd933d015bd}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a937d43773dc3cbfa6a227fd933d015bd}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!normalize@{normalize}}
+\index{normalize@{normalize}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Subscriber.\+Framework.\+Tag.\+normalize (\begin{DoxyParamCaption}\item[{\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \mbox{[}$\,$\mbox{]}}]{P,  }\item[{int}]{sample\+Size,  }\item[{\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}}]{sum }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a3239688e001844a24284b8add4bda133}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a3239688e001844a24284b8add4bda133}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!\+\_\+calibrated@{\+\_\+calibrated}}
+\index{\+\_\+calibrated@{\+\_\+calibrated}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{\+\_\+calibrated}{\_calibrated}}
+{\footnotesize\ttfamily bool Pozyx\+Subscriber.\+Framework.\+Tag.\+\_\+calibrated\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a8524031ef74735540ef02c6a144eac01}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a8524031ef74735540ef02c6a144eac01}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!\+\_\+down@{\+\_\+down}}
+\index{\+\_\+down@{\+\_\+down}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{\+\_\+down}{\_down}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Subscriber.\+Framework.\+Tag.\+\_\+down\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a0971d6d25e87cc52ca66e956a67ca583}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a0971d6d25e87cc52ca66e956a67ca583}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!\+\_\+id@{\+\_\+id}}
+\index{\+\_\+id@{\+\_\+id}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{\+\_\+id}{\_id}}
+{\footnotesize\ttfamily string Pozyx\+Subscriber.\+Framework.\+Tag.\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_ae4d79a68e001e62340cc5f6184f46f82}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_ae4d79a68e001e62340cc5f6184f46f82}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!\+\_\+position@{\+\_\+position}}
+\index{\+\_\+position@{\+\_\+position}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{\+\_\+position}{\_position}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Subscriber.\+Framework.\+Tag.\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a10e9b6ccc424f24caeb65a05a268d10a}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a10e9b6ccc424f24caeb65a05a268d10a}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!\+\_\+prev\+Indx@{\+\_\+prev\+Indx}}
+\index{\+\_\+prev\+Indx@{\+\_\+prev\+Indx}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{\+\_\+prev\+Indx}{\_prevIndx}}
+{\footnotesize\ttfamily int Pozyx\+Subscriber.\+Framework.\+Tag.\+\_\+prev\+Indx\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_acd3b551104408fd60eea0a868e1fafe2}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_acd3b551104408fd60eea0a868e1fafe2}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!\+\_\+refresh\+Rate@{\+\_\+refresh\+Rate}}
+\index{\+\_\+refresh\+Rate@{\+\_\+refresh\+Rate}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{\+\_\+refresh\+Rate}{\_refreshRate}}
+{\footnotesize\ttfamily int Pozyx\+Subscriber.\+Framework.\+Tag.\+\_\+refresh\+Rate\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a8e3301483ad33c81388eacda51e39f3b}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a8e3301483ad33c81388eacda51e39f3b}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!\+\_\+tagdata@{\+\_\+tagdata}}
+\index{\+\_\+tagdata@{\+\_\+tagdata}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{\+\_\+tagdata}{\_tagdata}}
+{\footnotesize\ttfamily List$<$\hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pos_data}{Pos\+Data}$>$ Pozyx\+Subscriber.\+Framework.\+Tag.\+\_\+tagdata\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A tag object that is tracked using the Pozyx environment 
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a56ff41dd3c5a612ab390ef2d6c2eacdb}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a56ff41dd3c5a612ab390ef2d6c2eacdb}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!\+\_\+velocity@{\+\_\+velocity}}
+\index{\+\_\+velocity@{\+\_\+velocity}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{\+\_\+velocity}{\_velocity}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Subscriber.\+Framework.\+Tag.\+\_\+velocity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a0452cd07da18e2f11ca7f3e14831f94a}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a0452cd07da18e2f11ca7f3e14831f94a}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!ID@{ID}}
+\index{ID@{ID}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{ID}{ID}}
+{\footnotesize\ttfamily string Pozyx\+Subscriber.\+Framework.\+Tag.\+ID\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+the ID of the tag 
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_aaf8eae6b4234cd24e9aa7ec97cd7f21f}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_aaf8eae6b4234cd24e9aa7ec97cd7f21f}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!is\+Calibrated@{is\+Calibrated}}
+\index{is\+Calibrated@{is\+Calibrated}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{is\+Calibrated}{isCalibrated}}
+{\footnotesize\ttfamily bool Pozyx\+Subscriber.\+Framework.\+Tag.\+is\+Calibrated\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a174d82951696d1da13ec68f003f98bcf}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a174d82951696d1da13ec68f003f98bcf}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!Last\+Pos\+Data@{Last\+Pos\+Data}}
+\index{Last\+Pos\+Data@{Last\+Pos\+Data}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{Last\+Pos\+Data}{LastPosData}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Subscriber.\+Framework.\+Tag.\+Last\+Pos\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+the last positional data of this tag 
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_a74a78a7dddc3e41bbb1b8dcdc4d2077e}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_a74a78a7dddc3e41bbb1b8dcdc4d2077e}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!Position@{Position}}
+\index{Position@{Position}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Subscriber.\+Framework.\+Tag.\+Position\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+the current position of the tag 
+
+\mbox{\Hypertarget{class_pozyx_subscriber_1_1_framework_1_1_tag_aa577a04657d16985adfd75898003324d}\label{class_pozyx_subscriber_1_1_framework_1_1_tag_aa577a04657d16985adfd75898003324d}} 
+\index{Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}!refresh\+Rate@{refresh\+Rate}}
+\index{refresh\+Rate@{refresh\+Rate}!Pozyx\+Subscriber\+::\+Framework\+::\+Tag@{Pozyx\+Subscriber\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{refresh\+Rate}{refreshRate}}
+{\footnotesize\ttfamily int Pozyx\+Subscriber.\+Framework.\+Tag.\+refresh\+Rate\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The refresh rate of the tag 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Pozyx\+Subscriber/\+Pozyx\+Subscriber/\+Framework/\hyperlink{_sim_object_8cs}{Sim\+Object.\+cs}\end{DoxyCompactItemize}

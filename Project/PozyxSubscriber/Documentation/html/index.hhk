@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a3239688e001844a24284b8add4bda133"><param name="Name" value="_calibrated"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a71e86b3047a367d0bfd08c92ce480509"><param name="Name" value="_connectedStatus"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a8524031ef74735540ef02c6a144eac01"><param name="Name" value="_down"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#ae52e36480c57296f8c88230dac699a95"><param name="Name" value="_filename"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#ae52e36480c57296f8c88230dac699a95"><param name="Name" value="PozyxSubscriber::Framework::MqttClient"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#ac76e24779e67f985f38d3d5070cb0535"><param name="Name" value="PozyxSubscriber::Framework::Reader"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a40a0a0fd989252d51605ba77653818c8"><param name="Name" value="_host"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#a2bd63c7b8f0f8d466e6e4da6a1d89cab"><param name="Name" value="_id"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#a2bd63c7b8f0f8d466e6e4da6a1d89cab"><param name="Name" value="PozyxSubscriber::Framework::Anchor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a0971d6d25e87cc52ca66e956a67ca583"><param name="Name" value="PozyxSubscriber::Framework::Tag"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a5d5b39ad30ad8758fb7f53aaa50fc1fb"><param name="Name" value="_instance"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a391436676bf93116d83dd7c422c5b8cd"><param name="Name" value="_MqqtClient"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a87eef1b4acc1a34131cba51200b1d769"><param name="Name" value="_mqttClient"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a02914fcd8ac56b10a6cd5c29a4a6b64e"><param name="Name" value="_options"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#aab2f5dd433a5758bb747fd597f9e189c"><param name="Name" value="_orientation"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a5667a6367405f1c0a2ffe300f4245590"><param name="Name" value="_port"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#ac316ecc8136e9a3081a847c41854e67a"><param name="Name" value="_position"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#ac316ecc8136e9a3081a847c41854e67a"><param name="Name" value="PozyxSubscriber::Framework::Anchor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a2ab2fcb731d1e194fb310ec9b33ccfaf"><param name="Name" value="PozyxSubscriber::Framework::SimObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#ae4d79a68e001e62340cc5f6184f46f82"><param name="Name" value="PozyxSubscriber::Framework::Tag"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a6809d1816519ed71734e2d21ef308222"><param name="Name" value="_posoffset"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a10e9b6ccc424f24caeb65a05a268d10a"><param name="Name" value="_prevIndx"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a97683f60e678f6552639b2d79d31cf3d"><param name="Name" value="_reader"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#acd3b551104408fd60eea0a868e1fafe2"><param name="Name" value="_refreshRate"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#acd3b551104408fd60eea0a868e1fafe2"><param name="Name" value="PozyxSubscriber::Framework::Tag"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a45020f3e4a891fdb094d5dc29cfe8291"><param name="Name" value="PozyxSubscriber::SimEnvironment"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#ab65cd6844648eb75a68ffe881f80beea"><param name="Name" value="_sim"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#ab65cd6844648eb75a68ffe881f80beea"><param name="Name" value="PozyxSubscriber::Framework::MqttClient"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#a2105f5c7ce04e3a24ca3113f97f500b2"><param name="Name" value="PozyxSubscriber::Framework::Reader"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a8e3301483ad33c81388eacda51e39f3b"><param name="Name" value="_tagdata"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a726825a7059b308b64e9bc3787808327"><param name="Name" value="_tagIDs"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#ad8934fda7f02f6a3f2c86de8322b9204"><param name="Name" value="_tags"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#ad8934fda7f02f6a3f2c86de8322b9204"><param name="Name" value="PozyxSubscriber::Framework::SimObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a7a9050254e24024b517089b736316881"><param name="Name" value="PozyxSubscriber::SimEnvironment"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a87701d3f45a0c6149f9a7305144713f8"><param name="Name" value="_topic"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a56ff41dd3c5a612ab390ef2d6c2eacdb"><param name="Name" value="_velocity"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pos_data.html#a3a392d3d0fb95980c5fbf152de894370"><param name="Name" value="Acceleration"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a3d46f90b9f7f701bda3a25639c31d392"><param name="Name" value="AddData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a9cac7e5ea0f5e6e5d0018a62ae055de0"><param name="Name" value="AddTag"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#af3383b1c654f08e99fd5fd42a522b1b7"><param name="Name" value="Anchor"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#aab2a4adc47c58e9de1e307d0c8f467dc"><param name="Name" value="Begin"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#aab2a4adc47c58e9de1e307d0c8f467dc"><param name="Name" value="PozyxSubscriber::Framework::MqttClient"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#afb1a43eb336971690e2c3fde43947b1d"><param name="Name" value="PozyxSubscriber::Framework::Reader"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a1c648d512ff2292a3f0f084f54ab9cae"><param name="Name" value="Calibrate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a88bca5e01f7b0aa1279d0b92cff3b03b"><param name="Name" value="ConnectedHandler"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a32da22171f3ba4173336035846e3c170"><param name="Name" value="ConnectedStatus"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a54c41e58e89d8ed0c99f4438decbeb2c"><param name="Name" value="Contains"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#acabf34348d05e247155adf10d7632b6f"><param name="Name" value="DisconnectedHandler"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#abc07da4b47b1141e447f0a6a57fbb5fb"><param name="Name" value="Dot"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a57884d6f0b0e0ae9d5745ce88848597d"><param name="Name" value="getAngleZ"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#aa62fb67e660b0a83467bca1e8a523607"><param name="Name" value="getPosition"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#aafaa3f130c9a8cc0a0eacb29253fbd7d"><param name="Name" value="GetTag"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pos_data.html#adc23be06f8e926708bfca77144f549e6"><param name="Name" value="good"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a0452cd07da18e2f11ca7f3e14831f94a"><param name="Name" value="ID"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a84c5b43571ebc24a983d38f8cfa219bf"><param name="Name" value="Initialize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a57d7b43dd1ff01a963153b24a79649a4"><param name="Name" value="Instance"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#aaf8eae6b4234cd24e9aa7ec97cd7f21f"><param name="Name" value="isCalibrated"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a174d82951696d1da13ec68f003f98bcf"><param name="Name" value="LastPosData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a5ed77cbca2ee86d73a18d0dedb1bbe99"><param name="Name" value="log"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_application_1_1_program.html#a35d33857544887b054b88bb37aeff83c"><param name="Name" value="Main"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a5ee71b80d7ae09ef3a487a5762094b7e"><param name="Name" value="MessageHandler"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#ad2d247e2046c2a43f823e77a94802545"><param name="Name" value="MqttClient"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#af4ddb163b4b711c2c1105c7fc0253af9"><param name="Name" value="newTag"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a44da2728624c5997efe7a086d1c11356"><param name="Name" value="Norm"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a937d43773dc3cbfa6a227fd933d015bd"><param name="Name" value="normalize"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#afd9bd7161a50f4a4f0a361bbba6f1f96"><param name="Name" value="O_Vector"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a544586c64fdd2d54247ebca86303ae1c"><param name="Name" value="O_Vectors"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a46b777f59a80586112c74ff13c27dacc"><param name="Name" value="operator*"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#ad9217e4f7c748ebbcd005656bbb15c07"><param name="Name" value="operator+"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#ae607f892a7eab44b2385884df61f6699"><param name="Name" value="operator-"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a8319e66719bd50e33a1742a846b2947e"><param name="Name" value="operator/"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a7bef5a38ed8e44b431f1c959e0f550df"><param name="Name" value="Orientation"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pos_data.html#aff147d1e93133ef61c532f5b16ce2d4c"><param name="Name" value="pos"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pos_data.html#aece72e84d2c40a52bba235cdd84d525e"><param name="Name" value="PosData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a154ba70dc97ab79384ebecae98d69e18"><param name="Name" value="Position"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a154ba70dc97ab79384ebecae98d69e18"><param name="Name" value="PozyxSubscriber::Framework::SimObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a74a78a7dddc3e41bbb1b8dcdc4d2077e"><param name="Name" value="PozyxSubscriber::Framework::Tag"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_pozyx_subscriber.html"><param name="Name" value="PozyxSubscriber"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_pozyx_subscriber_1_1_application.html"><param name="Name" value="PozyxSubscriber::Application"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_application_1_1_program.html"><param name="Name" value="PozyxSubscriber::Application::Program"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_application_1_1_program.html#a35d33857544887b054b88bb37aeff83c"><param name="Name" value="Main"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_pozyx_subscriber_1_1_framework.html"><param name="Name" value="PozyxSubscriber::Framework"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html"><param name="Name" value="PozyxSubscriber::Framework::Anchor"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#a2bd63c7b8f0f8d466e6e4da6a1d89cab"><param name="Name" value="_id"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#ac316ecc8136e9a3081a847c41854e67a"><param name="Name" value="_position"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#af3383b1c654f08e99fd5fd42a522b1b7"><param name="Name" value="Anchor"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#aa62fb67e660b0a83467bca1e8a523607"><param name="Name" value="getPosition"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#a7a7f74dc8d89d8ec6bbd5f155fce5850"><param name="Name" value="SetPosition"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html"><param name="Name" value="PozyxSubscriber::Framework::MqttClient"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#ae52e36480c57296f8c88230dac699a95"><param name="Name" value="_filename"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a87eef1b4acc1a34131cba51200b1d769"><param name="Name" value="_mqttClient"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a02914fcd8ac56b10a6cd5c29a4a6b64e"><param name="Name" value="_options"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#ab65cd6844648eb75a68ffe881f80beea"><param name="Name" value="_sim"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a87701d3f45a0c6149f9a7305144713f8"><param name="Name" value="_topic"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#aab2a4adc47c58e9de1e307d0c8f467dc"><param name="Name" value="Begin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a88bca5e01f7b0aa1279d0b92cff3b03b"><param name="Name" value="ConnectedHandler"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#acabf34348d05e247155adf10d7632b6f"><param name="Name" value="DisconnectedHandler"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a5ed77cbca2ee86d73a18d0dedb1bbe99"><param name="Name" value="log"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a5ee71b80d7ae09ef3a487a5762094b7e"><param name="Name" value="MessageHandler"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#ad2d247e2046c2a43f823e77a94802545"><param name="Name" value="MqttClient"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a0fc53bbaeb9efec6fa5d8ad5708e3fae"><param name="Name" value="StartAsync"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pos_data.html"><param name="Name" value="PozyxSubscriber::Framework::PosData"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pos_data.html#a3a392d3d0fb95980c5fbf152de894370"><param name="Name" value="Acceleration"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pos_data.html#adc23be06f8e926708bfca77144f549e6"><param name="Name" value="good"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pos_data.html#aff147d1e93133ef61c532f5b16ce2d4c"><param name="Name" value="pos"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pos_data.html#aece72e84d2c40a52bba235cdd84d525e"><param name="Name" value="PosData"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html"><param name="Name" value="PozyxSubscriber::Framework::PozyxVector"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#abc07da4b47b1141e447f0a6a57fbb5fb"><param name="Name" value="Dot"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a57884d6f0b0e0ae9d5745ce88848597d"><param name="Name" value="getAngleZ"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a44da2728624c5997efe7a086d1c11356"><param name="Name" value="Norm"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a46b777f59a80586112c74ff13c27dacc"><param name="Name" value="operator*"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#ad9217e4f7c748ebbcd005656bbb15c07"><param name="Name" value="operator+"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#ae607f892a7eab44b2385884df61f6699"><param name="Name" value="operator-"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a8319e66719bd50e33a1742a846b2947e"><param name="Name" value="operator/"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a9b698d9e83339b4a71856aefdca5e1b6"><param name="Name" value="PozyxVector"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#aaf687bd5085dd3c3f7898837f01c83d7"><param name="Name" value="x"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a797da3992cbe6488a25af4dcf7acf297"><param name="Name" value="y"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a600da165d6704d619340ce23e4920b0e"><param name="Name" value="z"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html"><param name="Name" value="PozyxSubscriber::Framework::Reader"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#ac76e24779e67f985f38d3d5070cb0535"><param name="Name" value="_filename"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#a2105f5c7ce04e3a24ca3113f97f500b2"><param name="Name" value="_sim"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#afb1a43eb336971690e2c3fde43947b1d"><param name="Name" value="Begin"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#a34b6d7d372c71c7811229d42ce07e31f"><param name="Name" value="Reader"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#a41ad44c9590bacac708e2ed4a24d56b2"><param name="Name" value="StartAsync"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#a19c48a4c5be9fb991299d29d7378bbee"><param name="Name" value="time"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html"><param name="Name" value="PozyxSubscriber::Framework::SimObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#aab2f5dd433a5758bb747fd597f9e189c"><param name="Name" value="_orientation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a2ab2fcb731d1e194fb310ec9b33ccfaf"><param name="Name" value="_position"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a6809d1816519ed71734e2d21ef308222"><param name="Name" value="_posoffset"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#ad8934fda7f02f6a3f2c86de8322b9204"><param name="Name" value="_tags"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a9cac7e5ea0f5e6e5d0018a62ae055de0"><param name="Name" value="AddTag"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a1c648d512ff2292a3f0f084f54ab9cae"><param name="Name" value="Calibrate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a54c41e58e89d8ed0c99f4438decbeb2c"><param name="Name" value="Contains"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#afd9bd7161a50f4a4f0a361bbba6f1f96"><param name="Name" value="O_Vector"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a544586c64fdd2d54247ebca86303ae1c"><param name="Name" value="O_Vectors"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a7bef5a38ed8e44b431f1c959e0f550df"><param name="Name" value="Orientation"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a154ba70dc97ab79384ebecae98d69e18"><param name="Name" value="Position"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a4b3f38bbd3d9ad1b621f08c2317d66f8"><param name="Name" value="removeTag"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#ab0a3cd312e9fdd62beea5f4dd5ecbd7f"><param name="Name" value="SimObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a7e366950e0bdf28f37845e9f510a491f"><param name="Name" value="Update"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html"><param name="Name" value="PozyxSubscriber::Framework::Tag"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a3239688e001844a24284b8add4bda133"><param name="Name" value="_calibrated"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a8524031ef74735540ef02c6a144eac01"><param name="Name" value="_down"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a0971d6d25e87cc52ca66e956a67ca583"><param name="Name" value="_id"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#ae4d79a68e001e62340cc5f6184f46f82"><param name="Name" value="_position"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a10e9b6ccc424f24caeb65a05a268d10a"><param name="Name" value="_prevIndx"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#acd3b551104408fd60eea0a868e1fafe2"><param name="Name" value="_refreshRate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a8e3301483ad33c81388eacda51e39f3b"><param name="Name" value="_tagdata"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a56ff41dd3c5a612ab390ef2d6c2eacdb"><param name="Name" value="_velocity"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a3d46f90b9f7f701bda3a25639c31d392"><param name="Name" value="AddData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a0452cd07da18e2f11ca7f3e14831f94a"><param name="Name" value="ID"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#aaf8eae6b4234cd24e9aa7ec97cd7f21f"><param name="Name" value="isCalibrated"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a174d82951696d1da13ec68f003f98bcf"><param name="Name" value="LastPosData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a937d43773dc3cbfa6a227fd933d015bd"><param name="Name" value="normalize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#a74a78a7dddc3e41bbb1b8dcdc4d2077e"><param name="Name" value="Position"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#aa577a04657d16985adfd75898003324d"><param name="Name" value="refreshRate"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html"><param name="Name" value="PozyxSubscriber::SimEnvironment"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a71e86b3047a367d0bfd08c92ce480509"><param name="Name" value="_connectedStatus"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a40a0a0fd989252d51605ba77653818c8"><param name="Name" value="_host"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a5d5b39ad30ad8758fb7f53aaa50fc1fb"><param name="Name" value="_instance"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a391436676bf93116d83dd7c422c5b8cd"><param name="Name" value="_MqqtClient"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a5667a6367405f1c0a2ffe300f4245590"><param name="Name" value="_port"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a97683f60e678f6552639b2d79d31cf3d"><param name="Name" value="_reader"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a45020f3e4a891fdb094d5dc29cfe8291"><param name="Name" value="_refreshRate"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a726825a7059b308b64e9bc3787808327"><param name="Name" value="_tagIDs"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a7a9050254e24024b517089b736316881"><param name="Name" value="_tags"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a32da22171f3ba4173336035846e3c170"><param name="Name" value="ConnectedStatus"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#aafaa3f130c9a8cc0a0eacb29253fbd7d"><param name="Name" value="GetTag"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a84c5b43571ebc24a983d38f8cfa219bf"><param name="Name" value="Initialize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a57d7b43dd1ff01a963153b24a79649a4"><param name="Name" value="Instance"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#af4ddb163b4b711c2c1105c7fc0253af9"><param name="Name" value="newTag"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#abd4106d662f4991da45aa743b24c4d88"><param name="Name" value="PushData"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a85870c67295486d7abb27f35603a4356"><param name="Name" value="reader"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a6386074fe09ea029c9203bd5cb969650"><param name="Name" value="RemoveTag"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a3b5bc1fd7dd731dd19e3441c1ab0b54b"><param name="Name" value="SimEnvironment"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a1804d91547ecc65c02091d63e8c1163e"><param name="Name" value="StartEnvironment"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a7395c9fc1afe5a0686f2b6693eef748b"><param name="Name" value="TagIDs"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a9b698d9e83339b4a71856aefdca5e1b6"><param name="Name" value="PozyxVector"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#abd4106d662f4991da45aa743b24c4d88"><param name="Name" value="PushData"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#a34b6d7d372c71c7811229d42ce07e31f"><param name="Name" value="Reader"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a85870c67295486d7abb27f35603a4356"><param name="Name" value="reader"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_tag.html#aa577a04657d16985adfd75898003324d"><param name="Name" value="refreshRate"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a4b3f38bbd3d9ad1b621f08c2317d66f8"><param name="Name" value="removeTag"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a6386074fe09ea029c9203bd5cb969650"><param name="Name" value="RemoveTag"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_anchor.html#a7a7f74dc8d89d8ec6bbd5f155fce5850"><param name="Name" value="SetPosition"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a3b5bc1fd7dd731dd19e3441c1ab0b54b"><param name="Name" value="SimEnvironment"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#ab0a3cd312e9fdd62beea5f4dd5ecbd7f"><param name="Name" value="SimObject"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a0fc53bbaeb9efec6fa5d8ad5708e3fae"><param name="Name" value="StartAsync"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_mqtt_client.html#a0fc53bbaeb9efec6fa5d8ad5708e3fae"><param name="Name" value="PozyxSubscriber::Framework::MqttClient"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#a41ad44c9590bacac708e2ed4a24d56b2"><param name="Name" value="PozyxSubscriber::Framework::Reader"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a1804d91547ecc65c02091d63e8c1163e"><param name="Name" value="StartEnvironment"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_sim_environment.html#a7395c9fc1afe5a0686f2b6693eef748b"><param name="Name" value="TagIDs"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_reader.html#a19c48a4c5be9fb991299d29d7378bbee"><param name="Name" value="time"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_pozyx_subscriber_1_1_framework_1_1_sim_object.html#a7e366950e0bdf28f37845e9f510a491f"><param name="Name" value="Update"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#aaf687bd5085dd3c3f7898837f01c83d7"><param name="Name" value="x"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a797da3992cbe6488a25af4dcf7acf297"><param name="Name" value="y"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_pozyx_subscriber_1_1_framework_1_1_pozyx_vector.html#a600da165d6704d619340ce23e4920b0e"><param name="Name" value="z"></OBJECT>
+</UL>
+</BODY>
+</HTML>
