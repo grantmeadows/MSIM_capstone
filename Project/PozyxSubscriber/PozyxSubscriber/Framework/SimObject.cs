@@ -11,8 +11,6 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: InternalsVisibleTo("SimEnvironment")]
-
 
 namespace PozyxSubscriber.Framework
 {
@@ -40,7 +38,7 @@ namespace PozyxSubscriber.Framework
         /// <summary>
         /// Tag Constructor
         /// </summary>
-        internal Tag(string ID, int RefreshRate)
+        public Tag(SimEnvironment S, string ID, int RefreshRate)
         {
             _id = ID;
             _tagdata = new List<PosData>();
@@ -49,6 +47,7 @@ namespace PozyxSubscriber.Framework
             _refreshRate = RefreshRate;
             _calibrated = false;
             _prevIndx = 0;
+            S.newTag(this);
         }
 
 
