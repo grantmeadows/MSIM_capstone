@@ -101,7 +101,8 @@ namespace PozyxSubscriber.Framework
                 PozyxVector previousPosition = _position;
                 PozyxVector[] Data = new PozyxVector[_refreshRate];
                 int v = _tagdata.Count() - _refreshRate;
-                for (int i = _tagdata.Count() - 1; i > (_tagdata.Count() - _refreshRate - 1); i--)
+                int i;
+                for (i = _tagdata.Count() - 1; i > (_tagdata.Count() - _refreshRate - 1); i--)
                 {
                     if (_tagdata[i].good)
                     {

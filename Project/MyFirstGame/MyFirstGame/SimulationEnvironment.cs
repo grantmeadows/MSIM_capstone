@@ -73,8 +73,6 @@ namespace PozyxSubscriber
         public void Initialize(string filename, int refreshRate)
         {
             reader = true;
-            //_objects = new Dictionary<string, SimObject>();
-            //_objectIDs = new List<string>();
             _host = "";
             _port = 0;
             _tags = new Dictionary<string, Tag>();
@@ -202,13 +200,6 @@ namespace PozyxSubscriber
             return _tags[ID];
         }
 
-        //public void newTag(Tag T)
-        //{
-        //    string ID = T.ID;
-        //    _tagIDs.Add(ID);
-        //    _tags[ID] = T;
-        //    _tags[ID].AddData(new PosData());
-        //}
 
 
         /// <summary>
@@ -223,22 +214,6 @@ namespace PozyxSubscriber
             _tags.Remove(ID);
             return T;
         }
-
-
-        //public void newObject(SimObject S)
-        //{
-        //    string ID = S.ID;
-        //    _objectIDs.Add(ID);
-        //    _objects[ID] = S;
-        //}
-
-        //public SimObject createObject(string ID)
-        //{
-        //    SimObject S = new SimObject(ID);
-        //    _objectIDs.Add(ID);
-        //    _objects[ID] = S;
-        //    return S;
-        //}
 
 
         /// <summary>

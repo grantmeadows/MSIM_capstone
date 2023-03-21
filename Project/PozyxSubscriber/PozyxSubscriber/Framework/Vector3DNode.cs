@@ -71,12 +71,6 @@ namespace PozyxSubscriber.Framework
             Denom1 = (float)(Math.Sqrt((a.z * a.z) + (a.x * a.x)));
             Denom2 = (float)Math.Sqrt((b.z * b.z) + (b.x * b.x));
             r.y = (float)Math.Acos(((a.z * b.z) + (a.x * b.x)) / (Denom1 * Denom2));
-
-
-
-
-
-
             return r;
 
         }

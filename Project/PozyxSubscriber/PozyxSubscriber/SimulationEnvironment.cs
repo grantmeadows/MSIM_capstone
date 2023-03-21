@@ -202,15 +202,6 @@ namespace PozyxSubscriber
             return _tags[ID];
         }
 
-        //public void newTag(Tag T)
-        //{
-        //    string ID = T.ID;
-        //    _tagIDs.Add(ID);
-        //    _tags[ID] = T;
-        //    _tags[ID].AddData(new PosData());
-        //}
-
-
         /// <summary>
         /// Removes a tag from the simulation environment
         /// </summary>
@@ -223,22 +214,6 @@ namespace PozyxSubscriber
             _tags.Remove(ID);
             return T;
         }
-
-
-        //public void newObject(SimObject S)
-        //{
-        //    string ID = S.ID;
-        //    _objectIDs.Add(ID);
-        //    _objects[ID] = S;
-        //}
-
-        //public SimObject createObject(string ID)
-        //{
-        //    SimObject S = new SimObject(ID);
-        //    _objectIDs.Add(ID);
-        //    _objects[ID] = S;
-        //    return S;
-        //}
 
 
         /// <summary>
