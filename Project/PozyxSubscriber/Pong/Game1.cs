@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using PozyxSubscriber.Framework;
 
 namespace Ping_Pong
 {
@@ -17,6 +18,13 @@ namespace Ping_Pong
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        //Simulation Environment
+        SimObject simObject;
+        SimEnvironment sim;
+        string tag1;
+        string tag2;
+        static float paddleWidth;
 
         // Audio
         SoundEffect soundPaddleHit;
@@ -53,8 +61,8 @@ namespace Ping_Pong
         Rectangle m_backgroundDims = new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
         // constants
-        const int SCREEN_WIDTH = 640;
-        const int SCREEN_HEIGHT = 480;
+        const int SCREEN_WIDTH = (4000 / 3);
+        const int SCREEN_HEIGHT = (3000 / 3);
 
         public Game1()
         {
@@ -70,14 +78,46 @@ namespace Ping_Pong
         /// </summary>
         protected override void Initialize()
         {
+
             // use a fixed frame rate of 30 frames per second
             IsFixedTimeStep = true;
             TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 33);
 
+            InitializeSimEnviornment();
             InitScreen();
             InitGameObjects();
 
             base.Initialize();
+        }
+
+        
+        /// <summary>
+        /// Start capturing of position
+        /// </summary>
+        private void InitializeSimEnviornment()
+        {
+            var host = "10.0.0.254";
+            var port = 1883;
+            int numTags = 2;
+            tag1 = "5772";
+            tag2 = "6985";
+
+            int tagRefreshRate = 5;
+
+            sim = SimEnvironment.Instance;
+            simObject = new SimObject();
+
+            sim.Initialize(host, port,"Pong.txt", tagRefreshRate);
+            Tag t1 = sim.newTag(tag1, 15);
+            Tag t2 = sim.newTag(tag2, 15);
+
+            simObject.AddTag(t1);
+            simObject.AddTag(t2);
+
+            sim.StartEnvironment();
+            while (!sim.ConnectedStatus) ;
+
+            simObject.Calibrate(sim);
         }
 
         /// <summary>
@@ -108,10 +148,11 @@ namespace Ping_Pong
             m_paddle2 = new Paddle();
 
             // set the size of the paddles
+            paddleWidth = (sim.GetDistanceBetweenTags(tag1, tag2) / 3);
             m_paddle1.Width = 15.0f;
-            m_paddle1.Height = 100.0f;
+            m_paddle1.Height = paddleWidth;
             m_paddle2.Width = 15.0f;
-            m_paddle2.Height = 100.0f;
+            m_paddle2.Height = paddleWidth;
 
             // map the digits in the image to actual numbers
             m_ScoreRect = new Rectangle[10];
@@ -430,27 +471,8 @@ namespace Ping_Pong
             bool PlayerDown =
                 pad1.DPad.Down == ButtonState.Pressed;
 
-            // also check the keyboard, PLAYER ONE
-            PlayerUp |= keyb.IsKeyDown(Keys.W);
-            PlayerDown |= keyb.IsKeyDown(Keys.S);
-
-            // move the paddle
-            if (PlayerUp)
-            {
-                m_paddle1.Y -= PADDLE_STRIDE;
-                if (m_paddle1.Y < MIN_Y)
-                {
-                    m_paddle1.Y = MIN_Y;
-                }
-            }
-            else if (PlayerDown)
-            {
-                m_paddle1.Y += PADDLE_STRIDE;
-                if (m_paddle1.Y > MAX_Y)
-                {
-                    m_paddle1.Y = MAX_Y;
-                }
-            }
+            //update paddle position from tag info
+            m_paddle1.Y = simObject.Position.y / 3;
 
             // check the controller, PLAYER TWO
             PlayerUp =

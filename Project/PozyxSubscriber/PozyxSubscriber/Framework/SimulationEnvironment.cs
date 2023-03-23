@@ -9,10 +9,9 @@ using Microsoft.VisualBasic;
 using System.Threading;
 using Newtonsoft.Json.Linq;
 using System.Data;
-using PozyxSubscriber.Framework;
 using System.Linq.Expressions;
 
-namespace PozyxSubscriber
+namespace PozyxSubscriber.Framework
 {
 
     /// <summary>
@@ -59,7 +58,7 @@ namespace PozyxSubscriber
             _tagIDs = new List<string>();
             _reader = null;
             _refreshRate = refreshRate;
-            _MqqtClient = new MqttClient(host, port, this, filename);       
+            _MqqtClient = new MqttClient(host, port, this, filename);
         }
 
 
@@ -95,11 +94,11 @@ namespace PozyxSubscriber
         }
 
 
-        Reader? _reader;  
+        Reader? _reader;
         private static MqttClient? _MqqtClient;
         Dictionary<string, Tag> _tags;
         List<string> _tagIDs;
-        
+
         private string _host;
         private int _port;
 
@@ -169,15 +168,15 @@ namespace PozyxSubscriber
 
 
                 if (_tags.ContainsKey(ID))
-                        _tags[ID].AddData(newData);
-                    else
-                    {
-                        _tagIDs.Add(ID);
-                        _tags[ID] = new Tag(ID, _refreshRate);
-                        _tags[ID].AddData(newData);
-                    }
+                    _tags[ID].AddData(newData);
+                else
+                {
+                    _tagIDs.Add(ID);
+                    _tags[ID] = new Tag(ID, _refreshRate);
+                    _tags[ID].AddData(newData);
+                }
 
-                
+
 
 
             }
@@ -222,6 +221,17 @@ namespace PozyxSubscriber
             _tagIDs.Remove(ID);
             _tags.Remove(ID);
             return T;
+        }
+
+        public float GetDistanceBetweenTags(string t1, string t2)
+        {
+            PozyxVector t1Pos = _tags[t1].Position;
+            PozyxVector t2Pos = _tags[t2].Position;
+
+            float lhs = (float)MathF.Pow(t2Pos.x - t1Pos.x, 2);
+            float rhs = (float)MathF.Pow(t2Pos.y - t1Pos.y, 2);
+
+            return MathF.Sqrt(lhs + rhs);
         }
 
 
