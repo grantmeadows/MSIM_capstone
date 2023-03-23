@@ -61,8 +61,8 @@ namespace Ping_Pong
         Rectangle m_backgroundDims = new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
         // constants
-        const int SCREEN_WIDTH = (4000 / 3);
-        const int SCREEN_HEIGHT = (3000 / 3);
+        const int SCREEN_WIDTH = 640;
+        const int SCREEN_HEIGHT = 480;
 
         public Game1()
         {
@@ -83,9 +83,9 @@ namespace Ping_Pong
             IsFixedTimeStep = true;
             TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 33);
 
+            InitGameObjects();
             InitializeSimEnviornment();
             InitScreen();
-            InitGameObjects();
 
             base.Initialize();
         }
@@ -107,17 +107,17 @@ namespace Ping_Pong
             sim = SimEnvironment.Instance;
             simObject = new SimObject();
 
-            sim.Initialize(host, port,"Pong.txt", tagRefreshRate);
+            sim.Initialize(host, port,"Pong.txt", 2);
             Tag t1 = sim.newTag(tag1, 15);
-            Tag t2 = sim.newTag(tag2, 15);
+            //Tag t2 = sim.newTag(tag2, 15);
 
             simObject.AddTag(t1);
-            simObject.AddTag(t2);
+            //simObject.AddTag(t2);
 
             sim.StartEnvironment();
             while (!sim.ConnectedStatus) ;
 
-            simObject.Calibrate(sim);
+            simObject.Calibrate(sim, 30.0f, SCREEN_HEIGHT / 2 - m_paddle1.Height / 2, 0.0f);
         }
 
         /// <summary>
@@ -148,11 +148,11 @@ namespace Ping_Pong
             m_paddle2 = new Paddle();
 
             // set the size of the paddles
-            paddleWidth = (sim.GetDistanceBetweenTags(tag1, tag2) / 3);
+            //paddleWidth = (sim.GetDistanceBetweenTags(tag1, tag2) / 3);
             m_paddle1.Width = 15.0f;
-            m_paddle1.Height = paddleWidth;
+            m_paddle1.Height = 100;
             m_paddle2.Width = 15.0f;
-            m_paddle2.Height = paddleWidth;
+            m_paddle2.Height = 100;
 
             // map the digits in the image to actual numbers
             m_ScoreRect = new Rectangle[10];
@@ -472,7 +472,8 @@ namespace Ping_Pong
                 pad1.DPad.Down == ButtonState.Pressed;
 
             //update paddle position from tag info
-            m_paddle1.Y = simObject.Position.y / 3;
+            
+            m_paddle1.Y = Math.Abs(simObject.Position.x) / 3;
 
             // check the controller, PLAYER TWO
             PlayerUp =

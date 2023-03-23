@@ -172,7 +172,7 @@ namespace PozyxSubscriber.Framework
                 else
                 {
                     _tagIDs.Add(ID);
-                    _tags[ID] = new Tag(ID, _refreshRate);
+                    _tags[ID] = new Tag(this, ID, _refreshRate);
                     _tags[ID].AddData(newData);
                 }
 
