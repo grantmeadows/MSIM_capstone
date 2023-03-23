@@ -93,6 +93,10 @@ namespace PozyxSubscriber.Framework
             _tagdata.Add(data);
             if (_tagdata.Count() >= _refreshRate)
             {
+                if (!_calibrated)
+                {
+                    _down = data.Acceleration[0];
+                }
                 _calibrated = true;
                 bool usedV = false;
                 int count = 0;
@@ -108,6 +112,21 @@ namespace PozyxSubscriber.Framework
                         Data[count] = _tagdata[i].pos;
                         sum += _tagdata[i].pos;
                         count++;
+                    }
+                    else
+                    {
+                        var SumA = new PozyxVector();
+                        int CountA = 0;
+                        foreach (var A in _tagdata[i].Acceleration)
+                        {
+                            SumA += A;
+                            CountA++;
+                        }
+
+                        SumA = (SumA / CountA) - _down;
+                        PozyxVector PositVector = (SumA * (1 / 2)) + (_velocity) + _position;
+                        Data[count] = previousPosition;
+
                     }
                 }
                 if (count == 0)
