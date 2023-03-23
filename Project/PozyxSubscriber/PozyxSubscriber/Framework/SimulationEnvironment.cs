@@ -193,21 +193,30 @@ namespace PozyxSubscriber.Framework
         {
             if (_tags.ContainsKey(ID))
             {
-                throw new Exception("ID declared twice within Pozyx Environment");
+                throw new Exception("tag declared twice within Pozyx Environment");
             }
             _tagIDs.Add(ID);
-            _tags[ID] = new Tag(ID, refreshRate);
+            _tags[ID] = new Tag(this, ID, refreshRate);
             _tags[ID].AddData(new PosData());
             return _tags[ID];
         }
 
-        //public void newTag(Tag T)
-        //{
-        //    string ID = T.ID;
-        //    _tagIDs.Add(ID);
-        //    _tags[ID] = T;
-        //    _tags[ID].AddData(new PosData());
-        //}
+
+        /// <summary>
+        /// Adds a new tag to the simulation environment
+        /// </summary>
+        /// <param name="tag"> the tag to add</param>
+        public void newTag(Tag tag)
+        {
+            string ID = tag.ID;
+            if (_tags.ContainsKey(ID))
+            {
+                throw new Exception("tag declared twice within Pozyx Environment");
+            }
+            _tagIDs.Add(ID);
+            _tags[ID] = tag;
+            _tags[ID].AddData(new PosData());
+        }
 
 
         /// <summary>
@@ -233,22 +242,6 @@ namespace PozyxSubscriber.Framework
 
             return MathF.Sqrt(lhs + rhs);
         }
-
-
-        //public void newObject(SimObject S)
-        //{
-        //    string ID = S.ID;
-        //    _objectIDs.Add(ID);
-        //    _objects[ID] = S;
-        //}
-
-        //public SimObject createObject(string ID)
-        //{
-        //    SimObject S = new SimObject(ID);
-        //    _objectIDs.Add(ID);
-        //    _objects[ID] = S;
-        //    return S;
-        //}
 
 
         /// <summary>

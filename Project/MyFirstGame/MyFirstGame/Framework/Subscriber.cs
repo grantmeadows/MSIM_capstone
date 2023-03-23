@@ -36,7 +36,6 @@ namespace PozyxSubscriber.Framework
         public MqttClient(string host, int port, SimEnvironment Sim)
         {
             _sim = Sim;
-
             _topic = "tags";
         } 
         public MqttClient(string host, int port, SimEnvironment Sim, string filename)

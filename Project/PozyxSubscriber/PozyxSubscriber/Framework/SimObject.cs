@@ -11,8 +11,6 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: InternalsVisibleTo("SimEnvironment")]
-
 
 namespace PozyxSubscriber.Framework
 {
@@ -40,7 +38,7 @@ namespace PozyxSubscriber.Framework
         /// <summary>
         /// Tag Constructor
         /// </summary>
-        internal Tag(string ID, int RefreshRate)
+        public Tag(SimEnvironment S, string ID, int RefreshRate)
         {
             _id = ID;
             _tagdata = new List<PosData>();
@@ -49,6 +47,7 @@ namespace PozyxSubscriber.Framework
             _refreshRate = RefreshRate;
             _calibrated = false;
             _prevIndx = 0;
+            S.newTag(this);
         }
 
 
@@ -101,7 +100,8 @@ namespace PozyxSubscriber.Framework
                 PozyxVector previousPosition = _position;
                 PozyxVector[] Data = new PozyxVector[_refreshRate];
                 int v = _tagdata.Count() - _refreshRate;
-                for (int i = _tagdata.Count() - 1; i > (_tagdata.Count() - _refreshRate - 1); i--)
+                int i;
+                for (i = _tagdata.Count() - 1; i > (_tagdata.Count() - _refreshRate - 1); i--)
                 {
                     if (_tagdata[i].good)
                     {
@@ -249,6 +249,17 @@ namespace PozyxSubscriber.Framework
             if (_tags.Contains(tag))
                 throw new Exception("Tag already attached to this Object");
             else _tags.Add(tag); 
+        }
+
+
+        /// <summary>
+        /// removes a tag from this object 
+        /// </summary>
+        /// <param name="tag"> The tag to remove </param>
+        public void removeTag(Tag tag)
+        {
+            if (_tags.Contains(tag))
+                _tags.Remove(tag);
         }
 
 
