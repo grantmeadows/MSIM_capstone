@@ -9,6 +9,7 @@ using System.Threading;
 using Newtonsoft.Json.Linq;
 using System.Data;
 using PozyxSubscriber.Framework;
+using System.Linq.Expressions;
 
 namespace PozyxSubscriber
 {
@@ -19,9 +20,10 @@ namespace PozyxSubscriber
     public sealed class SimEnvironment
     {
 
-        private bool _mutex;
         private static SimEnvironment? _instance = null;
         private bool _connectedStatus;
+
+        private bool reader;
 
         public SimEnvironment()
         {
@@ -45,54 +47,66 @@ namespace PozyxSubscriber
         /// </summary>
         /// <param name="host">Local IP addres of Pozyx gateway</param>
         /// <param name="port">Port</param>
-        /// <param name="numObjects">Number of objects in enviornment</param>
-        /// <param name="numTags">Number of tags in enviornment</param>
-        public void Initialize(string host, int port, int numObjects, int numTags, string filename, int refreshRate)
+        /// <param name="filename">a log file to keep track of all tag messages</param>
+        /// <param name="refreshRate">Default refresh rate of a tag not specified by the user</param>
+        public void Initialize(string host, int port, string filename, int refreshRate)
         {
-            _objects = new List<SimObject>();
-            _mutex = true;
+            reader = false;
             _host = host;
             _port = port;
             _tags = new Dictionary<string, Tag>();
             _tagIDs = new List<string>();
-            _anchors = new Dictionary<string, Anchor>();
-            _anchorIDs = new List<string>();
             _reader = null;
             _refreshRate = refreshRate;
-            _MqqtClient = new MqttClient(numTags, host, port, this, filename);       
+            _MqqtClient = new MqttClient(host, port, this, filename);       
         }
 
+
+        /// <summary>
+        /// Simulation Enviorntment Constructor, creates reader instance
+        /// will send JSON strings in coordination to how POZYX does using a log file.
+        /// Simulates reciving tag reads in realtime using a historic log
+        /// </summary>
+        /// <param name="filename">name of the log file to simulate with</param>
+        /// <param name="refreshRate">Default refresh rate of a tag not specified by the user</param>
         public void Initialize(string filename, int refreshRate)
         {
-            _objects = new List<SimObject>();
-            _mutex = true;
+            reader = true;
+            //_objects = new Dictionary<string, SimObject>();
+            //_objectIDs = new List<string>();
             _host = "";
             _port = 0;
             _tags = new Dictionary<string, Tag>();
             _tagIDs = new List<string>();
-            _anchors = new Dictionary<string, Anchor>();
-            _anchorIDs = new List<string>();
             _refreshRate = refreshRate;
             _reader = new Reader(filename, this);
         }
 
+        /// <summary>
+        /// StartEnvironment method, will begin tracking/reading JSON strings and tag readings from Pozyx on a separate thread
+        /// This begins populating the simulation environment
+        /// </summary>
+        public void StartEnvironment()
+        {
+
+            if (reader) _reader.Begin();
+            else _MqqtClient.Begin();
+        }
 
 
-
-        Reader _reader;
-        private static MqttClient _MqqtClient;
-        List<SimObject> _objects;
+        Reader? _reader;  
+        private static MqttClient? _MqqtClient;
         Dictionary<string, Tag> _tags;
         List<string> _tagIDs;
-
-        Dictionary<string, Anchor> _anchors;
-        List<string> _anchorIDs;
-
+        
         private string _host;
         private int _port;
 
         int _refreshRate;
 
+        /// <summary>
+        /// The Connection status of the MQTT or Reader class
+        /// </summary>
         public bool ConnectedStatus
         {
             get { return _connectedStatus; }
@@ -100,7 +114,10 @@ namespace PozyxSubscriber
         }
 
 
-
+        /// <summary>
+        /// Pushes a JSON JArray into the simulation
+        /// </summary>
+        /// <param name="msgdata"> the JArray parsed to populate the simulation environment with</param>
         public void PushData(JArray msgdata)
         {
             foreach (var M in msgdata)
@@ -114,7 +131,11 @@ namespace PozyxSubscriber
                 {
                     x = M["data"]["coordinates"]["x"].Value<float>();
                     y = M["data"]["coordinates"]["y"].Value<float>();
-                    z = M["data"]["coordinates"]["z"].Value<float>();
+                    try
+                    {
+                        z = M["data"]["coordinates"]["z"].Value<float>();
+                    }
+                    catch { z = 0; }
                 }
                 else
                 {
@@ -126,21 +147,23 @@ namespace PozyxSubscriber
                 if (Accel.Count() > 0)
                 {
                     var temp = Accel.First();
-                    newData.Acceleration = new List<Vector3D>();
+                    newData.Acceleration = new List<PozyxVector>();
                     for (int i = 0; i < Accel.Count(); i++)
                     {
-                        Vector3D vect;
+                        PozyxVector vect = new PozyxVector();
                         vect.x = temp[0].Value<float>();
                         vect.y = temp[1].Value<float>();
-                        vect.z = temp[2].Value<float>();
+                        try { vect.z = temp[2].Value<float>(); }
+                        catch { vect.z = 0; }
+
                         newData.Acceleration.Add(vect);
                         temp = temp.Next;
                     }
                 }
                 else
                 {
-                    newData.Acceleration = new List<Vector3D>();
-                    newData.Acceleration.Add(new Vector3D());
+                    newData.Acceleration = new List<PozyxVector>();
+                    newData.Acceleration.Add(new PozyxVector());
                 }
 
 
@@ -149,59 +172,75 @@ namespace PozyxSubscriber
                     else
                     {
                         _tagIDs.Add(ID);
-                        _tags[ID] = new Tag(ID, _refreshRate);
+                        _tags[ID] = newTag(ID, _refreshRate);
                         _tags[ID].AddData(newData);
                     }
+
             }
         }
 
-        public void NewTag(string ID, int refreshRate)
+
+        /// <summary>
+        /// Adds a new tag to the simulation environment
+        /// </summary>
+        /// <param name="ID"> the ID of the tag to add</param>
+        /// <param name="refreshRate"> the refresh rate of the added tag</param>
+        /// <returns> the newly created tag </returns>
+        public Tag newTag(string ID, int refreshRate)
         {
+            if (_tags.ContainsKey(ID))
+            {
+                throw new Exception("tag declared twice within Pozyx Environment");
+            }
             _tagIDs.Add(ID);
-            _tags[ID] = new Tag(ID, _refreshRate);
+            _tags[ID] = new Tag(this, ID, refreshRate);
+            _tags[ID].AddData(new PosData());
+            return _tags[ID];
+        }
+
+
+        /// <summary>
+        /// Adds a new tag to the simulation environment
+        /// </summary>
+        /// <param name="tag"> the tag to add</param>
+        public void newTag(Tag tag)
+        {
+            string ID = tag.ID;
+            if (_tags.ContainsKey(ID))
+            {
+                throw new Exception("tag declared twice within Pozyx Environment");
+            }
+            _tagIDs.Add(ID);
+            _tags[ID] = tag;
             _tags[ID].AddData(new PosData());
         }
 
-        public void NewObj(List<Tag> tagList)
-        {
-            var obj = new SimObject();
-            foreach (Tag tag in tagList) 
-            {
-                obj.AddTag(tag);
-            }
-            _objects.Add(obj);
-        }
 
-        private void MutexLock()
+        /// <summary>
+        /// Removes a tag from the simulation environment
+        /// </summary>
+        /// <param name="ID"> the ID of the tag to remove</param>
+        /// <returns> the removed tag </returns>
+        public Tag RemoveTag(string ID)
         {
-            while (_mutex) Thread.Sleep(100);
-            _mutex = true;
-        }
-        private void MutexUnlock()
-        {
-            _mutex = false;
+            Tag T = _tags[ID];
+            _tagIDs.Remove(ID);
+            _tags.Remove(ID);
+            return T;
         }
 
 
-        public PosData getLatestposition(string ID) { if (_tags.ContainsKey(ID)) return _tags[ID].GetLatestPosData(); else return new PosData(0, 0, 0); }
-
-        public Dictionary<string, Vector3D> getAllPositions()
-        {
-            Dictionary<string, Vector3D> ret = new Dictionary<string, Vector3D>();
-            foreach (var T in _tagIDs)
-            {
-                ret[T] = _tags[T].getPosition();
-            }
-            return ret;
-        }
-
-        public Anchor getAnchor(string ID) { return _anchors[ID]; }
-
+        /// <summary>
+        /// gets a tag from the simulation environment
+        /// </summary>
+        /// <param name="ID"> the ID of the tag to get</param>
+        /// <returns> the requested tag </returns>
         public Tag GetTag(string ID) { return _tags[ID]; }
 
-        public void SetAnchor(string ID, Anchor anchor) { _anchors["ID"] = anchor; }
-
-        public List<string> GetTagIDs() { return _tagIDs; }
+        /// <summary>
+        /// a list of strings that contain the IDs of all the active tags in the Simulation Environment
+        /// </summary>
+        public List<string> TagIDs { get { return _tagIDs; } }
 
     }
 

@@ -11,6 +11,7 @@ public class Tag_Live : MonoBehaviour
 {
     public int numTags;
     public int tagRefreshRate;
+    SimEnvironment sim = SimEnvironment.Instance;
 
     [System.Serializable]
     public class TagIDs
@@ -18,8 +19,6 @@ public class Tag_Live : MonoBehaviour
         public string[] tagIDList;
     }
     public TagIDs[] objects;
-
-    SimEnvironment sim = SimEnvironment.Instance;
 
     public GameObject TagPrefab;
     public GameObject TagMarker;
@@ -38,16 +37,15 @@ public class Tag_Live : MonoBehaviour
         var host = "10.0.0.254";
         var port = 1883;
 
-        sim.Initialize(host, port, objects.Length, numTags, "Dat.txt", tagRefreshRate);
+        //sim.Initialize(host, port, "Dat.txt", tagRefreshRate);
+        sim.Initialize("Assets/Data/FailureRun.txt", 15);
 
         foreach (var obj in objects)
         {
             var color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
             foreach (var tagID in obj.tagIDList)
             {
-                // Add tag to framework
-                sim.NewTag(tagID, tagRefreshRate);
-
+                sim.newTag(tagID, tagRefreshRate);
                 // Add tag to Unity
                 baseObj = new GameObject(tagID);
                 GameObject t = Instantiate(TagPrefab);
@@ -65,35 +63,37 @@ public class Tag_Live : MonoBehaviour
                 temp.transform.parent = baseObj.transform;
             }
         }
+
+        sim.StartEnvironment();
+
+        while (!sim.ConnectedStatus);
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (var id in sim.GetTagIDs())
+        foreach (var id in sim.TagIDs)
         {
             count++;
-            var position = sim.getLatestposition(id);
+            var position = sim.GetTag(id).Position;
 
-            if (position.good == true)
+            temp = tagList.Find(x => x.name == id);
+
+            //Activate tag
+            if (temp.activeSelf == false)
             {
-                temp = tagList.Find(x => x.name == id);
-                //Activate tag
-                if (temp.activeSelf == false)
-                {
-                    temp.SetActive(true);
-                }
-
-                // Place a marker
-                GameObject th = Instantiate(TagMarker);
-                th.transform.position = temp.transform.position;
-                th.GetComponent<Renderer>().material.color = temp.GetComponent<Renderer>().material.GetColor("_Color");
-                th.name = temp.name + "_" + count.ToString();
-                th.transform.parent = GameObject.Find(temp.name + "_History").transform;
-
-                // Move tag
-                temp.transform.position = new Vector3(position.pos.x /1000, position.pos.z /1000, position.pos.y / 1000);
+                temp.SetActive(true);
             }
+
+            // Place a marker
+            GameObject th = Instantiate(TagMarker);
+            th.transform.position = temp.transform.position;
+            th.GetComponent<Renderer>().material.color = temp.GetComponent<Renderer>().material.GetColor("_Color");
+            th.name = temp.name + "_" + count.ToString();
+            th.transform.parent = GameObject.Find(temp.name + "_History").transform;
+
+            // Move tag
+            temp.transform.position = new Vector3(position.x /1000, position.z /1000, position.y / 1000);
         }
                 
     }

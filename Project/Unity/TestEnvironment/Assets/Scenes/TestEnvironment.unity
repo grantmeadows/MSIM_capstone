@@ -590,11 +590,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52864b63828b52a479efd29f6b1d47e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numTags: 1
+  numTags: 4
   tagRefreshRate: 15
   objects:
   - tagIDList:
     - 6985
+    - 7000
+    - 5772
+    - 5974
   TagPrefab: {fileID: 4656374199788638134, guid: b3a69fa79f2f1ee4db658ee2196a18e1, type: 3}
   TagMarker: {fileID: 2159924670593484831, guid: 3258bcd8f31ec1d44af142e1734966e0, type: 3}
 --- !u!1 &1563644769

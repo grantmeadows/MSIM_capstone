@@ -5,7 +5,6 @@ using System;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using System.IO;
 
 namespace PozyxSubscriber.Framework
@@ -21,7 +20,6 @@ namespace PozyxSubscriber.Framework
         private string _topic;
         private SimEnvironment _sim;
         private StringBuilder log = new StringBuilder();
-
         private string _filename;
 
         /// <summary>
@@ -31,13 +29,13 @@ namespace PozyxSubscriber.Framework
         /// <param name="host">Host of the pozyx broker</param>
         /// <param name="port">Port</param>
 
-        public MqttClient(int _numTags, string host, int port, SimEnvironment Sim)
+        public MqttClient(string host, int port, SimEnvironment Sim)
         {
             _sim = Sim;
 
             _topic = "tags";
         } 
-        public MqttClient(int _numTags, string host, int port, SimEnvironment Sim, string filename)
+        public MqttClient(string host, int port, SimEnvironment Sim, string filename)
         {
             _sim = Sim;
             _filename = filename;
@@ -49,10 +47,16 @@ namespace PozyxSubscriber.Framework
                 .Build();
 
             _mqttClient = new MqttFactory().CreateMqttClient();
+            /*
+            _mqttClient.UseConnectedHandler(ConnectedHandler);
+            _mqttClient.UseApplicationMessageReceivedHandler(MessageHandler);
+            _mqttClient.UseDisconnectedHandler(DisconnectedHandler);
+            */
+        }
 
+        public void Begin()
+        {
             Task.Run(() => StartAsync());
-            //Comment out sleep before finalization
-            //Thread.Sleep(Timeout.Infinite);
         }
 
         public async void ConnectedHandler(MqttClientConnectedEventArgs e)
@@ -73,8 +77,6 @@ namespace PozyxSubscriber.Framework
 
         public void MessageHandler(MqttApplicationMessageReceivedEventArgs eventArgs)
         {
-            //Console.WriteLine(Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload));
-
             var msg = Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload);
 
             var msgData = JArray.Parse(msg);
@@ -84,21 +86,6 @@ namespace PozyxSubscriber.Framework
 
             log.AppendLine(msg.ToString());
             File.WriteAllText(_filename, log.ToString());
-            Dictionary<string, Vector3D> Pos = _sim.getAllPositions();
-            foreach (var ID in _sim.GetTagIDs())
-            {
-                Console.Write("[Tag ID: ");
-                Console.Write(ID);
-                Console.Write(": X: ");
-                Console.Write((int)Pos[ID].x);
-                Console.Write("  Y: ");
-                Console.Write((int)Pos[ID].y);
-                Console.Write("  Z: ");
-                Console.Write((int)Pos[ID].z);
-                Console.Write("] ");
-            }
-            Console.WriteLine(" ");
-
         }
 
         public async Task StartAsync()
