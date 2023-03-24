@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PozyxSubscriber", "PozyxSubscriber\PozyxSubscriber.csproj", "{F971D95B-37C1-4D59-9E77-2DBB0BBBA80C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pong", "Pong\Pong.csproj", "{5A387AF7-E010-433F-9660-46D56F37FCBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F971D95B-37C1-4D59-9E77-2DBB0BBBA80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F971D95B-37C1-4D59-9E77-2DBB0BBBA80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F971D95B-37C1-4D59-9E77-2DBB0BBBA80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F971D95B-37C1-4D59-9E77-2DBB0BBBA80C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A387AF7-E010-433F-9660-46D56F37FCBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A387AF7-E010-433F-9660-46D56F37FCBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A387AF7-E010-433F-9660-46D56F37FCBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A387AF7-E010-433F-9660-46D56F37FCBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4DE571B-8207-468E-8594-F9A1B8759691}
+	EndGlobalSection
+EndGlobal

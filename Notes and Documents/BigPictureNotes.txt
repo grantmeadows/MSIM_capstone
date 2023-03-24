@@ -1,0 +1,11 @@
+Big Picture notes:
+
+
+	Create Base Object - Plan out the structure
+		PositionalData (Mapped out by distance from tag)
+		RotationalData
+		AnchorData
+		Methods
+		Sensors (callbacks)
+
+	How do we structure the framework?
