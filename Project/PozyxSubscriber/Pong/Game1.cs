@@ -117,7 +117,7 @@ namespace Ping_Pong
             sim.StartEnvironment();
             while (!sim.ConnectedStatus) ;
 
-            simObject.Calibrate(sim, 30.0f, SCREEN_HEIGHT / 2 - m_paddle1.Height / 2, 0.0f);
+            simObject.Calibrate(sim, m_paddle1.Y, 30.0f, 0.0f);
         }
 
         /// <summary>
@@ -473,7 +473,7 @@ namespace Ping_Pong
 
             //update paddle position from tag info
             
-            m_paddle1.Y = Math.Abs(simObject.Position.x) / 3;
+            m_paddle1.Y = Math.Abs((SCREEN_HEIGHT - simObject.Position.x)) / 3;
 
             // check the controller, PLAYER TWO
             PlayerUp =

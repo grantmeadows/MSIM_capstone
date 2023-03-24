@@ -97,7 +97,6 @@ namespace PozyxSubscriber.Framework
                 {
                     _down = data.Acceleration[0];
                 }
-                _calibrated = true;
                 bool usedV = false;
                 int count = 0;
                 PozyxVector sum = new PozyxVector();
@@ -105,7 +104,7 @@ namespace PozyxSubscriber.Framework
                 PozyxVector[] Data = new PozyxVector[_refreshRate];
                 int v = _tagdata.Count() - _refreshRate;
                 int i;
-                for (i = _tagdata.Count() - 1; i > (_tagdata.Count() - _refreshRate - 1); i--)
+                for (i = _tagdata.Count() - 1; i > (_tagdata.Count() - _refreshRate); i--)
                 {
                     if (_tagdata[i].good)
                     {
@@ -137,6 +136,7 @@ namespace PozyxSubscriber.Framework
                 _position = normalize(Data, count, sum);
                 _velocity = (_position - previousPosition);
             }
+            _calibrated = true;
         }
 
 
