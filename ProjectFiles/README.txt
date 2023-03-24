@@ -1,1 +1,0 @@
-Folder for all code and project files
