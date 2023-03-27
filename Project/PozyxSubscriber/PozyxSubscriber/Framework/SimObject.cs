@@ -135,8 +135,9 @@ namespace PozyxSubscriber.Framework
                 }
                 _position = normalize(Data, count, sum);
                 _velocity = (_position - previousPosition);
+                _calibrated = true;
             }
-            _calibrated = true;
+            
         }
 
 

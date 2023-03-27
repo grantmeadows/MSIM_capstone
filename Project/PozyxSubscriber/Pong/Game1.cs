@@ -107,7 +107,8 @@ namespace Ping_Pong
             sim = SimEnvironment.Instance;
             simObject = new SimObject();
 
-            sim.Initialize(host, port,"Pong.txt", 2);
+            //sim.Initialize(host, port,"Pong.txt", 2);
+            sim.Initialize("Pong.txt", 15);
             Tag t1 = sim.newTag(tag1, 15);
             //Tag t2 = sim.newTag(tag2, 15);
 
