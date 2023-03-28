@@ -198,7 +198,6 @@ namespace PozyxSubscriber.Framework
         /// <summary>
         /// an object that can be represented by the simulation environment
         /// </summary>
-
         private List<Tag> _tags;
         private PozyxVector _position;
         private PozyxVector _orientation;
@@ -220,6 +219,16 @@ namespace PozyxSubscriber.Framework
             
         }
 
+        /// <summary>
+        /// List of tags attatched to object
+        /// </summary>
+        public List<Tag> Tags
+        { 
+            get 
+            { 
+                return _tags; 
+            } 
+        }
 
         /// <summary>
         /// PozyxVector: The Position of the current Simobject
