@@ -96,11 +96,14 @@ namespace PozyxSubscriber.Framework
             {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (!_calibrated)
                 {
                     _down = data.Acceleration[0];
                 }
 =======
+=======
+>>>>>>> parent of ef7a427 (Acceleration)
 =======
 >>>>>>> parent of ef7a427 (Acceleration)
                 _calibrated = true;
