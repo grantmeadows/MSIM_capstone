@@ -356,7 +356,25 @@ namespace PozyxSubscriber.Framework
         {
             Calibrate(S);
             PozyxVector P = new PozyxVector(xpos, ypos, zpos);
-            _posoffset += (_position * _scale) + P;
+            _posoffset += (_position * _scale) - P;
+        }
+
+        /// <summary>
+        /// sets the SimObject's current position in the real world be the set pos values, and reinitializes its coordinate readings.
+        /// Sets current real world orientation to 0
+        /// Must be done after attaching tags to a SimObject, SimulationEnvironment must be running and connected
+        /// </summary>
+        /// <param name="S"> The tag to attach to the object </param>
+        /// <param name="xpos"> the x origin </param>
+        /// <param name="ypos"> the y origin </param>
+        /// <param name="zpos"> the z origin </param>
+        /// <param name="scale"> the scale of the position's displacement </param>
+        public void Calibrate(SimEnvironment S, float xpos, float ypos, float zpos, float scale)
+        {
+            Calibrate(S);
+            PozyxVector P = new PozyxVector(xpos, ypos, zpos);
+            _scale = scale;
+            _posoffset += (_position * _scale) - P;
         }
 
 
