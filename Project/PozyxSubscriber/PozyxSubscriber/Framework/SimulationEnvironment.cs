@@ -172,7 +172,7 @@ namespace PozyxSubscriber.Framework
                 else
                 {
                     _tagIDs.Add(ID);
-                    _tags[ID] = new Tag(this, ID, _refreshRate);
+                    _tags[ID] = new Tag(ID, _refreshRate);
                     _tags[ID].AddData(newData);
                 }
 
@@ -196,7 +196,7 @@ namespace PozyxSubscriber.Framework
                 throw new Exception("tag declared twice within Pozyx Environment");
             }
             _tagIDs.Add(ID);
-            _tags[ID] = new Tag(this, ID, refreshRate);
+            _tags[ID] = new Tag(ID, refreshRate);
             _tags[ID].AddData(new PosData());
             return _tags[ID];
         }

@@ -38,8 +38,9 @@ namespace PozyxSubscriber.Framework
         /// <summary>
         /// Tag Constructor
         /// </summary>
-        public Tag(SimEnvironment S, string ID, int RefreshRate)
+        public Tag(string ID, int RefreshRate)
         {
+            SimEnvironment S = SimEnvironment.Instance;
             _id = ID;
             _tagdata = new List<PosData>();
             _position = new PozyxVector();
@@ -135,8 +136,9 @@ namespace PozyxSubscriber.Framework
                 }
                 _position = normalize(Data, count, sum);
                 _velocity = (_position - previousPosition);
+                _calibrated = true;
             }
-            _calibrated = true;
+            
         }
 
 
@@ -286,8 +288,9 @@ namespace PozyxSubscriber.Framework
         /// sets the SimObject's current position and orientation in the real world be the default 0, and reinitializes its coordinate readings.
         /// Must be done after attaching tags to a SimObject, SimulationEnvironment must be running
         /// </summary>
-        public void Calibrate(SimEnvironment S)
+        public void Calibrate()
         {
+            SimEnvironment S = SimEnvironment.Instance;
             Console.Write("Calibrating..  ");
             if (!S.ConnectedStatus) { throw new Exception("Cannot calibrate if Sim environment is not connected or running"); }
             if (_tags.Count > 0)
@@ -337,9 +340,9 @@ namespace PozyxSubscriber.Framework
         /// <param name="xpos"> the x origin </param>
         /// <param name="ypos"> the y origin </param>
         /// <param name="zpos"> the z origin </param>
-        public void Calibrate(SimEnvironment S, float xpos, float ypos, float zpos)
+        public void Calibrate(float xpos, float ypos, float zpos)
         {
-            Calibrate(S);
+            Calibrate();
             PozyxVector P = new PozyxVector(xpos, ypos, zpos);
             _posoffset += P;
         }
