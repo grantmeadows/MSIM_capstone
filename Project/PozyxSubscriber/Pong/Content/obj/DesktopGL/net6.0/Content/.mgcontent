@@ -4,13 +4,13 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Grant/Desktop/School_ODU/Senior_Spring/Capstone/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/ball.png</File>
-    <File>C:/Users/Grant/Desktop/School_ODU/Senior_Spring/Capstone/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/myName.spritefont</File>
-    <File>C:/Users/Grant/Desktop/School_ODU/Senior_Spring/Capstone/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/score.spritefont</File>
-    <File>C:/Users/Grant/Desktop/School_ODU/Senior_Spring/Capstone/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/backgroundMusic.mp3</File>
-    <File>C:/Users/Grant/Desktop/School_ODU/Senior_Spring/Capstone/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/onBoarderHit.wav</File>
-    <File>C:/Users/Grant/Desktop/School_ODU/Senior_Spring/Capstone/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/onPaddleHit.wav</File>
-    <File>C:/Users/Grant/Desktop/School_ODU/Senior_Spring/Capstone/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/table.png</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/ball.png</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/myName.spritefont</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/score.spritefont</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/backgroundMusic.mp3</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/onBoarderHit.wav</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/onPaddleHit.wav</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/table.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

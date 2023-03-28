@@ -232,16 +232,16 @@ namespace PozyxSubscriber.Framework
             return T;
         }
 
-        public float GetDistanceBetweenTags(string t1, string t2)
-        {
-            PozyxVector t1Pos = _tags[t1].Position;
-            PozyxVector t2Pos = _tags[t2].Position;
+        //public float GetDistanceBetweenTags(string t1, string t2)
+        //{
+        //    PozyxVector t1Pos = _tags[t1].Position;
+        //    //PozyxVector t2Pos = _tags[t2].Position;
 
-            float lhs = (float)MathF.Pow(t2Pos.x - t1Pos.x, 2);
-            float rhs = (float)MathF.Pow(t2Pos.y - t1Pos.y, 2);
+        //    float lhs = (float)MathF.Pow(t2Pos.x - t1Pos.x, 2);
+        //    float rhs = (float)MathF.Pow(t2Pos.y - t1Pos.y, 2);
 
-            return MathF.Sqrt(lhs + rhs);
-        }
+        //    return MathF.Sqrt(lhs + rhs);
+        //}
 
 
         /// <summary>

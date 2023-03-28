@@ -61,8 +61,8 @@ namespace Ping_Pong
         Rectangle m_backgroundDims = new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
         // constants
-        const int SCREEN_WIDTH = (4000 / 3);
-        const int SCREEN_HEIGHT = (3000 / 3);
+        const int SCREEN_WIDTH = (1280);
+        const int SCREEN_HEIGHT = (720);
 
         public Game1()
         {
@@ -83,9 +83,10 @@ namespace Ping_Pong
             IsFixedTimeStep = true;
             TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 33);
 
-            InitializeSimEnviornment();
+            
             InitScreen();
             InitGameObjects();
+            InitializeSimEnviornment();
 
             base.Initialize();
         }
@@ -100,24 +101,24 @@ namespace Ping_Pong
             var port = 1883;
             int numTags = 2;
             tag1 = "5772";
-            tag2 = "6985";
+            //tag2 = "6985";
 
-            int tagRefreshRate = 5;
+            int tagRefreshRate = 24;
 
             sim = SimEnvironment.Instance;
             simObject = new SimObject();
 
             sim.Initialize(host, port,"Pong.txt", tagRefreshRate);
-            Tag t1 = sim.newTag(tag1, 15);
-            Tag t2 = sim.newTag(tag2, 15);
+            Tag t1 = sim.newTag(tag1, tagRefreshRate);
+            //Tag t2 = sim.newTag(tag2, 15);
 
             simObject.AddTag(t1);
-            simObject.AddTag(t2);
+            //simObject.AddTag(t2);
 
             sim.StartEnvironment();
             while (!sim.ConnectedStatus) ;
 
-            simObject.Calibrate(sim);
+            simObject.Calibrate(sim, m_paddle1.X, m_paddle1.Y, 0.0f);
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Ping_Pong
             m_paddle2 = new Paddle();
 
             // set the size of the paddles
-            paddleWidth = (sim.GetDistanceBetweenTags(tag1, tag2) / 3);
+            paddleWidth = 100.0f;
             m_paddle1.Width = 15.0f;
             m_paddle1.Height = paddleWidth;
             m_paddle2.Width = 15.0f;

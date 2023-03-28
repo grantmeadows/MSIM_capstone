@@ -31,7 +31,7 @@ namespace PozyxSubscriber.Application
             SimObject S = new SimObject();
 
             S.AddTag(T1);
-            S.AddTag(T2);
+            //S.AddTag(T2);
             sim.StartEnvironment();
 
             while (!sim.ConnectedStatus) ;

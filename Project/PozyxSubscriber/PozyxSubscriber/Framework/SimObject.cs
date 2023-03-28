@@ -91,7 +91,7 @@ namespace PozyxSubscriber.Framework
         public void AddData(PosData data)
         {
             _tagdata.Add(data);
-            if (_tagdata.Count() >= _refreshRate)
+            if (_tagdata.Count() >= _refreshRate*2)
             {
                 if (!_calibrated)
                 {
@@ -126,6 +126,7 @@ namespace PozyxSubscriber.Framework
                         SumA = (SumA / CountA) - _down;
                         PozyxVector PositVector = (SumA * (1 / 2)) + (_velocity) + _position;
                         Data[count] = previousPosition;
+                        count++;
 
                     }
                 }
@@ -137,9 +138,9 @@ namespace PozyxSubscriber.Framework
                 _position = normalize(Data, count, sum);
                 _velocity = (_position - previousPosition);
                 _calibrated = true;
-                if ( _tagdata.Count == _refreshRate*4)
+                if ( _tagdata.Count == _refreshRate*4+1)
                 {
-                    _tagdata.RemoveAt(_refreshRate * 4);
+                    _tagdata.RemoveAt(0);
                 }
             }
 
