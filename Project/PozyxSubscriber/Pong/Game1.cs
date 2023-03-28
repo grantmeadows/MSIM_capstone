@@ -108,7 +108,8 @@ namespace Ping_Pong
             sim = SimEnvironment.Instance;
             simObject = new SimObject();
 
-            sim.Initialize(host, port,"Pong.txt", tagRefreshRate);
+            //sim.Initialize(host, port,"Pong.txt", tagRefreshRate);
+            sim.Initialize("Pong.txt", tagRefreshRate);
             Tag t1 = sim.newTag(tag1, tagRefreshRate);
             //Tag t2 = sim.newTag(tag2, 15);
 
@@ -117,7 +118,7 @@ namespace Ping_Pong
 
             sim.StartEnvironment();
             while (!sim.ConnectedStatus) ;
-
+            simObject.Scale = 0.3f;
             simObject.Calibrate(sim, m_paddle1.X, m_paddle1.Y, 0.0f);
         }
 
@@ -473,7 +474,7 @@ namespace Ping_Pong
                 pad1.DPad.Down == ButtonState.Pressed;
 
             //update paddle position from tag info
-            m_paddle1.Y = simObject.Position.y / 3;
+            m_paddle1.Y = -simObject.Position.y;
 
             // check the controller, PLAYER TWO
             PlayerUp =

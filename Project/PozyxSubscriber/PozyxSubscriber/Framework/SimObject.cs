@@ -213,6 +213,8 @@ namespace PozyxSubscriber.Framework
         private PozyxVector O_Vector;
         private PozyxVector _posoffset;
 
+        private float _scale;
+
         /// <summary>
         /// SimObject Constructor
         /// </summary>
@@ -224,6 +226,7 @@ namespace PozyxSubscriber.Framework
             O_Vector = new PozyxVector();
             O_Vectors = new List<PozyxVector>();
             _tags = new List<Tag>();
+            _scale = 1;
             
         }
 
@@ -236,8 +239,14 @@ namespace PozyxSubscriber.Framework
             get
             {
                 Update();
-                return _position - _posoffset;
+                return (_position * _scale) - _posoffset;
             }
+        }
+
+        public float Scale
+        {
+            get {return _scale;}
+            set {_scale = value;}
         }
 
 
@@ -347,7 +356,7 @@ namespace PozyxSubscriber.Framework
         {
             Calibrate(S);
             PozyxVector P = new PozyxVector(xpos, ypos, zpos);
-            _posoffset += _position + P;
+            _posoffset += (_position * _scale) + P;
         }
 
 
