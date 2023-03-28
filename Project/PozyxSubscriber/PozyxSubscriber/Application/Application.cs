@@ -11,20 +11,20 @@ namespace PozyxSubscriber.Application
     {
         static public void Main(string[] args)
         {
-            int tagRefreshRate = 15;
+            int tagRefreshRate = 24;
 
-            string tag1 = "5974";
-            string tag2 = "7000";
+            string tag1 = "5772";
+            string tag2 = "6985";
 
             SimEnvironment sim = SimEnvironment.Instance;
 
             var host = "10.0.0.254";
             var port = 1883;
 
-           // sim.Initialize(host, port, "March21(4).txt", tagRefreshRate);
+           sim.Initialize(host, port, "March28_4.txt", tagRefreshRate);
 
 
-            sim.Initialize("March21(4).txt", tagRefreshRate);
+            //sim.Initialize("March21(4).txt", tagRefreshRate);
 
             Tag T1 = sim.newTag(tag1, tagRefreshRate);
             Tag T2 = sim.newTag(tag2, tagRefreshRate);

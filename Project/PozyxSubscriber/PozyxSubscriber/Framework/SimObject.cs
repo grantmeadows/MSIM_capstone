@@ -97,7 +97,7 @@ namespace PozyxSubscriber.Framework
                 {
                     _down = data.Acceleration[0];
                 }
-                _calibrated = true;
+               
                 bool usedV = false;
                 int count = 0;
                 PozyxVector sum = new PozyxVector();
@@ -136,7 +136,13 @@ namespace PozyxSubscriber.Framework
                 }
                 _position = normalize(Data, count, sum);
                 _velocity = (_position - previousPosition);
+                _calibrated = true;
+                if ( _tagdata.Count == _refreshRate*4)
+                {
+                    _tagdata.RemoveAt(_refreshRate * 4);
+                }
             }
+
         }
 
 
@@ -322,7 +328,6 @@ namespace PozyxSubscriber.Framework
                     O_Vector = sum / count;
                 }
                 Update();
-                _posoffset = _position;
             }
             Console.WriteLine("Calibration Complete..");
         }
@@ -341,7 +346,7 @@ namespace PozyxSubscriber.Framework
         {
             Calibrate(S);
             PozyxVector P = new PozyxVector(xpos, ypos, zpos);
-            _posoffset += P;
+            _posoffset += _position + P;
         }
 
 
