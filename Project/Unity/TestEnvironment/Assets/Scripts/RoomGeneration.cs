@@ -1,4 +1,5 @@
 using Cinemachine;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ProBuilder;
 
@@ -6,34 +7,63 @@ using UnityEngine.ProBuilder;
 public class RoomGeneration : MonoBehaviour
 {
     public GameObject AnchorPrefab;
-    public Vector3[] AnchorLoc;
+    public List<Vector3> AnchorLoc;
     public Material RoomMaterial;
+    private List<int> FloorFaces = new List<int>();
 
     void Start()
     {
         var targetGroup = GameObject.Find("TargetGroup").GetComponent<CinemachineTargetGroup>();
+        float max_X = int.MinValue;
+        float min_X = int.MaxValue;
+        float max_Z = int.MinValue;
+        float min_Z = int.MaxValue;
 
         // Anchor Placement
-        for (int i = 0; i < AnchorLoc.Length; i++)
+        for (int i = 0; i < AnchorLoc.Count; i++)
         {
             GameObject a = Instantiate(AnchorPrefab);
             a.transform.position = AnchorLoc[i];
             a.transform.parent = this.transform;
             a.name = "Anchor " + i;
 
+            if (AnchorLoc[i].x > max_X)
+            {
+                max_X = AnchorLoc[i].x;
+            }
+            if (AnchorLoc[i].z > max_Z)
+            {
+                max_Z = AnchorLoc[i].z;
+            }
+            if (AnchorLoc[i].x < min_X)
+            {
+                min_X = AnchorLoc[i].x;
+            }
+            if (AnchorLoc[i].z < min_Z)
+            {
+                min_Z = AnchorLoc[i].z;
+            }
+
+            FloorFaces.Add(AnchorLoc.Count);
+            FloorFaces.Add(i);
+            if(i < AnchorLoc.Count - 1)
+            {
+                FloorFaces.Add(i + 1);
+            }
+            else
+            {
+                FloorFaces.Add(0);
+            }
+
             targetGroup.AddMember(a.transform, 1, 0.25f);
         }
 
-        // Floor Placement
+        // Clockwise Anchor Floor Placement
+        AnchorLoc.Add(new Vector3((max_X - min_X) / 2, 0f, (max_Z - min_Z) / 2));
+        Debug.Log(FloorFaces);
         ProBuilderMesh quad = ProBuilderMesh.Create(
-            new Vector3[]
-            {
-                new Vector3(AnchorLoc[0].x, 0f, AnchorLoc[0].z),
-                new Vector3(AnchorLoc[1].x, 0f, AnchorLoc[1].z),
-                new Vector3(AnchorLoc[2].x, 0f, AnchorLoc[2].z),
-                new Vector3(AnchorLoc[3].x, 0f, AnchorLoc[3].z)
-            },
-            new Face[] { new Face(new int[] { 0, 1, 2, 0, 2, 3 }) }
+            AnchorLoc.ToArray(),
+            new Face[] { new Face(FloorFaces.ToArray()) }
             );
         quad.GetComponent<MeshRenderer>().material = RoomMaterial;
         quad.GetComponent<MeshRenderer>().receiveShadows = false;
