@@ -21,10 +21,10 @@ namespace PozyxSubscriber.Application
             var host = "10.0.0.254";
             var port = 1883;
 
-           // sim.Initialize(host, port, "March21(4).txt", tagRefreshRate);
+           sim.Initialize(host, port, "AccuracyTest1.txt", tagRefreshRate);
 
 
-            sim.Initialize("March21(4).txt", tagRefreshRate);
+            //sim.Initialize("March21(4).txt", tagRefreshRate);
 
             Tag T1 = sim.newTag(tag1, tagRefreshRate);
             Tag T2 = sim.newTag(tag2, tagRefreshRate);
@@ -36,7 +36,7 @@ namespace PozyxSubscriber.Application
 
             while (!sim.ConnectedStatus) ;
 
-            S.Calibrate(sim, 0.0f, 0.0f, 0.0f);
+            S.Calibrate(0.0f, 0.0f, 0.0f);
 
             while (sim.ConnectedStatus)
             {

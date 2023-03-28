@@ -98,18 +98,17 @@ namespace Ping_Pong
         {
             var host = "10.0.0.254";
             var port = 1883;
-            int numTags = 2;
             tag1 = "5772";
             tag2 = "6985";
 
-            int tagRefreshRate = 5;
+            int tagRefreshRate = 15;
 
             sim = SimEnvironment.Instance;
             simObject = new SimObject();
 
-            //sim.Initialize(host, port,"Pong.txt", 2);
-            sim.Initialize("Pong.txt", 15);
-            Tag t1 = sim.newTag(tag1, 15);
+            sim.Initialize(host, port,"PongMarch28.txt", tagRefreshRate);
+            //sim.Initialize("Pong.txt", 15);
+            Tag t1 = sim.newTag(tag1, tagRefreshRate);
             //Tag t2 = sim.newTag(tag2, 15);
 
             simObject.AddTag(t1);
@@ -118,7 +117,7 @@ namespace Ping_Pong
             sim.StartEnvironment();
             while (!sim.ConnectedStatus) ;
 
-            simObject.Calibrate(sim, m_paddle1.Y, 30.0f, 0.0f);
+            simObject.Calibrate(m_paddle1.Y, 30.0f, 0.0f);
         }
 
         /// <summary>
