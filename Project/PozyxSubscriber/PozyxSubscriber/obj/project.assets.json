@@ -96,24 +96,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cmoor\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Grant\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
+      "projectUniqueName": "C:\\Users\\Grant\\Desktop\\School_ODU\\Senior_Spring\\Capstone\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
       "projectName": "PozyxSubscriber",
-      "projectPath": "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
-      "packagesPath": "C:\\Users\\cmoor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cmoor\\Documents\\GitHub\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\obj\\",
+      "projectPath": "C:\\Users\\Grant\\Desktop\\School_ODU\\Senior_Spring\\Capstone\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\PozyxSubscriber.csproj",
+      "packagesPath": "C:\\Users\\Grant\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Grant\\Desktop\\School_ODU\\Senior_Spring\\Capstone\\MSIM_capstone\\Project\\PozyxSubscriber\\PozyxSubscriber\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\cmoor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Grant\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -121,7 +116,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
