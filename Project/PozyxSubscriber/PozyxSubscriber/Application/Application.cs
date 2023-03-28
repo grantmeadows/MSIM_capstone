@@ -11,17 +11,21 @@ namespace PozyxSubscriber.Application
     {
         static public void Main(string[] args)
         {
-            int tagRefreshRate = 15;
+            int tagRefreshRate = 24;
 
-            string tag1 = "5974";
-            string tag2 = "7000";
+            string tag1 = "5772";
+            string tag2 = "6985";
 
             SimEnvironment sim = SimEnvironment.Instance;
 
             var host = "10.0.0.254";
             var port = 1883;
 
+<<<<<<< HEAD
            sim.Initialize(host, port, "AccuracyTest1.txt", tagRefreshRate);
+=======
+           sim.Initialize(host, port, "March28_4.txt", tagRefreshRate);
+>>>>>>> Revert2
 
 
             //sim.Initialize("March21(4).txt", tagRefreshRate);
@@ -31,7 +35,7 @@ namespace PozyxSubscriber.Application
             SimObject S = new SimObject();
 
             S.AddTag(T1);
-            S.AddTag(T2);
+            //S.AddTag(T2);
             sim.StartEnvironment();
 
             while (!sim.ConnectedStatus) ;

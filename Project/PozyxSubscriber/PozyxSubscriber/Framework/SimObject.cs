@@ -92,12 +92,16 @@ namespace PozyxSubscriber.Framework
         public void AddData(PosData data)
         {
             _tagdata.Add(data);
-            if (_tagdata.Count() >= _refreshRate)
+            if (_tagdata.Count() >= _refreshRate*2)
             {
                 if (!_calibrated)
                 {
                     _down = data.Acceleration[0];
                 }
+<<<<<<< HEAD
+=======
+               
+>>>>>>> Revert2
                 bool usedV = false;
                 int count = 0;
                 PozyxVector sum = new PozyxVector();
@@ -126,6 +130,7 @@ namespace PozyxSubscriber.Framework
                         SumA = (SumA / CountA) - _down;
                         PozyxVector PositVector = (SumA * (1 / 2)) + (_velocity) + _position;
                         Data[count] = previousPosition;
+                        count++;
 
                     }
                 }
@@ -137,8 +142,17 @@ namespace PozyxSubscriber.Framework
                 _position = normalize(Data, count, sum);
                 _velocity = (_position - previousPosition);
                 _calibrated = true;
+<<<<<<< HEAD
             }
             
+=======
+                if ( _tagdata.Count == _refreshRate*4+1)
+                {
+                    _tagdata.RemoveAt(0);
+                }
+            }
+
+>>>>>>> Revert2
         }
 
 
@@ -208,6 +222,8 @@ namespace PozyxSubscriber.Framework
         private PozyxVector O_Vector;
         private PozyxVector _posoffset;
 
+        private float _scale;
+
         /// <summary>
         /// SimObject Constructor
         /// </summary>
@@ -219,6 +235,7 @@ namespace PozyxSubscriber.Framework
             O_Vector = new PozyxVector();
             O_Vectors = new List<PozyxVector>();
             _tags = new List<Tag>();
+            _scale = 1;
             
         }
 
@@ -231,8 +248,14 @@ namespace PozyxSubscriber.Framework
             get
             {
                 Update();
-                return _position - _posoffset;
+                return (_position * _scale) - _posoffset;
             }
+        }
+
+        public float Scale
+        {
+            get {return _scale;}
+            set {_scale = value;}
         }
 
 
@@ -325,7 +348,6 @@ namespace PozyxSubscriber.Framework
                     O_Vector = sum / count;
                 }
                 Update();
-                _posoffset = _position;
             }
             Console.WriteLine("Calibration Complete..");
         }
@@ -344,7 +366,25 @@ namespace PozyxSubscriber.Framework
         {
             Calibrate();
             PozyxVector P = new PozyxVector(xpos, ypos, zpos);
-            _posoffset += P;
+            _posoffset += (_position * _scale) - P;
+        }
+
+        /// <summary>
+        /// sets the SimObject's current position in the real world be the set pos values, and reinitializes its coordinate readings.
+        /// Sets current real world orientation to 0
+        /// Must be done after attaching tags to a SimObject, SimulationEnvironment must be running and connected
+        /// </summary>
+        /// <param name="S"> The tag to attach to the object </param>
+        /// <param name="xpos"> the x origin </param>
+        /// <param name="ypos"> the y origin </param>
+        /// <param name="zpos"> the z origin </param>
+        /// <param name="scale"> the scale of the position's displacement </param>
+        public void Calibrate(SimEnvironment S, float xpos, float ypos, float zpos, float scale)
+        {
+            Calibrate(S);
+            PozyxVector P = new PozyxVector(xpos, ypos, zpos);
+            _scale = scale;
+            _posoffset += (_position * _scale) - P;
         }
 
 

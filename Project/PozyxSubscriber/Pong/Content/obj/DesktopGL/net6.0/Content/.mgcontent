@@ -4,6 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+<<<<<<< HEAD
     <File>C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/ball.png</File>
     <File>C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/myName.spritefont</File>
     <File>C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/score.spritefont</File>
@@ -11,6 +12,15 @@
     <File>C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/onBoarderHit.wav</File>
     <File>C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/onPaddleHit.wav</File>
     <File>C:/Users/SpaticTech/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/table.png</File>
+=======
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/ball.png</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/myName.spritefont</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/score.spritefont</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/backgroundMusic.mp3</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/onBoarderHit.wav</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/soundEffects/onPaddleHit.wav</File>
+    <File>C:/Users/cmoor/Documents/GitHub/MSIM_capstone/Project/PozyxSubscriber/Pong/Content/table.png</File>
+>>>>>>> Revert2
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
