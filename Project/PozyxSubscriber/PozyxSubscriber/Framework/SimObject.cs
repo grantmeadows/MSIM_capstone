@@ -95,11 +95,14 @@ namespace PozyxSubscriber.Framework
             if (_tagdata.Count() >= _refreshRate)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (!_calibrated)
                 {
                     _down = data.Acceleration[0];
                 }
 =======
+=======
+>>>>>>> parent of ef7a427 (Acceleration)
                 _calibrated = true;
 >>>>>>> parent of ef7a427 (Acceleration)
                 bool usedV = false;
