@@ -1,4 +1,4 @@
-using PozyxSubscriber;
+using PozyxPositioner;
 using System;
 
 namespace Ping_Pong

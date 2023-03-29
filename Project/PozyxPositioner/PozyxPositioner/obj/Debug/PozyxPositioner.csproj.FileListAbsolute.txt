@@ -1,0 +1,10 @@
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\obj\Debug\PozyxPositioner.csproj.AssemblyReference.cache
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\obj\Debug\PozyxPositioner.csproj.CoreCompileInputs.cache
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\bin\Debug\PozyxPositioner.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\bin\Debug\PozyxPositioner.pdb
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\bin\Debug\MQTTnet.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\bin\Debug\Newtonsoft.Json.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\bin\Debug\Newtonsoft.Json.xml
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\obj\Debug\PozyxPositioner.csproj.CopyComplete
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\obj\Debug\PozyxPositioner.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\obj\Debug\PozyxPositioner.pdb

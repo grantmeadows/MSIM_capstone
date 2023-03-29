@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 
-namespace PozyxSubscriber.Framework
+namespace PozyxPositioner.Framework
 {
 
     public class Tag

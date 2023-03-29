@@ -48,9 +48,6 @@ C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\D
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\Content\soundEffects\onBoarderHit.ogg
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\Content\soundEffects\onHitPaddle.ogg
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\Content\soundEffects\onHitPaddle.xnb
-C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\PozyxSubscriber.deps.json
-C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\PozyxSubscriber.runtimeconfig.json
-C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\PozyxSubscriber.exe
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\Content\ball.xnb
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\Content\myName.xnb
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\Content\score.xnb

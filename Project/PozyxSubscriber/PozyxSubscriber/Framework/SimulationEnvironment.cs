@@ -11,7 +11,7 @@ using Newtonsoft.Json.Linq;
 using System.Data;
 using System.Linq.Expressions;
 
-namespace PozyxSubscriber.Framework
+namespace PozyxPositioner.Framework
 {
 
     /// <summary>

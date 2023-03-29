@@ -1,0 +1,10 @@
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\bin\Release\PozyxPositioner.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\bin\Release\PozyxPositioner.pdb
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\bin\Release\MQTTnet.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\bin\Release\Newtonsoft.Json.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\bin\Release\Newtonsoft.Json.xml
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\obj\Release\PozyxPositioner.csproj.AssemblyReference.cache
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\obj\Release\PozyxPositioner.csproj.CoreCompileInputs.cache
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\obj\Release\PozyxPositioner.csproj.CopyComplete
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\obj\Release\PozyxPositioner.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxPositioner\PozyxPositioner\obj\Release\PozyxPositioner.pdb

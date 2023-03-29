@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace PozyxSubscriber.Framework
+namespace PozyxPositioner.Framework
 {
     /// <summary>
     /// Contains a set of position data

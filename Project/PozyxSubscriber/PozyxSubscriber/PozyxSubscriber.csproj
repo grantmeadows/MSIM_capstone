@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Application\**" />
+    <EmbeddedResource Remove="Application\**" />
+    <None Remove="Application\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Framework\Anchor.cs" />
     <Compile Remove="SimulationEnviornment.cs" />
   </ItemGroup>

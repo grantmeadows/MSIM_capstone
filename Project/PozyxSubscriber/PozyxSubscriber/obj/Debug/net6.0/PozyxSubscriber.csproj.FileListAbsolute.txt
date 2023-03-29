@@ -45,16 +45,10 @@ C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubsc
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.dll
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\refint\PozyxSubscriber.dll
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.pdb
-C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\PozyxSubscriber.exe
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\PozyxSubscriber.deps.json
-C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\PozyxSubscriber.runtimeconfig.json
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\PozyxSubscriber.dll
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\PozyxSubscriber.pdb
-C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\MQTTnet.dll
-C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.csproj.CopyComplete
-C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.genruntimeconfig.cache
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\ref\PozyxSubscriber.dll
-C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\PozyxSubscriber.exe
 C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\PozyxSubscriber.deps.json
@@ -74,3 +68,9 @@ C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\MSIM_capstone\Project\P
 C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.pdb
 C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.genruntimeconfig.cache
 C:\Users\Grant\Desktop\School_ODU\Senior_Spring\Capstone\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\ref\PozyxSubscriber.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\PozyxSubscriber.exe
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\PozyxSubscriber.runtimeconfig.json
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\MQTTnet.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.csproj.CopyComplete
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\PozyxSubscriber\obj\Debug\net6.0\PozyxSubscriber.genruntimeconfig.cache

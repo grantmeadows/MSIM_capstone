@@ -108,3 +108,4 @@ C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGa
 C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\obj\Debug\net6.0\ref\MyFirstGame.dll
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\Content\RedDot.xnb
 C:\Users\SpaticTech\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\Content\RedDot.xnb
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\MyFirstGame\MyFirstGame\bin\Debug\net6.0\PozyxPositioner.pdb

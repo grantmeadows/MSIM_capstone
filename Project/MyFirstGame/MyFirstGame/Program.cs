@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PozyxSubscriber;
-using PozyxSubscriber.Framework;
+using PozyxPositioner;
+using PozyxPositioner.Framework;
 
 namespace MyFirstGame
 {
@@ -22,9 +22,9 @@ namespace MyFirstGame
             int tagRefreshRate = 15;
 
             //Comment out for real ltime tracking
-            sim.Initialize(host, port, "March21(4).txt", tagRefreshRate);
+            //sim.Initialize(host, port, "March21(4).txt", tagRefreshRate);
 
-            //sim.Initialize("rotation.txt", tagRefreshRate);
+            sim.Initialize("rotation1.txt", tagRefreshRate);
 
             //id of tag to track
             string[] TAGID = new string[2];
