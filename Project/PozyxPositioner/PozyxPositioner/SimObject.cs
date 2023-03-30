@@ -212,6 +212,7 @@ namespace PozyxPositioner.Framework
         private List<PozyxVector> O_Vectors;
         private PozyxVector O_Vector;
         private PozyxVector _posoffset;
+        private bool _calibrated;
 
         private float _scale;
 
@@ -228,7 +229,7 @@ namespace PozyxPositioner.Framework
             O_Vectors = new List<PozyxVector>();
             _tags = new List<Tag>();
             _scale = 1;
-            
+            _calibrated = false;
         }
 
 
@@ -244,10 +245,22 @@ namespace PozyxPositioner.Framework
             }
         }
 
+
+        /// <summary>
+        /// float: The Scale value of the Object's displacement
+        /// </summary>
         public float Scale
         {
             get {return _scale;}
             set {_scale = value;}
+        }
+
+
+        /// <summary>
+        /// bool: is this SimObject is calibrated
+        /// </summary>
+        public bool Calibrated { 
+            get { return _calibrated; }
         }
 
 
@@ -320,6 +333,8 @@ namespace PozyxPositioner.Framework
         /// <param name="zpos"> the z origin </param>
         public void Calibrate(float xpos, float ypos, float zpos)
         {
+            PozyxVector P = new PozyxVector(xpos, ypos, zpos);
+            _position = P;
             SimEnvironment S = SimEnvironment.Instance;
             Task.Run(() => CalibrateAsync(S, xpos, ypos, zpos));
         }
@@ -337,6 +352,8 @@ namespace PozyxPositioner.Framework
         /// <param name="scale"> the scale of the position's displacement </param>
         public void Calibrate(float xpos, float ypos, float zpos, float scale)
         {
+            PozyxVector P = new PozyxVector(xpos, ypos, zpos);
+            _position = P;
             SimEnvironment S = SimEnvironment.Instance;
             Task.Run(() => CalibrateAsync(S, xpos, ypos, zpos, scale));
         }
@@ -379,6 +396,7 @@ namespace PozyxPositioner.Framework
                     O_Vector = sum / count;
                 }
                 Update();
+                _calibrated = true;
             }
             Console.WriteLine("Calibration Complete..");
         }
@@ -436,9 +454,6 @@ namespace PozyxPositioner.Framework
                     if (final.x < 0) { _orientation.z *= -1; }
                     if (final.x < 0) { _orientation.y *= -1; }
                     if (final.z < 0) { _orientation.x *= -1; }
-
-
-
                 }
             }
         }

@@ -9,18 +9,26 @@
 
   <ItemGroup>
     <Compile Remove="Application\**" />
+    <Compile Remove="Framework\**" />
     <EmbeddedResource Remove="Application\**" />
+    <EmbeddedResource Remove="Framework\**" />
     <None Remove="Application\**" />
+    <None Remove="Framework\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Framework\Anchor.cs" />
     <Compile Remove="SimulationEnviornment.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MQTTnet" Version="3.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PozyxPositioner">
+      <HintPath>PozyxPositioner.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -170,9 +170,9 @@ namespace PozyxPositioner.Framework
                     _tags[ID].AddData(newData);
                 else
                 {
-                    _tagIDs.Add(ID);
+                    //_tagIDs.Add(ID);
                     _tags[ID] = new Tag(ID, _refreshRate);
-                    _tags[ID].AddData(newData);
+                    //_tags[ID].AddData(newData);
                 }
 
 
@@ -194,9 +194,9 @@ namespace PozyxPositioner.Framework
             {
                 throw new Exception("tag declared twice within Pozyx Environment");
             }
-            _tagIDs.Add(ID);
+            //_tagIDs.Add(ID);
             _tags[ID] = new Tag(ID, refreshRate);
-            _tags[ID].AddData(new PosData());
+            //_tags[ID].AddData(new PosData());
             return _tags[ID];
         }
 
