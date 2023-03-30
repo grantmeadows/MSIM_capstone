@@ -1,6 +1,6 @@
 using Cinemachine;
-using PozyxSubscriber;
-using PozyxSubscriber.Framework;
+using PozyxPositioner;
+using PozyxPositioner.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +11,7 @@ public class Tag_Live : MonoBehaviour
 {
     public int numTags;
     public int tagRefreshRate;
+
     SimEnvironment sim = SimEnvironment.Instance;
 
     [System.Serializable]
@@ -38,7 +39,7 @@ public class Tag_Live : MonoBehaviour
         var port = 1883;
 
         //sim.Initialize(host, port, "Dat.txt", tagRefreshRate);
-        sim.Initialize("Assets/Data/FailureRun.txt", 15);
+        sim.Initialize("Assets/Data/FailureRun.txt", 5);
 
         foreach (var obj in objects)
         {
@@ -46,6 +47,7 @@ public class Tag_Live : MonoBehaviour
             foreach (var tagID in obj.tagIDList)
             {
                 sim.newTag(tagID, tagRefreshRate);
+
                 // Add tag to Unity
                 baseObj = new GameObject(tagID);
                 GameObject t = Instantiate(TagPrefab);
@@ -74,8 +76,11 @@ public class Tag_Live : MonoBehaviour
     {
         foreach (var id in sim.TagIDs)
         {
-            count++;
             var position = sim.GetTag(id).Position;
+
+            Debug.Log(position.x);
+            Debug.Log(position.y);
+            Debug.Log(position.z);
 
             temp = tagList.Find(x => x.name == id);
 
@@ -93,7 +98,7 @@ public class Tag_Live : MonoBehaviour
             th.transform.parent = GameObject.Find(temp.name + "_History").transform;
 
             // Move tag
-            temp.transform.position = new Vector3(position.x /1000, position.z /1000, position.y / 1000);
+            temp.transform.position = new Vector3(position.x /1000f, position.z /1000f, position.y / 1000f);
         }
                 
     }

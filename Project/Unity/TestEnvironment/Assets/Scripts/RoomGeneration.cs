@@ -44,7 +44,9 @@ public class RoomGeneration : MonoBehaviour
                 min_Z = AnchorLoc[i].z;
             }
 
-            FloorFaces.Add(AnchorLoc.Count);
+            AnchorLoc[i] = new Vector3(AnchorLoc[i].x, 0f, AnchorLoc[i].z);
+
+            FloorFaces.Add(6);
             FloorFaces.Add(i);
             if(i < AnchorLoc.Count - 1)
             {
@@ -59,8 +61,8 @@ public class RoomGeneration : MonoBehaviour
         }
 
         // Clockwise Anchor Floor Placement
-        AnchorLoc.Add(new Vector3((max_X - min_X) / 2, 0f, (max_Z - min_Z) / 2));
-        Debug.Log(FloorFaces);
+        AnchorLoc.Add(new Vector3((max_X + min_X)/2f, 0f, (max_Z + min_Z)/2f));
+
         ProBuilderMesh quad = ProBuilderMesh.Create(
             AnchorLoc.ToArray(),
             new Face[] { new Face(FloorFaces.ToArray()) }

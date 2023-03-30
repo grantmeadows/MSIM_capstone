@@ -248,12 +248,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnchorPrefab: {fileID: 8714770656263999585, guid: 003065b81bc66f44ca3669f8cbf110d2, type: 3}
   AnchorLoc:
-  - {x: -2, y: 0, z: -6}
-  - {x: -4, y: 0, z: 0}
-  - {x: 4, y: 0, z: 6}
-  - {x: 6, y: 0, z: 5}
-  - {x: 5, y: 0, z: 0}
-  - {x: 5, y: 0, z: 0}
+  - {x: 0, y: 1.627, z: 0}
+  - {x: 1.969, y: 0.577, z: 0.678}
+  - {x: 3.883, y: 1.634, z: 0.014}
+  - {x: 3.693, y: 0.581, z: -2.958}
+  - {x: 1.661, y: 1.629, z: -4.012}
+  - {x: -0.025, y: 0.575, z: -2.948}
   RoomMaterial: {fileID: 2100000, guid: 4a833dcc2d8cc3f4b92e0753b6a64a98, type: 2}
 --- !u!4 &828288721
 Transform:
@@ -589,13 +589,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1431974601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f17e58b2fea02f947b292b88cd2b2508, type: 3}
+  m_Script: {fileID: 11500000, guid: 52864b63828b52a479efd29f6b1d47e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SimulationSpeed: 1
+  numTags: 4
+  tagRefreshRate: 24
+  objects:
+  - tagIDList:
+    - 6985
+    - 7000
+    - 5974
+    - 5772
   TagPrefab: {fileID: 4656374199788638134, guid: b3a69fa79f2f1ee4db658ee2196a18e1, type: 3}
   TagMarker: {fileID: 2159924670593484831, guid: 3258bcd8f31ec1d44af142e1734966e0, type: 3}
-  FileName: FailureRun
 --- !u!1 &1563644769
 GameObject:
   m_ObjectHideFlags: 0
