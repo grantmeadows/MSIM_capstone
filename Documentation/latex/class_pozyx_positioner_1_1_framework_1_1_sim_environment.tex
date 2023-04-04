@@ -18,32 +18,32 @@ Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Environment\+:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a2163b3c6c4794224ceba0e5279b7ee8e}{Get\+Tag} (string ID)
+\begin{DoxyCompactList}\small\item\em gets a tag from the simulation environment \end{DoxyCompactList}\item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad559e17b83e87b9121d3ffd9c08e10b4}{Initialize} (string host, int port, string filename, int refresh\+Rate)
 \begin{DoxyCompactList}\small\item\em Simulation Enviorntment Constructor, creates Mqqt\+Client instance, includes a filename to log all messages starting subscription to tags topic \end{DoxyCompactList}\item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a15a540048be983d1a0ae9983272992be}{Initialize} (string host, int port, int refresh\+Rate)
 \begin{DoxyCompactList}\small\item\em Simulation Enviorntment Constructor, creates Mqqt\+Client instance starting subscription to tags topic \end{DoxyCompactList}\item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a7ede2b3fa6a7af26549b316f1649ba21}{Initialize} (string filename, int refresh\+Rate)
 \begin{DoxyCompactList}\small\item\em Simulation Enviorntment Constructor, creates reader instance will send J\+S\+ON strings in coordination to how P\+O\+Z\+YX does using a log file. Simulates reciving tag reads in realtime using a historic log \end{DoxyCompactList}\item 
-void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a0d114a29811d19d1376273cb078f6f61}{Start\+Environment} ()
-\begin{DoxyCompactList}\small\item\em Start\+Environment method, will begin tracking/reading J\+S\+ON strings and tag readings from Pozyx on a separate thread This begins populating the simulation environment \end{DoxyCompactList}\item 
-void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a94e341475ddb03c2c27dd253748ad65a}{Push\+Data} (J\+Array msgdata)
-\begin{DoxyCompactList}\small\item\em Pushes a J\+S\+ON J\+Array into the simulation \end{DoxyCompactList}\item 
 \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad523ae9a258ae7b68d7f966be92ff3bb}{new\+Tag} (string ID, int refresh\+Rate)
 \begin{DoxyCompactList}\small\item\em Adds a new tag to the simulation environment \end{DoxyCompactList}\item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ae804be21b53900cbac13c0cce385b170}{new\+Tag} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} tag)
 \begin{DoxyCompactList}\small\item\em Adds a new tag to the simulation environment \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a94e341475ddb03c2c27dd253748ad65a}{Push\+Data} (J\+Array msgdata)
+\begin{DoxyCompactList}\small\item\em Pushes a J\+S\+ON J\+Array into the simulation \end{DoxyCompactList}\item 
 \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_aa69448aa9bc85a646b57b753f5c5e483}{Remove\+Tag} (string ID)
 \begin{DoxyCompactList}\small\item\em Removes a tag from the simulation environment \end{DoxyCompactList}\item 
-\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a2163b3c6c4794224ceba0e5279b7ee8e}{Get\+Tag} (string ID)
-\begin{DoxyCompactList}\small\item\em gets a tag from the simulation environment \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a0d114a29811d19d1376273cb078f6f61}{Start\+Environment} ()
+\begin{DoxyCompactList}\small\item\em Start\+Environment method, will begin tracking/reading J\+S\+ON strings and tag readings from Pozyx on a separate thread This begins populating the simulation environment \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
+bool \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ae0d0d204695b423669bd6d0593d961aa}{Connected\+Status}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The Connection status of the M\+Q\+TT or Reader class \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a099b83d9b2af93ae755b7bd081bef37c}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a099b83d9b2af93ae755b7bd081bef37c}} 
 static \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-bool \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ae0d0d204695b423669bd6d0593d961aa}{Connected\+Status}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em The Connection status of the M\+Q\+TT or Reader class \end{DoxyCompactList}\item 
 List$<$ string $>$ \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_af1e5db7ec810b6d92216b74c3eeb657a}{Tag\+I\+Ds}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em a list of strings that contain the I\+Ds of all the active tags in the Simulation Environment \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -149,8 +149,7 @@ Adds a new tag to the simulation environment
 \begin{DoxyReturn}{Returns}
 the newly created tag 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -172,8 +171,7 @@ Adds a new tag to the simulation environment
 {\em tag} & the tag to add\\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -195,8 +193,7 @@ Pushes a J\+S\+ON J\+Array into the simulation
 {\em msgdata} & the J\+Array parsed to populate the simulation environment with\\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

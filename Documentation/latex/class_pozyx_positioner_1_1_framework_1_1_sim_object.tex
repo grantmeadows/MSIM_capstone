@@ -2,7 +2,8 @@
 \label{class_pozyx_positioner_1_1_framework_1_1_sim_object}\index{Pozyx\+Positioner.\+Framework.\+Sim\+Object@{Pozyx\+Positioner.\+Framework.\+Sim\+Object}}
 
 
-Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Object\+:\nopagebreak
+Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Object\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,29 +15,29 @@ Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Object\+:\nopageb
 \item 
 \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_acc186255ccf8c50a2de3aeaf8e65f645}{Sim\+Object} ()
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object} Constructor \end{DoxyCompactList}\item 
-bool \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a68a000516251ee3062ec72c22cc75f6d}{Contains} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} tag)
-\begin{DoxyCompactList}\small\item\em Checks to see if this \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object} has a specific tag attached to it \end{DoxyCompactList}\item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a46185130a7147410af586622732ad64a}{Add\+Tag} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} tag)
 \begin{DoxyCompactList}\small\item\em attaches a tag to this object for tracking, maximum of 2 tags must be attached for orientation measurements \end{DoxyCompactList}\item 
-void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a7cbe138ef2d7a74045a2e706ae3f59b4}{remove\+Tag} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} tag)
-\begin{DoxyCompactList}\small\item\em removes a tag from this object \end{DoxyCompactList}\item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_ae5a40c80792b6e84ae90cf31e2b5fc8f}{Calibrate} ()
 \begin{DoxyCompactList}\small\item\em sets the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}\textquotesingle{}s current position and orientation in the real world be the default 0, and reinitializes its coordinate readings. Must be done after attaching tags to a \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}, Simulation\+Environment must be running \end{DoxyCompactList}\item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_ad5e3a7c3290c1925d0e7d42a6e8b0111}{Calibrate} (float xpos, float ypos, float zpos)
 \begin{DoxyCompactList}\small\item\em sets the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}\textquotesingle{}s current position in the real world be the set pos values, and reinitializes its coordinate readings. Sets current real world orientation to 0 Must be done after attaching tags to a \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}, Simulation\+Environment must be running and connected \end{DoxyCompactList}\item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a7e07ca972f9fc7a962468f9746f9de72}{Calibrate} (float xpos, float ypos, float zpos, float scale)
-\begin{DoxyCompactList}\small\item\em sets the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}\textquotesingle{}s current position in the real world be the set pos values, and reinitializes its coordinate readings. Sets current real world orientation to 0 Must be done after attaching tags to a \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}, Simulation\+Environment must be running and connected \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em sets the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}\textquotesingle{}s current position in the real world be the set pos values, and reinitializes its coordinate readings. Sets current real world orientation to 0 Must be done after attaching tags to a \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}, Simulation\+Environment must be running and connected \end{DoxyCompactList}\item 
+bool \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a68a000516251ee3062ec72c22cc75f6d}{Contains} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} tag)
+\begin{DoxyCompactList}\small\item\em Checks to see if this \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object} has a specific tag attached to it \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a7cbe138ef2d7a74045a2e706ae3f59b4}{remove\+Tag} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} tag)
+\begin{DoxyCompactList}\small\item\em removes a tag from this object \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a1d2b2ac8c37883939483d4682826db21}{Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\begin{DoxyCompactList}\small\item\em \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\+: The Position of the current Simobject \end{DoxyCompactList}\item 
-float \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_ab9f89c4e327e25286f0269960d0d2de8}{Scale}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em float\+: The Scale value of the Object\textquotesingle{}s displacement \end{DoxyCompactList}\item 
 bool \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a6bcf32032872002b9edb17f0efc86eef}{Calibrated}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em bool\+: is this \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object} is calibrated \end{DoxyCompactList}\item 
 \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_af589d7d7066efe823f8a2decd5b081da}{Orientation}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\begin{DoxyCompactList}\small\item\em \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\+: The Orientation of the current Simobject in radians in a right handed coordinate system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\+: The Orientation of the current Simobject in radians in a right handed coordinate system. \end{DoxyCompactList}\item 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a1d2b2ac8c37883939483d4682826db21}{Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\+: The Position of the current Simobject \end{DoxyCompactList}\item 
+float \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_ab9f89c4e327e25286f0269960d0d2de8}{Scale}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em float\+: The Scale value of the Object\textquotesingle{}s displacement \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
