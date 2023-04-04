@@ -36,8 +36,18 @@ namespace PozyxPositioner.Framework
         public MqttClient(string host, int port, SimEnvironment Sim)
         {
             _sim = Sim;
+            _filename = "#";
+            this._topic = "tags";
 
-            _topic = "tags";
+
+            _options = new MqttClientOptionsBuilder()
+                .WithTcpServer(host, port)
+                .Build();
+
+            _mqttClient = new MqttFactory().CreateMqttClient();
+            _mqttClient.UseConnectedHandler(ConnectedHandler);
+            _mqttClient.UseApplicationMessageReceivedHandler(MessageHandler);
+            _mqttClient.UseDisconnectedHandler(DisconnectedHandler);
         }
 
         /// <summary>
@@ -60,7 +70,12 @@ namespace PozyxPositioner.Framework
 
             _mqttClient = new MqttFactory().CreateMqttClient();
             _mqttClient.UseConnectedHandler(ConnectedHandler);
-            _mqttClient.UseApplicationMessageReceivedHandler(MessageHandler);
+
+            if (_filename == "#")  
+                _mqttClient.UseApplicationMessageReceivedHandler(MessageHandlerNoLog);
+
+            else _mqttClient.UseApplicationMessageReceivedHandler(MessageHandler);
+
             _mqttClient.UseDisconnectedHandler(DisconnectedHandler);
         }
 
@@ -111,6 +126,21 @@ namespace PozyxPositioner.Framework
 
             log.AppendLine(msg.ToString());
             File.WriteAllText(_filename, log.ToString());
+        }
+
+
+        /// <summary>
+        /// Callback for when message is recieved
+        /// </summary>
+        private void MessageHandlerNoLog(MqttApplicationMessageReceivedEventArgs eventArgs)
+        {
+            var msg = Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload);
+
+            var msgData = JArray.Parse(msg);
+            var msgObj = JArray.Parse(msgData.ToString());
+
+            _sim.PushData(msgObj);
+
         }
 
         /// <summary>

@@ -7,7 +7,8 @@ Simulation enviornemnt
 
 
 
-Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Environment\+:\nopagebreak
+Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Environment\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,6 +19,8 @@ Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Environment\+:\no
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad559e17b83e87b9121d3ffd9c08e10b4}{Initialize} (string host, int port, string filename, int refresh\+Rate)
+\begin{DoxyCompactList}\small\item\em Simulation Enviorntment Constructor, creates Mqqt\+Client instance, includes a filename to log all messages starting subscription to tags topic \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a15a540048be983d1a0ae9983272992be}{Initialize} (string host, int port, int refresh\+Rate)
 \begin{DoxyCompactList}\small\item\em Simulation Enviorntment Constructor, creates Mqqt\+Client instance starting subscription to tags topic \end{DoxyCompactList}\item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a7ede2b3fa6a7af26549b316f1649ba21}{Initialize} (string filename, int refresh\+Rate)
 \begin{DoxyCompactList}\small\item\em Simulation Enviorntment Constructor, creates reader instance will send J\+S\+ON strings in coordination to how P\+O\+Z\+YX does using a log file. Simulates reciving tag reads in realtime using a historic log \end{DoxyCompactList}\item 
@@ -72,12 +75,12 @@ the requested tag
 \mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad559e17b83e87b9121d3ffd9c08e10b4}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad559e17b83e87b9121d3ffd9c08e10b4}} 
 \index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
-\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Initialize (\begin{DoxyParamCaption}\item[{string}]{host,  }\item[{int}]{port,  }\item[{string}]{filename,  }\item[{int}]{refresh\+Rate }\end{DoxyParamCaption})}
 
 
 
-Simulation Enviorntment Constructor, creates Mqqt\+Client instance starting subscription to tags topic 
+Simulation Enviorntment Constructor, creates Mqqt\+Client instance, includes a filename to log all messages starting subscription to tags topic 
 
 
 \begin{DoxyParams}{Parameters}
@@ -90,10 +93,29 @@ Simulation Enviorntment Constructor, creates Mqqt\+Client instance starting subs
 {\em refresh\+Rate} & Default refresh rate of a tag not specified by the user\\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a15a540048be983d1a0ae9983272992be}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a15a540048be983d1a0ae9983272992be}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Initialize (\begin{DoxyParamCaption}\item[{string}]{host,  }\item[{int}]{port,  }\item[{int}]{refresh\+Rate }\end{DoxyParamCaption})}
+
+
+
+Simulation Enviorntment Constructor, creates Mqqt\+Client instance starting subscription to tags topic 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & Local IP addres of Pozyx gateway\\
+\hline
+{\em port} & Port\\
+\hline
+{\em refresh\+Rate} & Default refresh rate of a tag not specified by the user\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a7ede2b3fa6a7af26549b316f1649ba21}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a7ede2b3fa6a7af26549b316f1649ba21}} 
 \index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
-\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Initialize (\begin{DoxyParamCaption}\item[{string}]{filename,  }\item[{int}]{refresh\+Rate }\end{DoxyParamCaption})}
 
 
@@ -127,7 +149,8 @@ Adds a new tag to the simulation environment
 \begin{DoxyReturn}{Returns}
 the newly created tag 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -149,7 +172,8 @@ Adds a new tag to the simulation environment
 {\em tag} & the tag to add\\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

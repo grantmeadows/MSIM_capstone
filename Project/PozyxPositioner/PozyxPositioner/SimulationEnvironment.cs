@@ -43,7 +43,7 @@ namespace PozyxPositioner.Framework
         }
 
         /// <summary>
-        /// Simulation Enviorntment Constructor, creates MqqtClient instance
+        /// Simulation Enviorntment Constructor, creates MqqtClient instance, includes a filename to log all messages
         /// starting subscription to tags topic
         /// </summary>
         /// <param name="host">Local IP addres of Pozyx gateway</param>
@@ -59,6 +59,25 @@ namespace PozyxPositioner.Framework
             _tagIDs = new List<string>();
             _refreshRate = refreshRate;
             _MqqtClient = new MqttClient(host, port, this, filename);
+        }
+
+
+        /// <summary>
+        /// Simulation Enviorntment Constructor, creates MqqtClient instance
+        /// starting subscription to tags topic
+        /// </summary>
+        /// <param name="host">Local IP addres of Pozyx gateway</param>
+        /// <param name="port">Port</param>
+        /// <param name="refreshRate">Default refresh rate of a tag not specified by the user</param>
+        public void Initialize(string host, int port, int refreshRate)
+        {
+            reader = false;
+            _host = host;
+            _port = port;
+            _tags = new Dictionary<string, Tag>();
+            _tagIDs = new List<string>();
+            _refreshRate = refreshRate;
+            _MqqtClient = new MqttClient(host, port, this);
         }
 
 

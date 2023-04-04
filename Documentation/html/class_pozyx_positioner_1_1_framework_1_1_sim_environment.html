@@ -56,13 +56,18 @@ $(function() {
 Collaboration diagram for PozyxPositioner.Framework.SimEnvironment:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_pozyx_positioner_1_1_framework_1_1_sim_environment__coll__graph.png" border="0" usemap="#_pozyx_positioner_8_framework_8_sim_environment_coll__map" alt="Collaboration graph"/></div>
+<map name="_pozyx_positioner_8_framework_8_sim_environment_coll__map" id="_pozyx_positioner_8_framework_8_sim_environment_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad559e17b83e87b9121d3ffd9c08e10b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_sim_environment.html#ad559e17b83e87b9121d3ffd9c08e10b4">Initialize</a> (string host, int port, string filename, int refreshRate)</td></tr>
-<tr class="memdesc:ad559e17b83e87b9121d3ffd9c08e10b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulation Enviorntment Constructor, creates MqqtClient instance starting subscription to tags topic  <a href="#ad559e17b83e87b9121d3ffd9c08e10b4">More...</a><br /></td></tr>
+<tr class="memdesc:ad559e17b83e87b9121d3ffd9c08e10b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulation Enviorntment Constructor, creates MqqtClient instance, includes a filename to log all messages starting subscription to tags topic  <a href="#ad559e17b83e87b9121d3ffd9c08e10b4">More...</a><br /></td></tr>
 <tr class="separator:ad559e17b83e87b9121d3ffd9c08e10b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a540048be983d1a0ae9983272992be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_sim_environment.html#a15a540048be983d1a0ae9983272992be">Initialize</a> (string host, int port, int refreshRate)</td></tr>
+<tr class="memdesc:a15a540048be983d1a0ae9983272992be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulation Enviorntment Constructor, creates MqqtClient instance starting subscription to tags topic  <a href="#a15a540048be983d1a0ae9983272992be">More...</a><br /></td></tr>
+<tr class="separator:a15a540048be983d1a0ae9983272992be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ede2b3fa6a7af26549b316f1649ba21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_sim_environment.html#a7ede2b3fa6a7af26549b316f1649ba21">Initialize</a> (string filename, int refreshRate)</td></tr>
 <tr class="memdesc:a7ede2b3fa6a7af26549b316f1649ba21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulation Enviorntment Constructor, creates reader instance will send JSON strings in coordination to how POZYX does using a log file. Simulates reciving tag reads in realtime using a historic log  <a href="#a7ede2b3fa6a7af26549b316f1649ba21">More...</a><br /></td></tr>
 <tr class="separator:a7ede2b3fa6a7af26549b316f1649ba21"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,7 +133,7 @@ static <a class="el" href="class_pozyx_positioner_1_1_framework_1_1_sim_environm
 </div>
 </div>
 <a id="ad559e17b83e87b9121d3ffd9c08e10b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad559e17b83e87b9121d3ffd9c08e10b4">&#9670;&nbsp;</a></span>Initialize() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad559e17b83e87b9121d3ffd9c08e10b4">&#9670;&nbsp;</a></span>Initialize() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,7 +170,7 @@ static <a class="el" href="class_pozyx_positioner_1_1_framework_1_1_sim_environm
       </table>
 </div><div class="memdoc">
 
-<p>Simulation Enviorntment Constructor, creates MqqtClient instance starting subscription to tags topic </p>
+<p>Simulation Enviorntment Constructor, creates MqqtClient instance, includes a filename to log all messages starting subscription to tags topic </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">host</td><td>Local IP addres of Pozyx gateway</td></tr>
@@ -178,8 +183,52 @@ static <a class="el" href="class_pozyx_positioner_1_1_framework_1_1_sim_environm
 
 </div>
 </div>
+<a id="a15a540048be983d1a0ae9983272992be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15a540048be983d1a0ae9983272992be">&#9670;&nbsp;</a></span>Initialize() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PozyxPositioner.Framework.SimEnvironment.Initialize </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>refreshRate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Simulation Enviorntment Constructor, creates MqqtClient instance starting subscription to tags topic </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>Local IP addres of Pozyx gateway</td></tr>
+    <tr><td class="paramname">port</td><td>Port</td></tr>
+    <tr><td class="paramname">refreshRate</td><td>Default refresh rate of a tag not specified by the user</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a7ede2b3fa6a7af26549b316f1649ba21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ede2b3fa6a7af26549b316f1649ba21">&#9670;&nbsp;</a></span>Initialize() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ede2b3fa6a7af26549b316f1649ba21">&#9670;&nbsp;</a></span>Initialize() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
