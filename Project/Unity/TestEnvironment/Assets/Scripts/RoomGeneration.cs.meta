@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: deb699a148da5ce43bb7ae7d32d8e825
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AnchorPrefab: {fileID: 8714770656263999585, guid: 003065b81bc66f44ca3669f8cbf110d2, type: 3}
+  - RoomMaterial: {fileID: 2100000, guid: 4a833dcc2d8cc3f4b92e0753b6a64a98, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
