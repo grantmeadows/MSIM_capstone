@@ -1,0 +1,167 @@
+\hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client}{}\section{Pozyx\+Positioner.\+Framework.\+Mqtt\+Client Class Reference}
+\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client}\index{Pozyx\+Positioner.\+Framework.\+Mqtt\+Client@{Pozyx\+Positioner.\+Framework.\+Mqtt\+Client}}
+
+
+Mqqt client for subscribing to pozyx broker  
+
+
+
+
+Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Mqtt\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_pozyx_positioner_1_1_framework_1_1_mqtt_client__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a4e2ab3ac03e686e3b85fe50d1a02feb8}{Mqtt\+Client} (string host, int port, \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} Sim)
+\begin{DoxyCompactList}\small\item\em Initializes and begins asynch subscription to tag topic from pozyx broker \end{DoxyCompactList}\item 
+\hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aed3db79610eeaa328698f435c519c791}{Mqtt\+Client} (string host, int port, \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} Sim, string filename)
+\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aa08cbaf1de4adeae85b39edc92791ab9}{Begin} ()
+\item 
+async void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a5e0d99ca6d75c3ee47dc455eb6ff438c}{Connected\+Handler} (Mqtt\+Client\+Connected\+Event\+Args e)
+\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_adcfdb0246431f7e43d2810b8bf3e0873}{Disconnected\+Handler} (Mqtt\+Client\+Disconnected\+Event\+Args event\+Args)
+\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f}{Message\+Handler} (Mqtt\+Application\+Message\+Received\+Event\+Args event\+Args)
+\item 
+async Task \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a92ccb3ea4e84923cfb26c02367fac49e}{Start\+Async} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+I\+Mqtt\+Client \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a3bef7957deec9a68cf853c17555a4f85}{\+\_\+mqtt\+Client}
+\item 
+I\+Mqtt\+Client\+Options \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_abb53312377599059079ab76f8299599e}{\+\_\+options}
+\item 
+string \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a6ea2bbc30c60ba16cd972acfb64beea3}{\+\_\+topic}
+\item 
+\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a65faa3911fc07423829583320c96ab59}{\+\_\+sim}
+\item 
+String\+Builder \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a7dbee0133f3ec032ceffa37c73525aaa}{log} = new String\+Builder()
+\item 
+string \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_affc988c8046e844a8814a33dcc7ae611}{\+\_\+filename}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mqqt client for subscribing to pozyx broker 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a4e2ab3ac03e686e3b85fe50d1a02feb8}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a4e2ab3ac03e686e3b85fe50d1a02feb8}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Mqtt\+Client@{Mqtt\+Client}}
+\index{Mqtt\+Client@{Mqtt\+Client}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Mqtt\+Client()}{MqttClient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Mqtt\+Client (\begin{DoxyParamCaption}\item[{string}]{host,  }\item[{int}]{port,  }\item[{\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment}}]{Sim }\end{DoxyParamCaption})}
+
+
+
+Initializes and begins asynch subscription to tag topic from pozyx broker 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+num\+Tags} & Number of tags to be tracked\\
+\hline
+{\em host} & Host of the pozyx broker\\
+\hline
+{\em port} & Port\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aed3db79610eeaa328698f435c519c791}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aed3db79610eeaa328698f435c519c791}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Mqtt\+Client@{Mqtt\+Client}}
+\index{Mqtt\+Client@{Mqtt\+Client}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Mqtt\+Client()}{MqttClient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Mqtt\+Client (\begin{DoxyParamCaption}\item[{string}]{host,  }\item[{int}]{port,  }\item[{\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment}}]{Sim,  }\item[{string}]{filename }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aa08cbaf1de4adeae85b39edc92791ab9}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aa08cbaf1de4adeae85b39edc92791ab9}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Begin@{Begin}}
+\index{Begin@{Begin}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Begin()}{Begin()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a5e0d99ca6d75c3ee47dc455eb6ff438c}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a5e0d99ca6d75c3ee47dc455eb6ff438c}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Connected\+Handler@{Connected\+Handler}}
+\index{Connected\+Handler@{Connected\+Handler}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Connected\+Handler()}{ConnectedHandler()}}
+{\footnotesize\ttfamily async void Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Connected\+Handler (\begin{DoxyParamCaption}\item[{Mqtt\+Client\+Connected\+Event\+Args}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_adcfdb0246431f7e43d2810b8bf3e0873}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_adcfdb0246431f7e43d2810b8bf3e0873}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Disconnected\+Handler@{Disconnected\+Handler}}
+\index{Disconnected\+Handler@{Disconnected\+Handler}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Disconnected\+Handler()}{DisconnectedHandler()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Disconnected\+Handler (\begin{DoxyParamCaption}\item[{Mqtt\+Client\+Disconnected\+Event\+Args}]{event\+Args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Message\+Handler@{Message\+Handler}}
+\index{Message\+Handler@{Message\+Handler}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Message\+Handler()}{MessageHandler()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Message\+Handler (\begin{DoxyParamCaption}\item[{Mqtt\+Application\+Message\+Received\+Event\+Args}]{event\+Args }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a92ccb3ea4e84923cfb26c02367fac49e}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a92ccb3ea4e84923cfb26c02367fac49e}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Start\+Async@{Start\+Async}}
+\index{Start\+Async@{Start\+Async}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Start\+Async()}{StartAsync()}}
+{\footnotesize\ttfamily async Task Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Start\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_affc988c8046e844a8814a33dcc7ae611}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_affc988c8046e844a8814a33dcc7ae611}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!\+\_\+filename@{\+\_\+filename}}
+\index{\+\_\+filename@{\+\_\+filename}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+filename}{\_filename}}
+{\footnotesize\ttfamily string Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+\_\+filename\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a3bef7957deec9a68cf853c17555a4f85}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a3bef7957deec9a68cf853c17555a4f85}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!\+\_\+mqtt\+Client@{\+\_\+mqtt\+Client}}
+\index{\+\_\+mqtt\+Client@{\+\_\+mqtt\+Client}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+mqtt\+Client}{\_mqttClient}}
+{\footnotesize\ttfamily I\+Mqtt\+Client Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+\_\+mqtt\+Client\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_abb53312377599059079ab76f8299599e}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_abb53312377599059079ab76f8299599e}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!\+\_\+options@{\+\_\+options}}
+\index{\+\_\+options@{\+\_\+options}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+options}{\_options}}
+{\footnotesize\ttfamily I\+Mqtt\+Client\+Options Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+\_\+options\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a65faa3911fc07423829583320c96ab59}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a65faa3911fc07423829583320c96ab59}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!\+\_\+sim@{\+\_\+sim}}
+\index{\+\_\+sim@{\+\_\+sim}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+sim}{\_sim}}
+{\footnotesize\ttfamily \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+\_\+sim\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a6ea2bbc30c60ba16cd972acfb64beea3}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a6ea2bbc30c60ba16cd972acfb64beea3}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!\+\_\+topic@{\+\_\+topic}}
+\index{\+\_\+topic@{\+\_\+topic}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+topic}{\_topic}}
+{\footnotesize\ttfamily string Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+\_\+topic\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a7dbee0133f3ec032ceffa37c73525aaa}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a7dbee0133f3ec032ceffa37c73525aaa}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!log@{log}}
+\index{log@{log}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily String\+Builder Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+log = new String\+Builder()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Pozyx\+Subscriber/\+Pozyx\+Subscriber/\+Framework/\hyperlink{_subscriber_8cs}{Subscriber.\+cs}\end{DoxyCompactItemize}

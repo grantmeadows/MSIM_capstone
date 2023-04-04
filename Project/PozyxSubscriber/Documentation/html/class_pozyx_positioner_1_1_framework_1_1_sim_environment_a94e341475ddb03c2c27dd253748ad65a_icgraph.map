@@ -1,0 +1,4 @@
+<map id="PozyxPositioner.Framework.SimEnvironment.PushData" name="PozyxPositioner.Framework.SimEnvironment.PushData">
+<area shape="rect" id="node2" href="$class_pozyx_positioner_1_1_framework_1_1_reader.html#aa384522a8caca942f2becd73031ac77d" title="PozyxPositioner.Framework.\lReader.StartAsync" alt="" coords="243,5,432,47"/>
+<area shape="rect" id="node3" href="$class_pozyx_positioner_1_1_framework_1_1_mqtt_client.html#a1fda7c69a63eeeb876490644686b103f" title="PozyxPositioner.Framework.\lMqttClient.MessageHandler" alt="" coords="243,71,432,112"/>
+</map>

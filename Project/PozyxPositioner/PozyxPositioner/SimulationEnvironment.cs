@@ -8,7 +8,9 @@ using Microsoft.VisualBasic;
 using System.Threading;
 using Newtonsoft.Json.Linq;
 using System.Data;
+using System.IO;
 using System.Linq.Expressions;
+using System.Timers;
 
 namespace PozyxPositioner.Framework
 {
@@ -55,7 +57,6 @@ namespace PozyxPositioner.Framework
             _port = port;
             _tags = new Dictionary<string, Tag>();
             _tagIDs = new List<string>();
-            _reader = null;
             _refreshRate = refreshRate;
             _MqqtClient = new MqttClient(host, port, this, filename);
         }
@@ -78,7 +79,7 @@ namespace PozyxPositioner.Framework
             _tags = new Dictionary<string, Tag>();
             _tagIDs = new List<string>();
             _refreshRate = refreshRate;
-            _reader = new Reader(filename, this);
+            _filename = filename;
         }
 
         /// <summary>
@@ -88,16 +89,15 @@ namespace PozyxPositioner.Framework
         public void StartEnvironment()
         {
 
-            if (reader) _reader.Begin();
+            if (reader) Task.Run(() => StartAsyncReader()); 
             else _MqqtClient.Begin();
         }
 
 
-        Reader _reader;
         private static MqttClient _MqqtClient;
         Dictionary<string, Tag> _tags;
         List<string> _tagIDs;
-
+        string _filename;
         private string _host;
         private int _port;
 
@@ -255,8 +255,52 @@ namespace PozyxPositioner.Framework
         /// </summary>
         public List<string> TagIDs { get { return _tagIDs; } }
 
-    }
 
+
+        private async Task StartAsyncReader()
+        {
+
+            float time;
+            int L = 0;
+            string[] file = File.ReadAllLines(_filename);
+
+            var msgObj = JArray.Parse(file[L]);
+            var msgData = JArray.Parse(msgObj.ToString());
+            this.ConnectedStatus = true;
+            string s = msgData[0]["timestamp"].Value<string>();
+            s = s.Remove(0, 5);
+            double d = Convert.ToDouble(s);
+            time = (float)d * 1000;
+            this.PushData(msgData);
+            L++;
+            msgObj = JArray.Parse(file[L]);
+            msgData = JArray.Parse(msgObj.ToString());
+            s = msgData[0]["timestamp"].Value<string>();
+            s = s.Remove(0, 5);
+            d = Convert.ToDouble(s);
+            float next = (float)d * 1000;
+            while (L < file.Length)
+            {
+                this.PushData(msgData);
+                L++;
+                msgObj = JArray.Parse(file[L]);
+                msgData = JArray.Parse(msgObj.ToString());
+                s = msgData[0]["timestamp"].Value<string>();
+                s = s.Remove(0, 5);
+                d = Convert.ToDouble(s);
+                next = (float)d * 1000;
+
+                int sleep = (int)(next - time);
+                if (sleep < 0) sleep = 0;
+                time = next;
+                Thread.Sleep(sleep);
+
+
+            }
+            this.ConnectedStatus = false;
+        }
+
+    }
 
 
 }

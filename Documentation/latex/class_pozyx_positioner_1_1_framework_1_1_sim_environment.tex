@@ -1,0 +1,237 @@
+\hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{}\section{Pozyx\+Positioner.\+Framework.\+Sim\+Environment Class Reference}
+\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment}\index{Pozyx\+Positioner.\+Framework.\+Sim\+Environment@{Pozyx\+Positioner.\+Framework.\+Sim\+Environment}}
+
+
+Simulation enviornemnt  
+
+
+
+
+Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Environment\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{class_pozyx_positioner_1_1_framework_1_1_sim_environment__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad559e17b83e87b9121d3ffd9c08e10b4}{Initialize} (string host, int port, string filename, int refresh\+Rate)
+\begin{DoxyCompactList}\small\item\em Simulation Enviorntment Constructor, creates Mqqt\+Client instance starting subscription to tags topic \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a7ede2b3fa6a7af26549b316f1649ba21}{Initialize} (string filename, int refresh\+Rate)
+\begin{DoxyCompactList}\small\item\em Simulation Enviorntment Constructor, creates reader instance will send J\+S\+ON strings in coordination to how P\+O\+Z\+YX does using a log file. Simulates reciving tag reads in realtime using a historic log \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a0d114a29811d19d1376273cb078f6f61}{Start\+Environment} ()
+\begin{DoxyCompactList}\small\item\em Start\+Environment method, will begin tracking/reading J\+S\+ON strings and tag readings from Pozyx on a separate thread This begins populating the simulation environment \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a94e341475ddb03c2c27dd253748ad65a}{Push\+Data} (J\+Array msgdata)
+\begin{DoxyCompactList}\small\item\em Pushes a J\+S\+ON J\+Array into the simulation \end{DoxyCompactList}\item 
+\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad523ae9a258ae7b68d7f966be92ff3bb}{new\+Tag} (string ID, int refresh\+Rate)
+\begin{DoxyCompactList}\small\item\em Adds a new tag to the simulation environment \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ae804be21b53900cbac13c0cce385b170}{new\+Tag} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} tag)
+\begin{DoxyCompactList}\small\item\em Adds a new tag to the simulation environment \end{DoxyCompactList}\item 
+\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_aa69448aa9bc85a646b57b753f5c5e483}{Remove\+Tag} (string ID)
+\begin{DoxyCompactList}\small\item\em Removes a tag from the simulation environment \end{DoxyCompactList}\item 
+\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a2163b3c6c4794224ceba0e5279b7ee8e}{Get\+Tag} (string ID)
+\begin{DoxyCompactList}\small\item\em gets a tag from the simulation environment \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a099b83d9b2af93ae755b7bd081bef37c}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a099b83d9b2af93ae755b7bd081bef37c}} 
+static \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+bool \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ae0d0d204695b423669bd6d0593d961aa}{Connected\+Status}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The Connection status of the M\+Q\+TT or Reader class \end{DoxyCompactList}\item 
+List$<$ string $>$ \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_af1e5db7ec810b6d92216b74c3eeb657a}{Tag\+I\+Ds}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em a list of strings that contain the I\+Ds of all the active tags in the Simulation Environment \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simulation enviornemnt 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a2163b3c6c4794224ceba0e5279b7ee8e}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a2163b3c6c4794224ceba0e5279b7ee8e}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Get\+Tag@{Get\+Tag}}
+\index{Get\+Tag@{Get\+Tag}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{Get\+Tag()}{GetTag()}}
+{\footnotesize\ttfamily \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Get\+Tag (\begin{DoxyParamCaption}\item[{string}]{ID }\end{DoxyParamCaption})}
+
+
+
+gets a tag from the simulation environment 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & the ID of the tag to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the requested tag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad559e17b83e87b9121d3ffd9c08e10b4}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad559e17b83e87b9121d3ffd9c08e10b4}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Initialize (\begin{DoxyParamCaption}\item[{string}]{host,  }\item[{int}]{port,  }\item[{string}]{filename,  }\item[{int}]{refresh\+Rate }\end{DoxyParamCaption})}
+
+
+
+Simulation Enviorntment Constructor, creates Mqqt\+Client instance starting subscription to tags topic 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & Local IP addres of Pozyx gateway\\
+\hline
+{\em port} & Port\\
+\hline
+{\em filename} & a log file to keep track of all tag messages\\
+\hline
+{\em refresh\+Rate} & Default refresh rate of a tag not specified by the user\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a7ede2b3fa6a7af26549b316f1649ba21}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a7ede2b3fa6a7af26549b316f1649ba21}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Initialize (\begin{DoxyParamCaption}\item[{string}]{filename,  }\item[{int}]{refresh\+Rate }\end{DoxyParamCaption})}
+
+
+
+Simulation Enviorntment Constructor, creates reader instance will send J\+S\+ON strings in coordination to how P\+O\+Z\+YX does using a log file. Simulates reciving tag reads in realtime using a historic log 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & name of the log file to simulate with\\
+\hline
+{\em refresh\+Rate} & Default refresh rate of a tag not specified by the user\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad523ae9a258ae7b68d7f966be92ff3bb}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad523ae9a258ae7b68d7f966be92ff3bb}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!new\+Tag@{new\+Tag}}
+\index{new\+Tag@{new\+Tag}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{new\+Tag()}{newTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+new\+Tag (\begin{DoxyParamCaption}\item[{string}]{ID,  }\item[{int}]{refresh\+Rate }\end{DoxyParamCaption})}
+
+
+
+Adds a new tag to the simulation environment 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & the ID of the tag to add\\
+\hline
+{\em refresh\+Rate} & the refresh rate of the added tag\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly created tag 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ad523ae9a258ae7b68d7f966be92ff3bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ae804be21b53900cbac13c0cce385b170}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ae804be21b53900cbac13c0cce385b170}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!new\+Tag@{new\+Tag}}
+\index{new\+Tag@{new\+Tag}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{new\+Tag()}{newTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+new\+Tag (\begin{DoxyParamCaption}\item[{\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag}}]{tag }\end{DoxyParamCaption})}
+
+
+
+Adds a new tag to the simulation environment 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & the tag to add\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ae804be21b53900cbac13c0cce385b170_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a94e341475ddb03c2c27dd253748ad65a}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a94e341475ddb03c2c27dd253748ad65a}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Push\+Data@{Push\+Data}}
+\index{Push\+Data@{Push\+Data}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{Push\+Data()}{PushData()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Push\+Data (\begin{DoxyParamCaption}\item[{J\+Array}]{msgdata }\end{DoxyParamCaption})}
+
+
+
+Pushes a J\+S\+ON J\+Array into the simulation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msgdata} & the J\+Array parsed to populate the simulation environment with\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a94e341475ddb03c2c27dd253748ad65a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_aa69448aa9bc85a646b57b753f5c5e483}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_aa69448aa9bc85a646b57b753f5c5e483}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Remove\+Tag@{Remove\+Tag}}
+\index{Remove\+Tag@{Remove\+Tag}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{Remove\+Tag()}{RemoveTag()}}
+{\footnotesize\ttfamily \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Remove\+Tag (\begin{DoxyParamCaption}\item[{string}]{ID }\end{DoxyParamCaption})}
+
+
+
+Removes a tag from the simulation environment 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & the ID of the tag to remove\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the removed tag 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a0d114a29811d19d1376273cb078f6f61}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a0d114a29811d19d1376273cb078f6f61}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Start\+Environment@{Start\+Environment}}
+\index{Start\+Environment@{Start\+Environment}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{Start\+Environment()}{StartEnvironment()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Start\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start\+Environment method, will begin tracking/reading J\+S\+ON strings and tag readings from Pozyx on a separate thread This begins populating the simulation environment 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ae0d0d204695b423669bd6d0593d961aa}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ae0d0d204695b423669bd6d0593d961aa}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Connected\+Status@{Connected\+Status}}
+\index{Connected\+Status@{Connected\+Status}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{Connected\+Status}{ConnectedStatus}}
+{\footnotesize\ttfamily bool Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Connected\+Status\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The Connection status of the M\+Q\+TT or Reader class 
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_af1e5db7ec810b6d92216b74c3eeb657a}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_af1e5db7ec810b6d92216b74c3eeb657a}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}!Tag\+I\+Ds@{Tag\+I\+Ds}}
+\index{Tag\+I\+Ds@{Tag\+I\+Ds}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Environment}}
+\subsubsection{\texorpdfstring{Tag\+I\+Ds}{TagIDs}}
+{\footnotesize\ttfamily List$<$string$>$ Pozyx\+Positioner.\+Framework.\+Sim\+Environment.\+Tag\+I\+Ds\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+a list of strings that contain the I\+Ds of all the active tags in the Simulation Environment 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Pozyx\+Positioner/\+Pozyx\+Positioner/Simulation\+Environment.\+cs\end{DoxyCompactItemize}

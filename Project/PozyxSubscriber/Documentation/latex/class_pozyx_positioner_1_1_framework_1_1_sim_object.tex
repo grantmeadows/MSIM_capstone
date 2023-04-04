@@ -1,0 +1,275 @@
+\hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object}{}\section{Pozyx\+Positioner.\+Framework.\+Sim\+Object Class Reference}
+\label{class_pozyx_positioner_1_1_framework_1_1_sim_object}\index{Pozyx\+Positioner.\+Framework.\+Sim\+Object@{Pozyx\+Positioner.\+Framework.\+Sim\+Object}}
+
+
+Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_pozyx_positioner_1_1_framework_1_1_sim_object__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_acc186255ccf8c50a2de3aeaf8e65f645}{Sim\+Object} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object} Constructor \end{DoxyCompactList}\item 
+bool \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a68a000516251ee3062ec72c22cc75f6d}{Contains} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} tag)
+\begin{DoxyCompactList}\small\item\em Checks to see if this \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object} has a specific tag attached to it \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a46185130a7147410af586622732ad64a}{Add\+Tag} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} tag)
+\begin{DoxyCompactList}\small\item\em attaches a tag to this object for tracking, maximum of 2 tags must be attached for orientation measurements \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a7cbe138ef2d7a74045a2e706ae3f59b4}{remove\+Tag} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} tag)
+\begin{DoxyCompactList}\small\item\em removes a tag from this object \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a222891687d37d968292c484b044803ca}{Calibrate} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} S)
+\begin{DoxyCompactList}\small\item\em sets the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}\textquotesingle{}s current position and orientation in the real world be the default 0, and reinitializes its coordinate readings. Must be done after attaching tags to a \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}, Simulation\+Environment must be running \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a0018cc8c8c91d0e32bec8c59b2459cd2}{Calibrate} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} S, float xpos, float ypos, float zpos)
+\begin{DoxyCompactList}\small\item\em sets the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}\textquotesingle{}s current position in the real world be the set pos values, and reinitializes its coordinate readings. Sets current real world orientation to 0 Must be done after attaching tags to a \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}, Simulation\+Environment must be running and connected \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a1dc9505026ffbfb922eb41c1a8bb9858}{Calibrate} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} S, float xpos, float ypos, float zpos, float scale)
+\begin{DoxyCompactList}\small\item\em sets the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}\textquotesingle{}s current position in the real world be the set pos values, and reinitializes its coordinate readings. Sets current real world orientation to 0 Must be done after attaching tags to a \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}, Simulation\+Environment must be running and connected \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a1d2b2ac8c37883939483d4682826db21}{Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\+: The Position of the current Simobject \end{DoxyCompactList}\item 
+float \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_ab9f89c4e327e25286f0269960d0d2de8}{Scale}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_af589d7d7066efe823f8a2decd5b081da}{Orientation}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\+: The Orientation of the current Simobject \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_afe392c2a31003ef615127a8c00f6ed27}{Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} $>$ \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_aa84e7c3fd9b8c17e15e4ba64b0e5867b}{\+\_\+tags}
+\begin{DoxyCompactList}\small\item\em an object that can be represented by the simulation environment \end{DoxyCompactList}\item 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a2955942c0f03c9dfadcc5bb13127116b}{\+\_\+position}
+\item 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a20cac81c32c0b711c923aae1c6c8352c}{\+\_\+orientation}
+\item 
+List$<$ \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} $>$ \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a83028e56f420485333ba365bd5949550}{O\+\_\+\+Vectors}
+\item 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a9f70129956e360ff10ebe252d924a536}{O\+\_\+\+Vector}
+\item 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a27df1659477df50c36d6b0fff1b58786}{\+\_\+posoffset}
+\item 
+float \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_af8b6718a875d6056b22624ea9cb6e0c9}{\+\_\+scale}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_acc186255ccf8c50a2de3aeaf8e65f645}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_acc186255ccf8c50a2de3aeaf8e65f645}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!Sim\+Object@{Sim\+Object}}
+\index{Sim\+Object@{Sim\+Object}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{Sim\+Object()}{SimObject()}}
+{\footnotesize\ttfamily Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+Sim\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object} Constructor 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a46185130a7147410af586622732ad64a}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a46185130a7147410af586622732ad64a}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!Add\+Tag@{Add\+Tag}}
+\index{Add\+Tag@{Add\+Tag}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{Add\+Tag()}{AddTag()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+Add\+Tag (\begin{DoxyParamCaption}\item[{\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag}}]{tag }\end{DoxyParamCaption})}
+
+
+
+attaches a tag to this object for tracking, maximum of 2 tags must be attached for orientation measurements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The tag to attach to the object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a222891687d37d968292c484b044803ca}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a222891687d37d968292c484b044803ca}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!Calibrate@{Calibrate}}
+\index{Calibrate@{Calibrate}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{Calibrate()}{Calibrate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+Calibrate (\begin{DoxyParamCaption}\item[{\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment}}]{S }\end{DoxyParamCaption})}
+
+
+
+sets the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}\textquotesingle{}s current position and orientation in the real world be the default 0, and reinitializes its coordinate readings. Must be done after attaching tags to a \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}, Simulation\+Environment must be running 
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a0018cc8c8c91d0e32bec8c59b2459cd2}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a0018cc8c8c91d0e32bec8c59b2459cd2}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!Calibrate@{Calibrate}}
+\index{Calibrate@{Calibrate}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{Calibrate()}{Calibrate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+Calibrate (\begin{DoxyParamCaption}\item[{\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment}}]{S,  }\item[{float}]{xpos,  }\item[{float}]{ypos,  }\item[{float}]{zpos }\end{DoxyParamCaption})}
+
+
+
+sets the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}\textquotesingle{}s current position in the real world be the set pos values, and reinitializes its coordinate readings. Sets current real world orientation to 0 Must be done after attaching tags to a \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}, Simulation\+Environment must be running and connected 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & The tag to attach to the object \\
+\hline
+{\em xpos} & the x origin \\
+\hline
+{\em ypos} & the y origin \\
+\hline
+{\em zpos} & the z origin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a1dc9505026ffbfb922eb41c1a8bb9858}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a1dc9505026ffbfb922eb41c1a8bb9858}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!Calibrate@{Calibrate}}
+\index{Calibrate@{Calibrate}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{Calibrate()}{Calibrate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+Calibrate (\begin{DoxyParamCaption}\item[{\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment}}]{S,  }\item[{float}]{xpos,  }\item[{float}]{ypos,  }\item[{float}]{zpos,  }\item[{float}]{scale }\end{DoxyParamCaption})}
+
+
+
+sets the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}\textquotesingle{}s current position in the real world be the set pos values, and reinitializes its coordinate readings. Sets current real world orientation to 0 Must be done after attaching tags to a \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object}, Simulation\+Environment must be running and connected 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & The tag to attach to the object \\
+\hline
+{\em xpos} & the x origin \\
+\hline
+{\em ypos} & the y origin \\
+\hline
+{\em zpos} & the z origin \\
+\hline
+{\em scale} & the scale of the position\textquotesingle{}s displacement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a68a000516251ee3062ec72c22cc75f6d}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a68a000516251ee3062ec72c22cc75f6d}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!Contains@{Contains}}
+\index{Contains@{Contains}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+Contains (\begin{DoxyParamCaption}\item[{\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag}}]{tag }\end{DoxyParamCaption})}
+
+
+
+Checks to see if this \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object}{Sim\+Object} has a specific tag attached to it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The tag to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if tag is attached 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a7cbe138ef2d7a74045a2e706ae3f59b4}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a7cbe138ef2d7a74045a2e706ae3f59b4}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!remove\+Tag@{remove\+Tag}}
+\index{remove\+Tag@{remove\+Tag}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{remove\+Tag()}{removeTag()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+remove\+Tag (\begin{DoxyParamCaption}\item[{\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag}}]{tag }\end{DoxyParamCaption})}
+
+
+
+removes a tag from this object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The tag to remove \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_afe392c2a31003ef615127a8c00f6ed27}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_afe392c2a31003ef615127a8c00f6ed27}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!Update@{Update}}
+\index{Update@{Update}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pozyx_positioner_1_1_framework_1_1_sim_object_afe392c2a31003ef615127a8c00f6ed27_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a20cac81c32c0b711c923aae1c6c8352c}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a20cac81c32c0b711c923aae1c6c8352c}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!\+\_\+orientation@{\+\_\+orientation}}
+\index{\+\_\+orientation@{\+\_\+orientation}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+orientation}{\_orientation}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+\_\+orientation\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a2955942c0f03c9dfadcc5bb13127116b}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a2955942c0f03c9dfadcc5bb13127116b}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!\+\_\+position@{\+\_\+position}}
+\index{\+\_\+position@{\+\_\+position}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+position}{\_position}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a27df1659477df50c36d6b0fff1b58786}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a27df1659477df50c36d6b0fff1b58786}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!\+\_\+posoffset@{\+\_\+posoffset}}
+\index{\+\_\+posoffset@{\+\_\+posoffset}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+posoffset}{\_posoffset}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+\_\+posoffset\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_af8b6718a875d6056b22624ea9cb6e0c9}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_af8b6718a875d6056b22624ea9cb6e0c9}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!\+\_\+scale@{\+\_\+scale}}
+\index{\+\_\+scale@{\+\_\+scale}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+scale}{\_scale}}
+{\footnotesize\ttfamily float Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+\_\+scale\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_aa84e7c3fd9b8c17e15e4ba64b0e5867b}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_aa84e7c3fd9b8c17e15e4ba64b0e5867b}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!\+\_\+tags@{\+\_\+tags}}
+\index{\+\_\+tags@{\+\_\+tags}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+tags}{\_tags}}
+{\footnotesize\ttfamily List$<$\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag}$>$ Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+\_\+tags\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+an object that can be represented by the simulation environment 
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a9f70129956e360ff10ebe252d924a536}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a9f70129956e360ff10ebe252d924a536}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!O\+\_\+\+Vector@{O\+\_\+\+Vector}}
+\index{O\+\_\+\+Vector@{O\+\_\+\+Vector}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{O\+\_\+\+Vector}{O\_Vector}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+O\+\_\+\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a83028e56f420485333ba365bd5949550}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a83028e56f420485333ba365bd5949550}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!O\+\_\+\+Vectors@{O\+\_\+\+Vectors}}
+\index{O\+\_\+\+Vectors@{O\+\_\+\+Vectors}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{O\+\_\+\+Vectors}{O\_Vectors}}
+{\footnotesize\ttfamily List$<$\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}$>$ Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+O\+\_\+\+Vectors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_af589d7d7066efe823f8a2decd5b081da}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_af589d7d7066efe823f8a2decd5b081da}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!Orientation@{Orientation}}
+\index{Orientation@{Orientation}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{Orientation}{Orientation}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+Orientation\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\+: The Orientation of the current Simobject 
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a1d2b2ac8c37883939483d4682826db21}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a1d2b2ac8c37883939483d4682826db21}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!Position@{Position}}
+\index{Position@{Position}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+Position\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\+: The Position of the current Simobject 
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_ab9f89c4e327e25286f0269960d0d2de8}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_ab9f89c4e327e25286f0269960d0d2de8}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!Scale@{Scale}}
+\index{Scale@{Scale}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{Scale}{Scale}}
+{\footnotesize\ttfamily float Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+Scale\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Pozyx\+Subscriber/\+Pozyx\+Subscriber/\+Framework/\hyperlink{_sim_object_8cs}{Sim\+Object.\+cs}\end{DoxyCompactItemize}

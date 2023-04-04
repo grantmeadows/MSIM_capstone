@@ -25,20 +25,28 @@ namespace PozyxPositioner.Framework
         private SimEnvironment _sim;
         private StringBuilder log = new StringBuilder();
         private string _filename;
+        
 
         /// <summary>
         /// Initializes and begins asynch subscription to tag topic from pozyx broker
         /// </summary>
-        /// <param name="_numTags">Number of tags to be tracked</param>
         /// <param name="host">Host of the pozyx broker</param>
         /// <param name="port">Port</param>
-
+        /// <param name="Sim"> The Simulation object </param>
         public MqttClient(string host, int port, SimEnvironment Sim)
         {
             _sim = Sim;
 
             _topic = "tags";
-        } 
+        }
+
+        /// <summary>
+        /// Initializes and begins asynch subscription to tag topic from pozyx broker, one is created by the SimEnvironment automatically
+        /// </summary>
+        /// <param name="host">Host of the pozyx broker</param>
+        /// <param name="port">Port</param>
+        /// <param name="Sim"> The Simulation object </param>
+        /// <param name="filename"> The name of a log file </param>
         public MqttClient(string host, int port, SimEnvironment Sim, string filename)
         {
             _sim = Sim;
@@ -56,12 +64,21 @@ namespace PozyxPositioner.Framework
             _mqttClient.UseDisconnectedHandler(DisconnectedHandler);
         }
 
+
+        /// <summary>
+        /// Begins the broker
+        /// </summary>
         public void Begin()
         {
             Task.Run(() => StartAsync());
         }
 
-        public async void ConnectedHandler(MqttClientConnectedEventArgs e)
+
+        /// <summary>
+        /// Callback for when a connection is made through the broker
+        /// </summary>
+        /// 
+        private async void ConnectedHandler(MqttClientConnectedEventArgs e)
         {
             Console.WriteLine("Connected with server!");
             await _mqttClient.SubscribeAsync(new MqttTopicFilterBuilder().WithTopic(_topic).Build());
@@ -70,14 +87,20 @@ namespace PozyxPositioner.Framework
             _sim.ConnectedStatus = true;
         }
 
-        public void DisconnectedHandler(MqttClientDisconnectedEventArgs eventArgs)
+        /// <summary>
+        /// Callback for when a connection lost through the broker
+        /// </summary>
+        private void DisconnectedHandler(MqttClientDisconnectedEventArgs eventArgs)
         {
             Console.WriteLine("Disconnected from server");
             _sim.ConnectedStatus = false;
         }
 
 
-        public void MessageHandler(MqttApplicationMessageReceivedEventArgs eventArgs)
+        /// <summary>
+        /// Callback for when message is recieved
+        /// </summary>
+        private void MessageHandler(MqttApplicationMessageReceivedEventArgs eventArgs)
         {
             var msg = Encoding.UTF8.GetString(eventArgs.ApplicationMessage.Payload);
 
@@ -90,7 +113,10 @@ namespace PozyxPositioner.Framework
             File.WriteAllText(_filename, log.ToString());
         }
 
-        public async Task StartAsync()
+        /// <summary>
+        /// Method to start listening to the MQTT topic
+        /// </summary>
+        private async Task StartAsync()
         {
             await _mqttClient.ConnectAsync(_options, CancellationToken.None);
         }

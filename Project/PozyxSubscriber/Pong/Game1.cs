@@ -118,7 +118,7 @@ namespace Ping_Pong
 
             sim.StartEnvironment();
             while (!sim.ConnectedStatus) ;
-            simObject.Calibrate(sim, m_paddle1.X, m_paddle1.Y, 0.0f, (1.0f/3.0f));
+            simObject.Calibrate(m_paddle1.X, m_paddle1.Y, 0.0f, (1.0f/3.0f));
         }
 
         /// <summary>

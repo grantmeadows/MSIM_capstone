@@ -85,3 +85,7 @@ C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\obj\D
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\obj\Debug\net6.0\Pong.pdb
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\obj\Debug\net6.0\Pong.genruntimeconfig.cache
 C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\obj\Debug\net6.0\ref\Pong.dll
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\PozyxSubscriber.deps.json
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\PozyxSubscriber.runtimeconfig.json
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\PozyxSubscriber.exe
+C:\Users\cmoor\Documents\GitHub\MSIM_capstone\Project\PozyxSubscriber\Pong\bin\Debug\net6.0\PozyxPositioner.dll
