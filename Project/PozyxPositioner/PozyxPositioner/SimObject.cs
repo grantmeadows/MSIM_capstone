@@ -313,7 +313,8 @@ namespace PozyxPositioner.Framework
 
 
         /// <summary>
-        /// sets the SimObject's current position and orientation in the real world be the default 0, and reinitializes its coordinate readings.
+        /// sets the SimObject's current position and orientation in the real world be the pozyx defaults, and reinitializes its coordinate readings.
+        /// Sets current real world orientation to 0
         /// Must be done after attaching tags to a SimObject, SimulationEnvironment must be running
         /// </summary>
         public void Calibrate()
