@@ -12,6 +12,7 @@ using UnityEngine;
 
 public class Tag_Application : MonoBehaviour
 {
+    public string fileName;
     public int tagRefreshRate;
 
     SimEnvironment env;
@@ -25,7 +26,6 @@ public class Tag_Application : MonoBehaviour
 
     public GameObject TagPrefab;
     public GameObject TagMarker;
-    public string fileName;
 
     List<GameObject> tagList = new List<GameObject>();
 
@@ -49,7 +49,7 @@ public class Tag_Application : MonoBehaviour
 
         env = SimEnvironment.Instance;
         //env.Initialize(host, port, fileName, tagRefreshRate);
-        env.Initialize(fileName, 24);
+        env.Initialize(fileName, tagRefreshRate);
 
         foreach (var obj in objects)
         {
@@ -143,6 +143,7 @@ public class Tag_Application : MonoBehaviour
     {
         foreach (var id in tagList)
         {
+            File.AppendAllText("Assets/Data/" + id.name.ToString() + "_" + fileCount.ToString() + ".txt", "Time, X, Y, Z");
             foreach (Transform child in GameObject.Find(id.name + "_History").transform)
             {
                 string outputText = (child.gameObject.GetComponent<Time_Storage>().getTime() - time).ToString() + ", " + 
