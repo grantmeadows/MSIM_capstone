@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9153182034878587008}
   - component: {fileID: 8648050817401958473}
   - component: {fileID: 6961726799545598416}
-  - component: {fileID: 8540178724996316844}
+  - component: {fileID: -4147025235355607474}
   m_Layer: 0
   m_Name: HistoryMarker
   m_TagString: Untagged
@@ -84,16 +84,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8540178724996316844
-SphereCollider:
+--- !u!114 &-4147025235355607474
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2159924670593484831}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19144d3228879b04d91348ab265f1bd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

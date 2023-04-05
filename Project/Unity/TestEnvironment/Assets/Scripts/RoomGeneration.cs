@@ -46,7 +46,7 @@ public class RoomGeneration : MonoBehaviour
 
             AnchorLoc[i] = new Vector3(AnchorLoc[i].x, 0f, AnchorLoc[i].z);
 
-            FloorFaces.Add(6);
+            FloorFaces.Add(AnchorLoc.Count);
             FloorFaces.Add(i);
             if(i < AnchorLoc.Count - 1)
             {
