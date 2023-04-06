@@ -7,12 +7,11 @@ Mqqt client for subscribing to pozyx broker
 
 
 
-Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Mqtt\+Client\+:
-\nopagebreak
+Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Mqtt\+Client\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=222pt]{class_pozyx_positioner_1_1_framework_1_1_mqtt_client__coll__graph}
+\includegraphics[height=550pt]{class_pozyx_positioner_1_1_framework_1_1_mqtt_client__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -24,6 +23,41 @@ Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Mqtt\+Client\+:
 \begin{DoxyCompactList}\small\item\em Initializes and begins asynch subscription to tag topic from pozyx broker, one is created by the \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} automatically \end{DoxyCompactList}\item 
 void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aa08cbaf1de4adeae85b39edc92791ab9}{Begin} ()
 \begin{DoxyCompactList}\small\item\em Begins the broker \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a5e0d99ca6d75c3ee47dc455eb6ff438c}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a5e0d99ca6d75c3ee47dc455eb6ff438c}} 
+async void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a5e0d99ca6d75c3ee47dc455eb6ff438c}{Connected\+Handler} (Mqtt\+Client\+Connected\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Callback for when a connection is made through the broker \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_adcfdb0246431f7e43d2810b8bf3e0873}{Disconnected\+Handler} (Mqtt\+Client\+Disconnected\+Event\+Args event\+Args)
+\begin{DoxyCompactList}\small\item\em Callback for when a connection lost through the broker \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f}{Message\+Handler} (Mqtt\+Application\+Message\+Received\+Event\+Args event\+Args)
+\begin{DoxyCompactList}\small\item\em Callback for when message is recieved \end{DoxyCompactList}\item 
+void \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_ab9a1361b72712044aa1d770006ebd6cd}{Message\+Handler\+No\+Log} (Mqtt\+Application\+Message\+Received\+Event\+Args event\+Args)
+\begin{DoxyCompactList}\small\item\em Callback for when message is recieved \end{DoxyCompactList}\item 
+async Task \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a92ccb3ea4e84923cfb26c02367fac49e}{Start\+Async} ()
+\begin{DoxyCompactList}\small\item\em Method to start listening to the M\+Q\+TT topic \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_affc988c8046e844a8814a33dcc7ae611}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_affc988c8046e844a8814a33dcc7ae611}} 
+string {\bfseries \+\_\+filename}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a3bef7957deec9a68cf853c17555a4f85}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a3bef7957deec9a68cf853c17555a4f85}} 
+I\+Mqtt\+Client {\bfseries \+\_\+mqtt\+Client}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_abb53312377599059079ab76f8299599e}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_abb53312377599059079ab76f8299599e}} 
+I\+Mqtt\+Client\+Options {\bfseries \+\_\+options}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a65faa3911fc07423829583320c96ab59}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a65faa3911fc07423829583320c96ab59}} 
+\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} {\bfseries \+\_\+sim}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a6ea2bbc30c60ba16cd972acfb64beea3}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a6ea2bbc30c60ba16cd972acfb64beea3}} 
+string {\bfseries \+\_\+topic}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a7dbee0133f3ec032ceffa37c73525aaa}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a7dbee0133f3ec032ceffa37c73525aaa}} 
+String\+Builder {\bfseries log} = new String\+Builder()
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -85,14 +119,62 @@ Initializes and begins asynch subscription to tag topic from pozyx broker, one i
 
 Begins the broker 
 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_adcfdb0246431f7e43d2810b8bf3e0873}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_adcfdb0246431f7e43d2810b8bf3e0873}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Disconnected\+Handler@{Disconnected\+Handler}}
+\index{Disconnected\+Handler@{Disconnected\+Handler}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Disconnected\+Handler()}{DisconnectedHandler()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Disconnected\+Handler (\begin{DoxyParamCaption}\item[{Mqtt\+Client\+Disconnected\+Event\+Args}]{event\+Args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callback for when a connection lost through the broker 
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Message\+Handler@{Message\+Handler}}
+\index{Message\+Handler@{Message\+Handler}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Message\+Handler()}{MessageHandler()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Message\+Handler (\begin{DoxyParamCaption}\item[{Mqtt\+Application\+Message\+Received\+Event\+Args}]{event\+Args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callback for when message is recieved 
+
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aa08cbaf1de4adeae85b39edc92791ab9_cgraph}
+\includegraphics[width=350pt]{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f_cgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_ab9a1361b72712044aa1d770006ebd6cd}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_ab9a1361b72712044aa1d770006ebd6cd}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Message\+Handler\+No\+Log@{Message\+Handler\+No\+Log}}
+\index{Message\+Handler\+No\+Log@{Message\+Handler\+No\+Log}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Message\+Handler\+No\+Log()}{MessageHandlerNoLog()}}
+{\footnotesize\ttfamily void Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Message\+Handler\+No\+Log (\begin{DoxyParamCaption}\item[{Mqtt\+Application\+Message\+Received\+Event\+Args}]{event\+Args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callback for when message is recieved 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_ab9a1361b72712044aa1d770006ebd6cd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a92ccb3ea4e84923cfb26c02367fac49e}\label{class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a92ccb3ea4e84923cfb26c02367fac49e}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}!Start\+Async@{Start\+Async}}
+\index{Start\+Async@{Start\+Async}!Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client@{Pozyx\+Positioner\+::\+Framework\+::\+Mqtt\+Client}}
+\subsubsection{\texorpdfstring{Start\+Async()}{StartAsync()}}
+{\footnotesize\ttfamily async Task Pozyx\+Positioner.\+Framework.\+Mqtt\+Client.\+Start\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Method to start listening to the M\+Q\+TT topic 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

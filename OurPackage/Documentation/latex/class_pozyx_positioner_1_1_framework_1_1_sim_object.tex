@@ -2,12 +2,11 @@
 \label{class_pozyx_positioner_1_1_framework_1_1_sim_object}\index{Pozyx\+Positioner.\+Framework.\+Sim\+Object@{Pozyx\+Positioner.\+Framework.\+Sim\+Object}}
 
 
-Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Object\+:
-\nopagebreak
+Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Object\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=222pt]{class_pozyx_positioner_1_1_framework_1_1_sim_object__coll__graph}
+\includegraphics[height=550pt]{class_pozyx_positioner_1_1_framework_1_1_sim_object__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -38,6 +37,47 @@ bool \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_a6bcf3203287
 \begin{DoxyCompactList}\small\item\em \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\+: The Position of the current Simobject \end{DoxyCompactList}\item 
 float \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_ab9f89c4e327e25286f0269960d0d2de8}{Scale}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em float\+: The Scale value of the Object\textquotesingle{}s displacement \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_ab0d578085cfad50b5e864a172b1254d0}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_ab0d578085cfad50b5e864a172b1254d0}} 
+async void {\bfseries Calibrate\+Async} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} S)
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_aa1039dc5dba70d15e26f6a98f8938501}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_aa1039dc5dba70d15e26f6a98f8938501}} 
+async void {\bfseries Calibrate\+Async} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} S, float xpos, float ypos, float zpos)
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_abd6181d20432387f956e80632f2994cf}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_abd6181d20432387f956e80632f2994cf}} 
+async void {\bfseries Calibrate\+Async} (\hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} S, float xpos, float ypos, float zpos, float scale)
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_afe392c2a31003ef615127a8c00f6ed27}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_afe392c2a31003ef615127a8c00f6ed27}} 
+void {\bfseries Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a2059b30b30cc5672b39ee813af211fca}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a2059b30b30cc5672b39ee813af211fca}} 
+bool {\bfseries \+\_\+calibrated}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a20cac81c32c0b711c923aae1c6c8352c}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a20cac81c32c0b711c923aae1c6c8352c}} 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} {\bfseries \+\_\+orientation}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a2955942c0f03c9dfadcc5bb13127116b}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a2955942c0f03c9dfadcc5bb13127116b}} 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} {\bfseries \+\_\+position}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a27df1659477df50c36d6b0fff1b58786}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a27df1659477df50c36d6b0fff1b58786}} 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} {\bfseries \+\_\+posoffset}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_af8b6718a875d6056b22624ea9cb6e0c9}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_af8b6718a875d6056b22624ea9cb6e0c9}} 
+float {\bfseries \+\_\+scale}
+\item 
+List$<$ \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} $>$ \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_object_aa84e7c3fd9b8c17e15e4ba64b0e5867b}{\+\_\+tags}
+\begin{DoxyCompactList}\small\item\em an object that can be represented by the simulation environment \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a9f70129956e360ff10ebe252d924a536}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a9f70129956e360ff10ebe252d924a536}} 
+\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} {\bfseries O\+\_\+\+Vector}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_a83028e56f420485333ba365bd5949550}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_a83028e56f420485333ba365bd5949550}} 
+List$<$ \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} $>$ {\bfseries O\+\_\+\+Vectors}
+\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -152,6 +192,19 @@ removes a tag from this object
 {\em tag} & The tag to remove \\
 \hline
 \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_object_aa84e7c3fd9b8c17e15e4ba64b0e5867b}\label{class_pozyx_positioner_1_1_framework_1_1_sim_object_aa84e7c3fd9b8c17e15e4ba64b0e5867b}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}!\+\_\+tags@{\+\_\+tags}}
+\index{\+\_\+tags@{\+\_\+tags}!Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object@{Pozyx\+Positioner\+::\+Framework\+::\+Sim\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+tags}{\_tags}}
+{\footnotesize\ttfamily List$<$\hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag}$>$ Pozyx\+Positioner.\+Framework.\+Sim\+Object.\+\_\+tags\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+an object that can be represented by the simulation environment 
+
 
 
 \subsection{Property Documentation}

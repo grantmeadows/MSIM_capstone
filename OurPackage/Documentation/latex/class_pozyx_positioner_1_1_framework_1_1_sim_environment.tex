@@ -7,12 +7,11 @@ Simulation enviornemnt
 
 
 
-Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Environment\+:
-\nopagebreak
+Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Sim\+Environment\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=222pt]{class_pozyx_positioner_1_1_framework_1_1_sim_environment__coll__graph}
+\includegraphics[height=550pt]{class_pozyx_positioner_1_1_framework_1_1_sim_environment__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -46,6 +45,48 @@ static \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\
 \item 
 List$<$ string $>$ \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment_af1e5db7ec810b6d92216b74c3eeb657a}{Tag\+I\+Ds}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em a list of strings that contain the I\+Ds of all the active tags in the Simulation Environment \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_acb84aa7c4c3ea6384dcd651b2d59b120}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_acb84aa7c4c3ea6384dcd651b2d59b120}} 
+async Task {\bfseries Start\+Async\+Reader} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a3bfc7c3386466741ac20e20dca73ee33}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a3bfc7c3386466741ac20e20dca73ee33}} 
+bool {\bfseries \+\_\+connected\+Status}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_af0947dfc354e424b2d7ab9f7aa7f7969}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_af0947dfc354e424b2d7ab9f7aa7f7969}} 
+string {\bfseries \+\_\+filename}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a01391d8f1ff2b13f275980c720c826f7}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a01391d8f1ff2b13f275980c720c826f7}} 
+string {\bfseries \+\_\+host}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a27b83c707ec5c7940ca2b720f3b279ad}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a27b83c707ec5c7940ca2b720f3b279ad}} 
+int {\bfseries \+\_\+port}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a5accfd1ee1c13ae0a68057eb17ce27e6}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a5accfd1ee1c13ae0a68057eb17ce27e6}} 
+int {\bfseries \+\_\+refresh\+Rate}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a16589d3e54bc678d0c32c6dac999cb7f}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a16589d3e54bc678d0c32c6dac999cb7f}} 
+List$<$ string $>$ {\bfseries \+\_\+tag\+I\+Ds}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ac4a63ffcd30b1ed0cd120e302f612c8c}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ac4a63ffcd30b1ed0cd120e302f612c8c}} 
+Dictionary$<$ string, \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag}{Tag} $>$ {\bfseries \+\_\+tags}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ab1101cc55564093891da3a9ff12028f9}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_ab1101cc55564093891da3a9ff12028f9}} 
+bool {\bfseries reader}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_af350a1664eeb1a28757466471b9e8d38}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_af350a1664eeb1a28757466471b9e8d38}} 
+static \hyperlink{class_pozyx_positioner_1_1_framework_1_1_sim_environment}{Sim\+Environment} {\bfseries \+\_\+instance} = null
+\item 
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a60ce5b8b923d8f964e80c25caa6b60d7}\label{class_pozyx_positioner_1_1_framework_1_1_sim_environment_a60ce5b8b923d8f964e80c25caa6b60d7}} 
+static \hyperlink{class_pozyx_positioner_1_1_framework_1_1_mqtt_client}{Mqtt\+Client} {\bfseries \+\_\+\+Mqqt\+Client}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

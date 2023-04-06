@@ -44,6 +44,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_pozyx_positioner_1_1_framework_1_1_tag-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">PozyxPositioner.Framework.Tag Class Reference</div>  </div>
@@ -54,6 +56,7 @@ Collaboration diagram for PozyxPositioner.Framework.Tag:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_pozyx_positioner_1_1_framework_1_1_tag__coll__graph.png" border="0" usemap="#_pozyx_positioner_8_framework_8_tag_coll__map" alt="Collaboration graph"/></div>
 <map name="_pozyx_positioner_8_framework_8_tag_coll__map" id="_pozyx_positioner_8_framework_8_tag_coll__map">
+<area shape="rect" id="node2" href="struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector.html" title="{PozyxPositioner.Framework.\lPozyxVector\n|+ x\l+ y\l+ z\l|+ PozyxVector()\l+ Dot()\l+ getAngleZ()\l+ Norm()\l+ operator*()\l+ operator*()\l+ operator+()\l+ operator&#45;()\l+ operator/()\l+ operator/()\l}" alt="" coords="16,5,205,259"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -74,12 +77,49 @@ Properties</h2></td></tr>
 <tr class="memitem:a02cdde9c3303a18f28453056939bf045"><td class="memItemLeft" align="right" valign="top"><a id="a02cdde9c3303a18f28453056939bf045"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCalibrated</b><code> [get, set]</code></td></tr>
 <tr class="separator:a02cdde9c3303a18f28453056939bf045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60d7ebc6171c464cd77e81aae36cacc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector.html">PozyxVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_tag.html#ac60d7ebc6171c464cd77e81aae36cacc">LastPosData</a><code> [get]</code></td></tr>
+<tr class="memdesc:ac60d7ebc6171c464cd77e81aae36cacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">the last positional data of this tag  <a href="#ac60d7ebc6171c464cd77e81aae36cacc">More...</a><br /></td></tr>
+<tr class="separator:ac60d7ebc6171c464cd77e81aae36cacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b1b836b4e64ae70171587a2bcde4d71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector.html">PozyxVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_tag.html#a0b1b836b4e64ae70171587a2bcde4d71">Position</a><code> [get]</code></td></tr>
 <tr class="memdesc:a0b1b836b4e64ae70171587a2bcde4d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">the current position of the tag  <a href="#a0b1b836b4e64ae70171587a2bcde4d71">More...</a><br /></td></tr>
 <tr class="separator:a0b1b836b4e64ae70171587a2bcde4d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9010e57016df0a932c5ce8f8584ff5f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_tag.html#a9010e57016df0a932c5ce8f8584ff5f9">refreshRate</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a9010e57016df0a932c5ce8f8584ff5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The refresh rate of the tag  <a href="#a9010e57016df0a932c5ce8f8584ff5f9">More...</a><br /></td></tr>
 <tr class="separator:a9010e57016df0a932c5ce8f8584ff5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ad660c4234e2e962b72737bff03665df9"><td class="memItemLeft" align="right" valign="top"><a id="ad660c4234e2e962b72737bff03665df9"></a>
+<a class="el" href="struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector.html">PozyxVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>normalize</b> (<a class="el" href="struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector.html">PozyxVector</a>[] P, int sampleSize, <a class="el" href="struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector.html">PozyxVector</a> sum)</td></tr>
+<tr class="separator:ad660c4234e2e962b72737bff03665df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8d2034cbbee073290ce6b4a4ab504c85"><td class="memItemLeft" align="right" valign="top"><a id="a8d2034cbbee073290ce6b4a4ab504c85"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_calibrated</b></td></tr>
+<tr class="separator:a8d2034cbbee073290ce6b4a4ab504c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a542f3cf1a7aa888a5f803cf90967e117"><td class="memItemLeft" align="right" valign="top"><a id="a542f3cf1a7aa888a5f803cf90967e117"></a>
+<a class="el" href="struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector.html">PozyxVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_down</b></td></tr>
+<tr class="separator:a542f3cf1a7aa888a5f803cf90967e117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac346aed5fb8ebb7a8830848f7ed57899"><td class="memItemLeft" align="right" valign="top"><a id="ac346aed5fb8ebb7a8830848f7ed57899"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_id</b></td></tr>
+<tr class="separator:ac346aed5fb8ebb7a8830848f7ed57899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02977bc7f7149d3f42049e26341c7e65"><td class="memItemLeft" align="right" valign="top"><a id="a02977bc7f7149d3f42049e26341c7e65"></a>
+<a class="el" href="struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector.html">PozyxVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_position</b></td></tr>
+<tr class="separator:a02977bc7f7149d3f42049e26341c7e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e1c3f330628259251be363086d9cea"><td class="memItemLeft" align="right" valign="top"><a id="ab1e1c3f330628259251be363086d9cea"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_prevIndx</b></td></tr>
+<tr class="separator:ab1e1c3f330628259251be363086d9cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87e59705ade22a9cc2d16c2d7e9fb27"><td class="memItemLeft" align="right" valign="top"><a id="aa87e59705ade22a9cc2d16c2d7e9fb27"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_refreshRate</b></td></tr>
+<tr class="separator:aa87e59705ade22a9cc2d16c2d7e9fb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca228bcaae42b55b93745415a33e2a61"><td class="memItemLeft" align="right" valign="top"><a id="aca228bcaae42b55b93745415a33e2a61"></a>
+List&lt; <a class="el" href="struct_pozyx_positioner_1_1_framework_1_1_pos_data.html">PosData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_tag.html#aca228bcaae42b55b93745415a33e2a61">_tagdata</a></td></tr>
+<tr class="memdesc:aca228bcaae42b55b93745415a33e2a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tag object that is tracked using the Pozyx environment <br /></td></tr>
+<tr class="separator:aca228bcaae42b55b93745415a33e2a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7847c9687168bc94d936bb9bf2d44bad"><td class="memItemLeft" align="right" valign="top"><a id="a7847c9687168bc94d936bb9bf2d44bad"></a>
+<a class="el" href="struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector.html">PozyxVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_velocity</b></td></tr>
+<tr class="separator:a7847c9687168bc94d936bb9bf2d44bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9b58a1a5756bf3c8cda1e2afd32276b2"></a>
@@ -177,6 +217,30 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>the ID of the tag </p>
+
+</div>
+</div>
+<a id="ac60d7ebc6171c464cd77e81aae36cacc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac60d7ebc6171c464cd77e81aae36cacc">&#9670;&nbsp;</a></span>LastPosData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector.html">PozyxVector</a> PozyxPositioner.Framework.Tag.LastPosData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the last positional data of this tag </p>
 
 </div>
 </div>

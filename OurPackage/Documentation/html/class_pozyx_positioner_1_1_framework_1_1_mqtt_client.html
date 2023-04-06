@@ -43,6 +43,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_pozyx_positioner_1_1_framework_1_1_mqtt_client-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">PozyxPositioner.Framework.MqttClient Class Reference</div>  </div>
@@ -56,6 +58,7 @@ Collaboration diagram for PozyxPositioner.Framework.MqttClient:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_pozyx_positioner_1_1_framework_1_1_mqtt_client__coll__graph.png" border="0" usemap="#_pozyx_positioner_8_framework_8_mqtt_client_coll__map" alt="Collaboration graph"/></div>
 <map name="_pozyx_positioner_8_framework_8_mqtt_client_coll__map" id="_pozyx_positioner_8_framework_8_mqtt_client_coll__map">
+<area shape="rect" id="node2" href="class_pozyx_positioner_1_1_framework_1_1_sim_environment.html" title="Simulation enviornemnt " alt="" coords="5,321,195,707"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -70,6 +73,46 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa08cbaf1de4adeae85b39edc92791ab9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_mqtt_client.html#aa08cbaf1de4adeae85b39edc92791ab9">Begin</a> ()</td></tr>
 <tr class="memdesc:aa08cbaf1de4adeae85b39edc92791ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the broker  <a href="#aa08cbaf1de4adeae85b39edc92791ab9">More...</a><br /></td></tr>
 <tr class="separator:aa08cbaf1de4adeae85b39edc92791ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a5e0d99ca6d75c3ee47dc455eb6ff438c"><td class="memItemLeft" align="right" valign="top"><a id="a5e0d99ca6d75c3ee47dc455eb6ff438c"></a>
+async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_mqtt_client.html#a5e0d99ca6d75c3ee47dc455eb6ff438c">ConnectedHandler</a> (MqttClientConnectedEventArgs e)</td></tr>
+<tr class="memdesc:a5e0d99ca6d75c3ee47dc455eb6ff438c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for when a connection is made through the broker <br /></td></tr>
+<tr class="separator:a5e0d99ca6d75c3ee47dc455eb6ff438c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcfdb0246431f7e43d2810b8bf3e0873"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_mqtt_client.html#adcfdb0246431f7e43d2810b8bf3e0873">DisconnectedHandler</a> (MqttClientDisconnectedEventArgs eventArgs)</td></tr>
+<tr class="memdesc:adcfdb0246431f7e43d2810b8bf3e0873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for when a connection lost through the broker  <a href="#adcfdb0246431f7e43d2810b8bf3e0873">More...</a><br /></td></tr>
+<tr class="separator:adcfdb0246431f7e43d2810b8bf3e0873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fda7c69a63eeeb876490644686b103f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_mqtt_client.html#a1fda7c69a63eeeb876490644686b103f">MessageHandler</a> (MqttApplicationMessageReceivedEventArgs eventArgs)</td></tr>
+<tr class="memdesc:a1fda7c69a63eeeb876490644686b103f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for when message is recieved  <a href="#a1fda7c69a63eeeb876490644686b103f">More...</a><br /></td></tr>
+<tr class="separator:a1fda7c69a63eeeb876490644686b103f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a1361b72712044aa1d770006ebd6cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_mqtt_client.html#ab9a1361b72712044aa1d770006ebd6cd">MessageHandlerNoLog</a> (MqttApplicationMessageReceivedEventArgs eventArgs)</td></tr>
+<tr class="memdesc:ab9a1361b72712044aa1d770006ebd6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for when message is recieved  <a href="#ab9a1361b72712044aa1d770006ebd6cd">More...</a><br /></td></tr>
+<tr class="separator:ab9a1361b72712044aa1d770006ebd6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ccb3ea4e84923cfb26c02367fac49e"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pozyx_positioner_1_1_framework_1_1_mqtt_client.html#a92ccb3ea4e84923cfb26c02367fac49e">StartAsync</a> ()</td></tr>
+<tr class="memdesc:a92ccb3ea4e84923cfb26c02367fac49e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to start listening to the MQTT topic  <a href="#a92ccb3ea4e84923cfb26c02367fac49e">More...</a><br /></td></tr>
+<tr class="separator:a92ccb3ea4e84923cfb26c02367fac49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:affc988c8046e844a8814a33dcc7ae611"><td class="memItemLeft" align="right" valign="top"><a id="affc988c8046e844a8814a33dcc7ae611"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_filename</b></td></tr>
+<tr class="separator:affc988c8046e844a8814a33dcc7ae611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bef7957deec9a68cf853c17555a4f85"><td class="memItemLeft" align="right" valign="top"><a id="a3bef7957deec9a68cf853c17555a4f85"></a>
+IMqttClient&#160;</td><td class="memItemRight" valign="bottom"><b>_mqttClient</b></td></tr>
+<tr class="separator:a3bef7957deec9a68cf853c17555a4f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb53312377599059079ab76f8299599e"><td class="memItemLeft" align="right" valign="top"><a id="abb53312377599059079ab76f8299599e"></a>
+IMqttClientOptions&#160;</td><td class="memItemRight" valign="bottom"><b>_options</b></td></tr>
+<tr class="separator:abb53312377599059079ab76f8299599e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65faa3911fc07423829583320c96ab59"><td class="memItemLeft" align="right" valign="top"><a id="a65faa3911fc07423829583320c96ab59"></a>
+<a class="el" href="class_pozyx_positioner_1_1_framework_1_1_sim_environment.html">SimEnvironment</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_sim</b></td></tr>
+<tr class="separator:a65faa3911fc07423829583320c96ab59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea2bbc30c60ba16cd972acfb64beea3"><td class="memItemLeft" align="right" valign="top"><a id="a6ea2bbc30c60ba16cd972acfb64beea3"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_topic</b></td></tr>
+<tr class="separator:a6ea2bbc30c60ba16cd972acfb64beea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dbee0133f3ec032ceffa37c73525aaa"><td class="memItemLeft" align="right" valign="top"><a id="a7dbee0133f3ec032ceffa37c73525aaa"></a>
+StringBuilder&#160;</td><td class="memItemRight" valign="bottom"><b>log</b> = new StringBuilder()</td></tr>
+<tr class="separator:a7dbee0133f3ec032ceffa37c73525aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Mqqt client for subscribing to pozyx broker </p>
@@ -186,14 +229,133 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Begins the broker </p>
+
+</div>
+</div>
+<a id="adcfdb0246431f7e43d2810b8bf3e0873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcfdb0246431f7e43d2810b8bf3e0873">&#9670;&nbsp;</a></span>DisconnectedHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PozyxPositioner.Framework.MqttClient.DisconnectedHandler </td>
+          <td>(</td>
+          <td class="paramtype">MqttClientDisconnectedEventArgs&#160;</td>
+          <td class="paramname"><em>eventArgs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback for when a connection lost through the broker </p>
+
+</div>
+</div>
+<a id="a1fda7c69a63eeeb876490644686b103f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fda7c69a63eeeb876490644686b103f">&#9670;&nbsp;</a></span>MessageHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PozyxPositioner.Framework.MqttClient.MessageHandler </td>
+          <td>(</td>
+          <td class="paramtype">MqttApplicationMessageReceivedEventArgs&#160;</td>
+          <td class="paramname"><em>eventArgs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback for when message is recieved </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aa08cbaf1de4adeae85b39edc92791ab9_cgraph.png" border="0" usemap="#class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aa08cbaf1de4adeae85b39edc92791ab9_cgraph" alt=""/></div>
-<map name="class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aa08cbaf1de4adeae85b39edc92791ab9_cgraph" id="class_pozyx_positioner_1_1_framework_1_1_mqtt_client_aa08cbaf1de4adeae85b39edc92791ab9_cgraph">
+<div class="center"><img src="class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f_cgraph.png" border="0" usemap="#class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f_cgraph" alt=""/></div>
+<map name="class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f_cgraph" id="class_pozyx_positioner_1_1_framework_1_1_mqtt_client_a1fda7c69a63eeeb876490644686b103f_cgraph">
 <area shape="rect" id="node2" href="class_pozyx_positioner_1_1_framework_1_1_sim_environment.html#a94e341475ddb03c2c27dd253748ad65a" title="Pushes a JSON JArray into the simulation " alt="" coords="243,5,432,47"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="ab9a1361b72712044aa1d770006ebd6cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9a1361b72712044aa1d770006ebd6cd">&#9670;&nbsp;</a></span>MessageHandlerNoLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PozyxPositioner.Framework.MqttClient.MessageHandlerNoLog </td>
+          <td>(</td>
+          <td class="paramtype">MqttApplicationMessageReceivedEventArgs&#160;</td>
+          <td class="paramname"><em>eventArgs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback for when message is recieved </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pozyx_positioner_1_1_framework_1_1_mqtt_client_ab9a1361b72712044aa1d770006ebd6cd_cgraph.png" border="0" usemap="#class_pozyx_positioner_1_1_framework_1_1_mqtt_client_ab9a1361b72712044aa1d770006ebd6cd_cgraph" alt=""/></div>
+<map name="class_pozyx_positioner_1_1_framework_1_1_mqtt_client_ab9a1361b72712044aa1d770006ebd6cd_cgraph" id="class_pozyx_positioner_1_1_framework_1_1_mqtt_client_ab9a1361b72712044aa1d770006ebd6cd_cgraph">
+<area shape="rect" id="node2" href="class_pozyx_positioner_1_1_framework_1_1_sim_environment.html#a94e341475ddb03c2c27dd253748ad65a" title="Pushes a JSON JArray into the simulation " alt="" coords="272,5,461,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a92ccb3ea4e84923cfb26c02367fac49e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ccb3ea4e84923cfb26c02367fac49e">&#9670;&nbsp;</a></span>StartAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task PozyxPositioner.Framework.MqttClient.StartAsync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method to start listening to the MQTT topic </p>
 
 </div>
 </div>
