@@ -12,6 +12,7 @@ using UnityEngine;
 
 public class Tag_Application : MonoBehaviour
 {
+    public bool DisplayTags;
     public string fileName;
     public int tagRefreshRate;
 
@@ -28,11 +29,13 @@ public class Tag_Application : MonoBehaviour
     public GameObject TagMarker;
 
     List<GameObject> tagList = new List<GameObject>();
+    private List<SimObject> simObjs = new List<SimObject>();
 
     GameObject temp;
     GameObject baseObj;
 
     private int[] count;
+    private int num;
     private int fileCount = 0;
     private float time;
 
@@ -46,39 +49,74 @@ public class Tag_Application : MonoBehaviour
 
         VisualizeTags();
 
-
         env = SimEnvironment.Instance;
-        //env.Initialize(host, port, fileName, tagRefreshRate);
-        env.Initialize(fileName, tagRefreshRate);
+        env.Initialize(host, port, fileName, tagRefreshRate);
+        //env.Initialize(fileName, tagRefreshRate);
+
+        num = 0;
 
         foreach (var obj in objects)
         {
+            simObjs.Add(new SimObject());
             foreach (var tagID in obj.tagIDList)
             {
-                env.newTag(tagID, tagRefreshRate);
+                simObjs[num].AddTag(env.newTag(tagID, tagRefreshRate));
             }
+            num++;
         }
 
         env.StartEnvironment();
 
-        while (!env.ConnectedStatus);
+        while (!env.ConnectedStatus) ;
+
+        foreach (var obj in simObjs)
+        {
+            obj.Calibrate();
+        }
     }
 
     // Loads gameObjects for each tag and creates a list of gameObjects.
     void VisualizeTags()
     {
         var targetGroup = GameObject.Find("TargetGroup").GetComponent<CinemachineTargetGroup>();
-        
-        foreach (var obj in objects)
+
+        if (DisplayTags == true)
         {
-            var color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-            foreach (var tagID in obj.tagIDList)
+            foreach (var obj in objects)
             {
+                var color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+                foreach (var tagID in obj.tagIDList)
+                {
+                    // Add tag to Unity
+                    baseObj = new GameObject(tagID);
+                    GameObject t = Instantiate(TagPrefab);
+                    t.transform.parent = baseObj.transform;
+                    t.name = tagID;
+                    t.GetComponent<Renderer>().material.color = color;
+                    t.SetActive(false);
+                    tagList.Add(t);
+
+                    // Cinemachine camera tracking
+                    targetGroup.AddMember(t.transform, 1, 0.25f);
+
+                    // Empty game object to organize history
+                    temp = new GameObject(tagID + "_History");
+                    temp.transform.parent = baseObj.transform;
+                }
+            }
+        }
+        else
+        {
+            num = 0;
+            foreach (var obj in objects)
+            {
+                var color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+
                 // Add tag to Unity
-                baseObj = new GameObject(tagID);
+                baseObj = new GameObject("Object_" + num.ToString());
                 GameObject t = Instantiate(TagPrefab);
                 t.transform.parent = baseObj.transform;
-                t.name = tagID;
+                t.name = "Object_" + num.ToString();
                 t.GetComponent<Renderer>().material.color = color;
                 t.SetActive(false);
                 tagList.Add(t);
@@ -87,7 +125,7 @@ public class Tag_Application : MonoBehaviour
                 targetGroup.AddMember(t.transform, 1, 0.25f);
 
                 // Empty game object to organize history
-                temp = new GameObject(tagID + "_History");
+                temp = new GameObject("Object_" + num.ToString() + "_History");
                 temp.transform.parent = baseObj.transform;
             }
         }
@@ -98,35 +136,73 @@ public class Tag_Application : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int tagNum = 0;
-        foreach (var id in env.TagIDs)
+        num = 0;
+        if (DisplayTags == true)
         {
-            var position = env.GetTag(id).Position;
-            if (position.x != 0 && position.y != 0 && position.z != 0)
+            foreach (var id in env.TagIDs)
             {
-                temp = tagList.Find(x => x.name == id);
-
-                if (Vector3.Distance(temp.transform.position, new Vector3(position.x / 1000f, position.z / 1000f, position.y / 1000f)) > 0.01)
+                var position = env.GetTag(id).Position;
+                if (position.x != 0 && position.y != 0 && position.z != 0)
                 {
-                    //Activate tag
-                    if (temp.activeSelf == false)
+                    temp = tagList.Find(x => x.name == id);
+
+                    if (Vector3.Distance(temp.transform.position, new Vector3(position.x / 1000f, position.z / 1000f, position.y / 1000f)) > 0.001)
                     {
-                        temp.SetActive(true);
+                        //Activate tag
+                        if (temp.activeSelf == false)
+                        {
+                            temp.SetActive(true);
+                        }
+
+                        // Move tag
+                        temp.transform.position = new Vector3(position.x / 1000f, position.z / 1000f, position.y / 1000f);
+
+                        // Place a marker
+                        GameObject th = Instantiate(TagMarker);
+                        th.transform.position = temp.transform.position;
+                        th.GetComponent<Renderer>().material.color = temp.GetComponent<Renderer>().material.GetColor("_Color");
+                        th.name = temp.name + "_" + count[num].ToString();
+                        th.transform.parent = GameObject.Find(temp.name + "_History").transform;
+                        count[num]++;
                     }
-
-                    // Move tag
-                    temp.transform.position = new Vector3(position.x / 1000f, position.z / 1000f, position.y / 1000f);
-
-                    // Place a marker
-                    GameObject th = Instantiate(TagMarker);
-                    th.transform.position = temp.transform.position;
-                    th.GetComponent<Renderer>().material.color = temp.GetComponent<Renderer>().material.GetColor("_Color");
-                    th.name = temp.name + "_" + count[tagNum].ToString();
-                    th.transform.parent = GameObject.Find(temp.name + "_History").transform;
-                    count[tagNum]++;
                 }
+                num++;
             }
-            tagNum++;
+        }
+        else
+        {
+            foreach (var obj in objects)
+            {
+                var position = simObjs[num].Position;
+                var orientation = simObjs[num].Orientation;
+
+                if (position.x != 0 && position.y != 0 && position.z != 0)
+                {
+                    temp = tagList.Find(x => x.name == "Object_" + num.ToString());
+
+                    if (Vector3.Distance(temp.transform.position, new Vector3(position.x / 1000f, position.z / 1000f, position.y / 1000f)) > 0.001)
+                    {
+                        //Activate tag
+                        if (temp.activeSelf == false)
+                        {
+                            temp.SetActive(true);
+                        }
+
+                        // Move tag
+                        temp.transform.position = new Vector3(position.x / 1000f, position.z / 1000f, position.y / 1000f);
+                        temp.transform.localEulerAngles = new Vector3(orientation.x * 180/3.14159265f, orientation.z * 180 / 3.14159265f, orientation.y * 180 / 3.14159265f);
+
+                        // Place a marker
+                        GameObject th = Instantiate(TagMarker);
+                        th.transform.position = temp.transform.position;
+                        th.GetComponent<Renderer>().material.color = temp.GetComponent<Renderer>().material.GetColor("_Color");
+                        th.name = temp.name + "_" + count[num].ToString();
+                        th.transform.parent = GameObject.Find(temp.name + "_History").transform;
+                        count[num]++;
+                    }
+                }
+                num++;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -143,7 +219,7 @@ public class Tag_Application : MonoBehaviour
     {
         foreach (var id in tagList)
         {
-            File.AppendAllText("Assets/Data/" + id.name.ToString() + "_" + fileCount.ToString() + ".txt", "Time, X, Y, Z");
+            File.AppendAllText("Assets/Data/" + id.name.ToString() + "_" + fileCount.ToString() + ".txt", "Time, X, Y, Z" + "\n");
             foreach (Transform child in GameObject.Find(id.name + "_History").transform)
             {
                 string outputText = (child.gameObject.GetComponent<Time_Storage>().getTime() - time).ToString() + ", " + 
