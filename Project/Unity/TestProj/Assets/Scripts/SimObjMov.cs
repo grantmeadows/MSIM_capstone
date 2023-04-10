@@ -10,6 +10,8 @@ public class SimObjMov : MonoBehaviour
 {
 
     private Transform t;
+    private Vector3 startingPos;
+    private float startingO;
     private SimEnvironment env;
     private SimObject S;
     private Text textObj;
@@ -22,11 +24,13 @@ public class SimObjMov : MonoBehaviour
     void Start()
     {
         count = 0;
-        textObj = GameObject.Find("TextExits").GetComponent<Text>();
+        //textObj = GameObject.Find("TextExits").GetComponent<Text>();
         t = transform.GetComponent<Transform>();
+        startingPos = transform.position;
+        startingO = t.eulerAngles.z;
         t.localPosition = new Vector2(1, 1);
         env = SimEnvironment.Instance;
-        textObj.text = "Exits: " + count;
+        //textObj.text = "Exits: " + count;
 
         var host = "10.0.0.254";
         var port = 1883;
@@ -49,7 +53,7 @@ public class SimObjMov : MonoBehaviour
         env.StartEnvironment();
 
         while (!env.ConnectedStatus) ;
-        S.Calibrate(0.0f, -37.2f, 0.0f, (0.0393701f));
+        S.Calibrate(startingPos.x, startingPos.y, startingPos.z, 0.0393701f);
         //S.Scale = 0.0393701f;
         //S.Calibrate();
 
@@ -58,10 +62,18 @@ public class SimObjMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var V = new Vector3(S.Position.x, S.Position.y, -1.0f);
-        var O = new Vector3(0.0f, 0.0f, S.Orientation.z * -(180/ Mathf.PI));
-        t.localPosition = V;
-        t.transform.eulerAngles = O;
+        if (S.Calibrated)
+        {
+            var V = new Vector3(S.Position.x, S.Position.y, -1.0f);
+            float or = (S.Orientation.z * -(180 / Mathf.PI)) + startingO;
+            var O = new Vector3(0.0f, 0.0f, or);
+            t.localPosition = V;
+            t.transform.eulerAngles = O;
+        }
+        else
+        {
+            t.localPosition = startingPos;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
