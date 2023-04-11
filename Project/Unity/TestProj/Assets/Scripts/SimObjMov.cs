@@ -10,6 +10,9 @@ public class SimObjMov : MonoBehaviour
 {
 
     private Transform t;
+    public int tagrefresh;
+    public string tag1ID;
+    public string tag2ID;
     private Vector3 startingPos;
     private float startingO;
     private SimEnvironment env;
@@ -34,16 +37,15 @@ public class SimObjMov : MonoBehaviour
 
         var host = "10.0.0.254";
         var port = 1883;
-        var tagrefresh = 24;
 
         if (Uselog)
             env.Initialize(filename, tagrefresh);
         else
-            env.Initialize(host, port, filename, 24);
+            env.Initialize(host, port, filename, tagrefresh);
 
-        Tag T1 = env.newTag("5772", tagrefresh);
+        Tag T1 = env.newTag(tag1ID, tagrefresh);
         //Tag T2 = env.newTag("7012", tagrefresh);
-        Tag T2 = env.newTag("6985", tagrefresh);
+        Tag T2 = env.newTag(tag2ID, tagrefresh);
 
         S = new SimObject();
 

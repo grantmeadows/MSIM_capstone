@@ -29,6 +29,21 @@
     <Reference Include="PozyxPositioner">
       <HintPath>PozyxPositioner.dll</HintPath>
     </Reference>
+    <Reference Include="PozyxPositioner">
+      <HintPath>PozyxPositioner.dll</HintPath>
+    </Reference>
+    <Reference Include="PozyxPositioner">
+      <HintPath>PozyxPositioner.dll</HintPath>
+    </Reference>
+    <Reference Include="PozyxPositioner">
+      <HintPath>PozyxPositioner.dll</HintPath>
+    </Reference>
+    <Reference Include="PozyxPositioner">
+      <HintPath>PozyxPositioner.dll</HintPath>
+    </Reference>
+    <Reference Include="PozyxPositioner">
+      <HintPath>PozyxPositioner.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
