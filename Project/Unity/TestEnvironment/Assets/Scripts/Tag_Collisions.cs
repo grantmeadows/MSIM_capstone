@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Distance_Display : MonoBehaviour
+public class Tag_Collisions : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Tracker " + name + " collided with obstacle");
+        }
     }
 
     // Update is called once per frame
