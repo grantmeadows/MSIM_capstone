@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Room_Generation : MonoBehaviour
 {
@@ -19,20 +21,17 @@ public class Room_Generation : MonoBehaviour
         }
     }
 
-    public GameObject RoomPrefab;
+    public GameObject layout;
 
-    void Start()
-    {
-        if (RoomPrefab != null) 
-        { 
-            Instantiate(RoomPrefab);
-        }
-    }
-
-    // Start is called before the first frame update
     public void RoomStart()
     {
-        PrefabUtility.SaveAsPrefabAsset(gameObject, "Assets/Prefabs/"+ gameObject.name + ".prefab");
+        GameObject r = Instantiate(layout);
+        r.transform.parent = transform;
+    }
+
+    public void RoomSave()
+    {
+        PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Room_Layout"), "Assets/Prefabs/Obstacle_Layout.prefab");
     }
 
     // Update is called once per frame

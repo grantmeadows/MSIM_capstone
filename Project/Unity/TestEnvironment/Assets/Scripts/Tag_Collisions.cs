@@ -14,7 +14,7 @@ public class Tag_Collisions : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("Tracker " + name + " collided with obstacle");
+            Debug.Log(name + " collided with obstacle" + other.gameObject.name);
         }
     }
 

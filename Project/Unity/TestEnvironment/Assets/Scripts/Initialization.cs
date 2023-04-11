@@ -28,6 +28,8 @@ public class Initialization : MonoBehaviour
     {
         ag.AnchorStart();
         ta.TagStart();
+        rg.RoomStart();
+        Debug.Break();
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class Initialization : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            rg.RoomStart();
+            rg.RoomSave();
         }
     }
 }

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ce98022b2219749a3b9da0929d5155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomPrefab: {fileID: 0}
+  layout: {fileID: 8287792973240576119, guid: e135777ed141f1f4c9c409551c36f8a6, type: 3}
 --- !u!4 &229720575
 Transform:
   m_ObjectHideFlags: 0
@@ -695,11 +695,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LiveTracking: 0
   DisplayTags: 1
+  host: 10.0.0.254
+  port: 1883
   fileName: AccuracyText1.txt
   tagRefreshRate: 15
   objects:
   - tagIDList:
-    - 6985
+    - 5974
     - 7000
   TagPrefab: {fileID: 4656374199788638134, guid: b3a69fa79f2f1ee4db658ee2196a18e1, type: 3}
   TagMarker: {fileID: 2159924670593484831, guid: 3258bcd8f31ec1d44af142e1734966e0, type: 3}
