@@ -31,7 +31,7 @@ public class Room_Generation : MonoBehaviour
 
     public void RoomSave()
     {
-        PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Room_Layout"), "Assets/Prefabs/Obstacle_Layout.prefab");
+        PrefabUtility.SaveAsPrefabAsset(GameObject.Find("New_Layout"), "Assets/Prefabs/Room_Layout.prefab");
     }
 
     // Update is called once per frame

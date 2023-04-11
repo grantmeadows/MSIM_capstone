@@ -143,7 +143,7 @@ public class Tag_Application : MonoBehaviour
                             th.transform.position = temp.transform.position;
                             th.GetComponent<Renderer>().material.color = temp.GetComponent<Renderer>().material.GetColor("_Color");
                             th.name = temp.name + "_" + count[num].ToString();
-                            th.transform.parent = GameObject.Find(temp.name + "_History").transform;
+                            th.transform.parent = temp.transform.parent.GetChild(1);
                             count[num]++;
                         }
                     }
