@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccuracyTest.cs" />
     <Compile Include="PosData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimObject.cs" />
