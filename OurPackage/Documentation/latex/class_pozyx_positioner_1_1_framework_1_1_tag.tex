@@ -2,7 +2,8 @@
 \label{class_pozyx_positioner_1_1_framework_1_1_tag}\index{Pozyx\+Positioner.\+Framework.\+Tag@{Pozyx\+Positioner.\+Framework.\+Tag}}
 
 
-Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Tag\+:\nopagebreak
+Collaboration diagram for Pozyx\+Positioner.\+Framework.\+Tag\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,45 +25,12 @@ string \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag_a0d75eeca4dea7088
 \mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_a02cdde9c3303a18f28453056939bf045}\label{class_pozyx_positioner_1_1_framework_1_1_tag_a02cdde9c3303a18f28453056939bf045}} 
 bool {\bfseries is\+Calibrated}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag_ac60d7ebc6171c464cd77e81aae36cacc}{Last\+Pos\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\begin{DoxyCompactList}\small\item\em the last positional data of this tag \end{DoxyCompactList}\item 
 \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag_a0b1b836b4e64ae70171587a2bcde4d71}{Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em the current position of the tag \end{DoxyCompactList}\item 
+List$<$ \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pos_data}{Pos\+Data} $>$ \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag_afb5b4baf9218efdddde17b8390408aa7}{Position\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em All positional Data in memory for this tag in a list of \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pos_data}{Pos\+Data} structs \end{DoxyCompactList}\item 
 int \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag_a9010e57016df0a932c5ce8f8584ff5f9}{refresh\+Rate}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em The refresh rate of the tag \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_ad660c4234e2e962b72737bff03665df9}\label{class_pozyx_positioner_1_1_framework_1_1_tag_ad660c4234e2e962b72737bff03665df9}} 
-\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} {\bfseries normalize} (\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector}\mbox{[}$\,$\mbox{]} P, int sample\+Size, \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} sum)
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_a8d2034cbbee073290ce6b4a4ab504c85}\label{class_pozyx_positioner_1_1_framework_1_1_tag_a8d2034cbbee073290ce6b4a4ab504c85}} 
-bool {\bfseries \+\_\+calibrated}
-\item 
-\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_a542f3cf1a7aa888a5f803cf90967e117}\label{class_pozyx_positioner_1_1_framework_1_1_tag_a542f3cf1a7aa888a5f803cf90967e117}} 
-\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} {\bfseries \+\_\+down}
-\item 
-\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_ac346aed5fb8ebb7a8830848f7ed57899}\label{class_pozyx_positioner_1_1_framework_1_1_tag_ac346aed5fb8ebb7a8830848f7ed57899}} 
-string {\bfseries \+\_\+id}
-\item 
-\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_a02977bc7f7149d3f42049e26341c7e65}\label{class_pozyx_positioner_1_1_framework_1_1_tag_a02977bc7f7149d3f42049e26341c7e65}} 
-\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} {\bfseries \+\_\+position}
-\item 
-\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_ab1e1c3f330628259251be363086d9cea}\label{class_pozyx_positioner_1_1_framework_1_1_tag_ab1e1c3f330628259251be363086d9cea}} 
-int {\bfseries \+\_\+prev\+Indx}
-\item 
-\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_aa87e59705ade22a9cc2d16c2d7e9fb27}\label{class_pozyx_positioner_1_1_framework_1_1_tag_aa87e59705ade22a9cc2d16c2d7e9fb27}} 
-int {\bfseries \+\_\+refresh\+Rate}
-\item 
-\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_aca228bcaae42b55b93745415a33e2a61}\label{class_pozyx_positioner_1_1_framework_1_1_tag_aca228bcaae42b55b93745415a33e2a61}} 
-List$<$ \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pos_data}{Pos\+Data} $>$ \hyperlink{class_pozyx_positioner_1_1_framework_1_1_tag_aca228bcaae42b55b93745415a33e2a61}{\+\_\+tagdata}
-\begin{DoxyCompactList}\small\item\em A tag object that is tracked using the Pozyx environment \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_a7847c9687168bc94d936bb9bf2d44bad}\label{class_pozyx_positioner_1_1_framework_1_1_tag_a7847c9687168bc94d936bb9bf2d44bad}} 
-\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} {\bfseries \+\_\+velocity}
-\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -121,16 +89,6 @@ Here is the caller graph for this function\+:\nopagebreak
 
 the ID of the tag 
 
-\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_ac60d7ebc6171c464cd77e81aae36cacc}\label{class_pozyx_positioner_1_1_framework_1_1_tag_ac60d7ebc6171c464cd77e81aae36cacc}} 
-\index{Pozyx\+Positioner\+::\+Framework\+::\+Tag@{Pozyx\+Positioner\+::\+Framework\+::\+Tag}!Last\+Pos\+Data@{Last\+Pos\+Data}}
-\index{Last\+Pos\+Data@{Last\+Pos\+Data}!Pozyx\+Positioner\+::\+Framework\+::\+Tag@{Pozyx\+Positioner\+::\+Framework\+::\+Tag}}
-\subsubsection{\texorpdfstring{Last\+Pos\+Data}{LastPosData}}
-{\footnotesize\ttfamily \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pozyx_vector}{Pozyx\+Vector} Pozyx\+Positioner.\+Framework.\+Tag.\+Last\+Pos\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
-
-
-
-the last positional data of this tag 
-
 \mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_a0b1b836b4e64ae70171587a2bcde4d71}\label{class_pozyx_positioner_1_1_framework_1_1_tag_a0b1b836b4e64ae70171587a2bcde4d71}} 
 \index{Pozyx\+Positioner\+::\+Framework\+::\+Tag@{Pozyx\+Positioner\+::\+Framework\+::\+Tag}!Position@{Position}}
 \index{Position@{Position}!Pozyx\+Positioner\+::\+Framework\+::\+Tag@{Pozyx\+Positioner\+::\+Framework\+::\+Tag}}
@@ -140,6 +98,16 @@ the last positional data of this tag
 
 
 the current position of the tag 
+
+\mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_afb5b4baf9218efdddde17b8390408aa7}\label{class_pozyx_positioner_1_1_framework_1_1_tag_afb5b4baf9218efdddde17b8390408aa7}} 
+\index{Pozyx\+Positioner\+::\+Framework\+::\+Tag@{Pozyx\+Positioner\+::\+Framework\+::\+Tag}!Position\+Data@{Position\+Data}}
+\index{Position\+Data@{Position\+Data}!Pozyx\+Positioner\+::\+Framework\+::\+Tag@{Pozyx\+Positioner\+::\+Framework\+::\+Tag}}
+\subsubsection{\texorpdfstring{Position\+Data}{PositionData}}
+{\footnotesize\ttfamily List$<$\hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pos_data}{Pos\+Data}$>$ Pozyx\+Positioner.\+Framework.\+Tag.\+Position\+Data\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+All positional Data in memory for this tag in a list of \hyperlink{struct_pozyx_positioner_1_1_framework_1_1_pos_data}{Pos\+Data} structs 
 
 \mbox{\Hypertarget{class_pozyx_positioner_1_1_framework_1_1_tag_a9010e57016df0a932c5ce8f8584ff5f9}\label{class_pozyx_positioner_1_1_framework_1_1_tag_a9010e57016df0a932c5ce8f8584ff5f9}} 
 \index{Pozyx\+Positioner\+::\+Framework\+::\+Tag@{Pozyx\+Positioner\+::\+Framework\+::\+Tag}!refresh\+Rate@{refresh\+Rate}}

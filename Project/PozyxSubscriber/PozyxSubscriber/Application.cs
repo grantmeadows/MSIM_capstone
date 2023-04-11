@@ -11,9 +11,9 @@ namespace PozyxPositioner.Application
     {
         static public void Main(string[] args)
         {
-            int tagRefreshRate = 24;
+            int tagRefreshRate = 15;
 
-            string tag1 = "5772";
+            string tag1 = "6982";
             string tag2 = "6985";
 
             SimEnvironment sim = SimEnvironment.Instance;
@@ -21,10 +21,10 @@ namespace PozyxPositioner.Application
             var host = "10.0.0.254";
             var port = 1883;
 
-           //sim.Initialize(host, port, "March30_3.txt", tagRefreshRate);
+            sim.Initialize(host, port, "April11_5.txt", tagRefreshRate);
 
 
-            sim.Initialize("March30_3.txt", tagRefreshRate);
+            //sim.Initialize("April11_1.txt", tagRefreshRate);
 
             //Tag T1 = sim.newTag(tag1, tagRefreshRate);
             //Tag T2 = sim.newTag(tag2, tagRefreshRate);

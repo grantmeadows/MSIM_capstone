@@ -84,6 +84,12 @@ namespace PozyxPositioner.Framework
 
 
         /// <summary>
+        /// All positional Data in memory for this tag in a list of PosData structs
+        /// </summary>
+        public List<PosData> PositionData { get { return _tagdata; } }
+
+
+        /// <summary>
         /// Adds data to this tag's positional data list, normalizes the data. 
         /// Then calculates the best possible realtime position
         /// </summary>

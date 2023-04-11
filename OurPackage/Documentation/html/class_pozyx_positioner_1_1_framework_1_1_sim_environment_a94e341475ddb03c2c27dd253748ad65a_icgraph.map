@@ -1,4 +1,3 @@
 <map id="PozyxPositioner.Framework.SimEnvironment.PushData" name="PozyxPositioner.Framework.SimEnvironment.PushData">
-<area shape="rect" id="node2" href="$class_pozyx_positioner_1_1_framework_1_1_mqtt_client.html#a1fda7c69a63eeeb876490644686b103f" title="Callback for when message is recieved " alt="" coords="257,5,447,47"/>
-<area shape="rect" id="node3" href="$class_pozyx_positioner_1_1_framework_1_1_mqtt_client.html#ab9a1361b72712044aa1d770006ebd6cd" title="Callback for when message is recieved " alt="" coords="243,71,461,112"/>
+<area shape="rect" id="node2" href="$class_pozyx_positioner_1_1_framework_1_1_mqtt_client.html#aa08cbaf1de4adeae85b39edc92791ab9" title="Begins the broker " alt="" coords="243,5,432,47"/>
 </map>
