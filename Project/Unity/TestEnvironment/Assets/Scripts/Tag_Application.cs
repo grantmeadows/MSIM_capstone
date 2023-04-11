@@ -12,6 +12,21 @@ using UnityEngine;
 
 public class Tag_Application : MonoBehaviour
 {
+    private static Tag_Application _instance;
+    public static Tag_Application Instance { get { return _instance; } }
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+    
+    public bool LiveTracking;
     public bool DisplayTags;
     public string fileName;
     public int tagRefreshRate;
@@ -40,7 +55,7 @@ public class Tag_Application : MonoBehaviour
     private float time;
 
     // Start is called before the first frame update
-    void Start()
+    public void TagStart()
     {
         var host = "10.0.0.254";
         var port = 1883;
@@ -49,9 +64,18 @@ public class Tag_Application : MonoBehaviour
 
         VisualizeTags();
 
+        Debug.Break();
+
         env = SimEnvironment.Instance;
-        env.Initialize(host, port, fileName, tagRefreshRate);
-        //env.Initialize(fileName, tagRefreshRate);
+
+        if (LiveTracking == true)
+        {
+            env.Initialize(host, port, fileName, tagRefreshRate);
+        }
+        else
+        {
+            env.Initialize(fileName, tagRefreshRate);
+        }
 
         num = 0;
 
@@ -190,7 +214,11 @@ public class Tag_Application : MonoBehaviour
 
                         // Move tag
                         temp.transform.position = new Vector3(position.x / 1000f, position.z / 1000f, position.y / 1000f);
-                        temp.transform.localEulerAngles = new Vector3(orientation.x * 180/3.14159265f, orientation.z * 180 / 3.14159265f, orientation.y * 180 / 3.14159265f);
+
+                        // Rotate tag
+                        // ??????????
+                        // temp.transform.localEulerAngles = new Vector3(orientation.x * 180/3.14159265f, orientation.z * 180 / 3.14159265f, orientation.y * 180 / 3.14159265f);
+                        // ??????????
 
                         // Place a marker
                         GameObject th = Instantiate(TagMarker);

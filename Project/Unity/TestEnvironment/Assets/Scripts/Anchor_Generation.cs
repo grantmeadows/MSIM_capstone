@@ -1,17 +1,33 @@
 using Cinemachine;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.ProBuilder;
 
 
-public class RoomGeneration : MonoBehaviour
+public class Anchor_Generation : MonoBehaviour
 {
+    private static Anchor_Generation _instance;
+    public static Anchor_Generation Instance { get { return _instance; } }
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+
     public GameObject AnchorPrefab;
     public List<Vector3> AnchorLoc;
+
     public Material RoomMaterial;
     private List<int> FloorFaces = new List<int>();
 
-    void Start()
+    public void AnchorStart()
     {
         var targetGroup = GameObject.Find("TargetGroup").GetComponent<CinemachineTargetGroup>();
         float max_X = int.MinValue;
