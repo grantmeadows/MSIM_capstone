@@ -7,31 +7,25 @@ using UnityEngine.UIElements;
 
 public class Room_Generation : MonoBehaviour
 {
-    private static Room_Generation _instance;
-    public static Room_Generation Instance { get { return _instance; } }
-    private void Awake()
-    {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
-    }
-
     public GameObject layout;
 
     public void RoomStart()
     {
         GameObject r = Instantiate(layout);
-        r.transform.parent = transform;
+        r.name = layout.name;
     }
 
     public void RoomSave()
     {
-        PrefabUtility.SaveAsPrefabAsset(GameObject.Find("New_Layout"), "Assets/Prefabs/Room_Layout.prefab");
+        PrefabUtility.SaveAsPrefabAsset(GameObject.Find("Room_Layout"), "Assets/Prefabs/Room_Layout.prefab");
+    }
+
+    public void ResetRoom()
+    {
+        foreach (Transform child in transform.GetChild(0).transform)
+        {
+            child.GetComponent<Renderer>().material.color = Color.white;
+        }
     }
 
     // Update is called once per frame

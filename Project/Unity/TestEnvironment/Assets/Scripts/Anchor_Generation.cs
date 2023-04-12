@@ -7,20 +7,6 @@ using UnityEngine.ProBuilder;
 
 public class Anchor_Generation : MonoBehaviour
 {
-    private static Anchor_Generation _instance;
-    public static Anchor_Generation Instance { get { return _instance; } }
-    private void Awake()
-    {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
-    }
-
     public GameObject AnchorPrefab;
     public List<Vector3> AnchorLoc;
 

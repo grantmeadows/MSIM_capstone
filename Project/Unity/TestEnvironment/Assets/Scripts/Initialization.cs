@@ -39,5 +39,9 @@ public class Initialization : MonoBehaviour
         {
             rg.RoomSave();
         }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            rg.ResetRoom();
+        }
     }
 }

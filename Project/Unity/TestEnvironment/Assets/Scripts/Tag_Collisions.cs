@@ -17,8 +17,19 @@ public class Tag_Collisions : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             timeCollided = Time.time;
-            other.gameObject.GetComponent<Renderer>().material.color = GetComponent<Renderer>().material.color;
+            Color color = GetComponent<Renderer>().material.color;
+            color.a = 0.5f;
+            other.gameObject.GetComponent<Renderer>().material.color = color;
             Debug.Log(name + " collided with obstacle " + other.gameObject.name + " at time " + Time.time.ToString());
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        var obstacleColor = other.gameObject.GetComponent<Renderer>().material.color;
+        if (other.gameObject.CompareTag("Obstacle") && obstacleColor == Color.white)
+        {
+            obstacleColor = GetComponent<Renderer>().material.color;
         }
     }
 
