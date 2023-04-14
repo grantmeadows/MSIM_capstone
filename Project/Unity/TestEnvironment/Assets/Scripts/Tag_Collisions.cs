@@ -26,10 +26,13 @@ public class Tag_Collisions : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        var obstacleColor = other.gameObject.GetComponent<Renderer>().material.color;
-        if (other.gameObject.CompareTag("Obstacle") && obstacleColor == Color.white)
+        Color colorW = Color.white;
+        colorW.a = 0.5f;
+        if (other.gameObject.CompareTag("Obstacle") && other.gameObject.GetComponent<Renderer>().material.color == colorW)
         {
-            obstacleColor = GetComponent<Renderer>().material.color;
+            Color color = GetComponent<Renderer>().material.color;
+            color.a = 0.5f;
+            other.gameObject.GetComponent<Renderer>().material.color = color;
         }
     }
 
@@ -37,6 +40,9 @@ public class Tag_Collisions : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            Color color = Color.white;
+            color.a = 0.5f;
+            other.gameObject.GetComponent<Renderer>().material.color = color;
             Debug.Log(name + " left after colliding for  " + (Time.time - timeCollided).ToString());
         }
     }
