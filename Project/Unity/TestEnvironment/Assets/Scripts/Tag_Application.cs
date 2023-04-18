@@ -8,27 +8,32 @@ using System.IO;
 using System.Threading;
 using System.Xml.Serialization;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Tag_Application : MonoBehaviour
-{   
+{
+    [Header("CHANGE PRIOR TO PLAY MODE")]
     public bool LiveTracking;
     public bool DisplayTags;
+    [Space(10)]
     public string host;
     public int port;
     public string fileName;
     public int tagRefreshRate;
 
-    SimEnvironment env;
-
     [System.Serializable]
+
     public class TagIDs
     {
         public string[] tagIDList;
     }
+    [Space(10)]
+    [Header("INSERT TAG IDs")]
     public TagIDs[] objects;
 
+    [Space(10)]
     public GameObject TagPrefab;
     public GameObject TagMarker;
 
@@ -37,6 +42,7 @@ public class Tag_Application : MonoBehaviour
 
     GameObject temp;
     GameObject baseObj;
+    SimEnvironment env;
 
     private int[] count;
     private int num;

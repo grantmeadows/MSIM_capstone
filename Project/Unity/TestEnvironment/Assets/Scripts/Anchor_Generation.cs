@@ -7,9 +7,11 @@ using UnityEngine.ProBuilder;
 
 public class Anchor_Generation : MonoBehaviour
 {
-    public GameObject AnchorPrefab;
+    [Header("CHANGE PRIOR TO PLAY MODE")]
+    [Tooltip("Insert Pozyx anchor coordinates in clockwise order.")]
     public List<Vector3> AnchorLoc;
 
+    public GameObject AnchorPrefab;
     public Material RoomMaterial;
     private List<int> FloorFaces = new List<int>();
 
