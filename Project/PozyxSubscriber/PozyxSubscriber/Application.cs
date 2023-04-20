@@ -9,6 +9,7 @@ namespace PozyxPositioner.Application
 {
     public class Program
     {
+
         static public void Main(string[] args)
         {
             int tagRefreshRate = 15;
@@ -41,27 +42,28 @@ namespace PozyxPositioner.Application
 
             while (sim.ConnectedStatus)
             {
-                foreach (var tag in sim.TagIDs) { 
-                PozyxVector pos = sim.GetTag(tag).Position;
+                foreach (var tag in sim.TagIDs)
+                {
+                    PozyxVector pos = sim.GetTag(tag).Position;
                     //PozyxVector o = sim.GetTag()
                     Console.Write(tag);
                     Console.Write(": [");
-                Console.Write(" X: ");
-                Console.Write((int)pos.x);
-                Console.Write("  Y: ");
-                Console.Write((int)pos.y);
-                Console.Write("  Z: ");
-                Console.Write((int)pos.z);
-                Console.Write("] ");
-                //Console.Write("Orientation: [ X: ");
-                //Console.Write((int)(o.x * (180 / Math.PI)));
-                //Console.Write("  Y: ");
-                //Console.Write((int)(o.y * (180 / Math.PI)));
-                //Console.Write("  Z: ");
-                //Console.Write((int)(o.z * (180 / Math.PI)));
-                //Console.Write("]");
-                
-            }
+                    Console.Write(" X: ");
+                    Console.Write((int)pos.x);
+                    Console.Write("  Y: ");
+                    Console.Write((int)pos.y);
+                    Console.Write("  Z: ");
+                    Console.Write((int)pos.z);
+                    Console.Write("] ");
+                    //Console.Write("Orientation: [ X: ");
+                    //Console.Write((int)(o.x * (180 / Math.PI)));
+                    //Console.Write("  Y: ");
+                    //Console.Write((int)(o.y * (180 / Math.PI)));
+                    //Console.Write("  Z: ");
+                    //Console.Write((int)(o.z * (180 / Math.PI)));
+                    //Console.Write("]");
+
+                }
                 Console.WriteLine();
                 Thread.Sleep(1000);
             }

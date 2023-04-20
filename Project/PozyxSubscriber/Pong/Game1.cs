@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -8,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using PozyxPositioner.Framework;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Ping_Pong
 {
@@ -21,6 +23,7 @@ namespace Ping_Pong
 
         //Simulation Environment
         SimObject simObject;
+        SimObject simObject2;
         SimEnvironment sim;
         string tag1;
         string tag2;
@@ -50,6 +53,7 @@ namespace Ping_Pong
         Ball m_ball;
         Texture2D m_textureBall;
         Random m_initialSpeed = new Random();
+        float initialBallSpeed = 20f;
 
         // the paddles
         Paddle m_paddle1;
@@ -61,8 +65,8 @@ namespace Ping_Pong
         Rectangle m_backgroundDims = new Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
         // constants
-        const int SCREEN_WIDTH = (1280);
-        const int SCREEN_HEIGHT = (720);
+        const int SCREEN_WIDTH = (2500);
+        const int SCREEN_HEIGHT = (2000);
 
         public Game1()
         {
@@ -100,25 +104,29 @@ namespace Ping_Pong
             var host = "10.0.0.254";
             var port = 1883;
             int numTags = 2;
-            tag1 = "6982";
-            tag2 = "6985";
+            tag1 = "6985";
+            tag2 = "5772";
 
-            int tagRefreshRate = 5;
+            int tagRefreshRate = 7;
 
             sim = SimEnvironment.Instance;
             simObject = new SimObject();
+            simObject2 = new SimObject();
 
             sim.Initialize(host, port, "Demonstration.txt", tagRefreshRate);
             //sim.Initialize("Pong.txt", tagRefreshRate);
             Tag t1 = sim.newTag(tag1, tagRefreshRate);
-            //Tag t2 = sim.newTag(tag2, tagRefreshRate);
+            Tag t2 = sim.newTag(tag2, tagRefreshRate);
 
             simObject.AddTag(t1);
-            //simObject.AddTag(t2);
+            simObject2.AddTag(t2);
 
             sim.StartEnvironment();
             while (!sim.ConnectedStatus) ;
-            simObject.Calibrate(m_paddle1.X, m_paddle1.Y, 0.0f, (1.0f/3.0f));
+            
+            simObject.Calibrate(m_paddle1.X, m_paddle1.Y, 0.0f, (1.0f));
+            simObject2.Calibrate(m_paddle2.X, m_paddle2.Y, 0.0f, (1.0f));
+            while (!simObject.Calibrated && !simObject2.Calibrated) ;
         }
 
         /// <summary>
@@ -141,18 +149,18 @@ namespace Ping_Pong
             m_ball = new Ball();
 
             // set the size of the ball
-            m_ball.Width = 20.0f;
-            m_ball.Height = 20.0f;
+            m_ball.Width = 60.0f;
+            m_ball.Height = 60.0f;
 
             // create 2 instances of our paddle
             m_paddle1 = new Paddle();
             m_paddle2 = new Paddle();
 
             // set the size of the paddles
-            paddleWidth = 100.0f;
-            m_paddle1.Width = 15.0f;
+            paddleWidth = 300.0f;
+            m_paddle1.Width = 30.0f;
             m_paddle1.Height = paddleWidth;
-            m_paddle2.Width = 15.0f;
+            m_paddle2.Width = 30.0f;
             m_paddle2.Height = paddleWidth;
 
             // map the digits in the image to actual numbers
@@ -188,22 +196,22 @@ namespace Ping_Pong
             // set a random speed and direction for the ball
             if (m_initialSpeed.NextDouble() >= .5)
             {
-                float random = (float)((m_initialSpeed.NextDouble() * 2) + 4);
+                float random = (float)((m_initialSpeed.NextDouble() * initialBallSpeed) + 4);
                 m_ball.DX = random;
             }
             else
             {
-                float random = -(float)((m_initialSpeed.NextDouble() * 2) + 4);
+                float random = -(float)((m_initialSpeed.NextDouble() * initialBallSpeed) + 4);
                 m_ball.DX = random;
             }
             if (m_initialSpeed.NextDouble() >= .5)
             {
-                float random = (float)((m_initialSpeed.NextDouble() * 2) + 3);
+                float random = (float)((m_initialSpeed.NextDouble() * initialBallSpeed) + 3);
                 m_ball.DY = random;
             }
             else
             {
-                float random = -(float)((m_initialSpeed.NextDouble() * 2) + 3);
+                float random = -(float)((m_initialSpeed.NextDouble() * initialBallSpeed) + 3);
                 m_ball.DY = random;
             }
 
@@ -371,7 +379,7 @@ namespace Ping_Pong
                 m_Score2++;
 
                 // reduce speed, reverse direction
-                m_ball.DX = 5.0f;
+                m_ball.DX = initialBallSpeed - 10;
             }
 
             // did ball touch the right side?
@@ -387,7 +395,7 @@ namespace Ping_Pong
                 m_Score1++;
 
                 // reduce speed, reverse direction
-                m_ball.DX = -5.0f;
+                m_ball.DX = -initialBallSpeed + 10;
             }
 
             // reset game if a player scores 10 goals
@@ -407,6 +415,21 @@ namespace Ping_Pong
                 // increase the speed a little.
                 m_ball.DX *= 1.15f;
             }
+
+            //if (m_Score1 >= 10)
+            //{
+            //    spriteBatch.DrawString(scoreFont,
+            //    $"Player 1 wins!",
+            //    new Vector2(SCREEN_HEIGHT/2, SCREEN_WIDTH / 2),
+            //    Color.White);
+            //}
+            //if (m_Score2 >= 10)
+            //{
+            //    spriteBatch.DrawString(scoreFont,
+            //    $"Player 2 wins!",
+            //    new Vector2(SCREEN_HEIGHT / 2, SCREEN_WIDTH / 2),
+            //    Color.White);
+            //}
         }
 
         /// <summary>
@@ -474,34 +497,36 @@ namespace Ping_Pong
 
             //update paddle position from tag info
             m_paddle1.Y = simObject.Position.y;
+            m_paddle2.Y = simObject2.Position.y;
+
 
             // check the controller, PLAYER TWO
-            PlayerUp =
-                pad2.DPad.Up == ButtonState.Pressed;
-            PlayerDown =
-                pad2.DPad.Down == ButtonState.Pressed;
+            //    PlayerUp =
+            //        pad2.DPad.Up == ButtonState.Pressed;
+            //    PlayerDown =
+            //        pad2.DPad.Down == ButtonState.Pressed;
 
-            // also check the keyboard, PLAYER TWO
-            PlayerUp |= keyb.IsKeyDown(Keys.Up);
-            PlayerDown |= keyb.IsKeyDown(Keys.Down);
+            //    // also check the keyboard, PLAYER TWO
+            //    PlayerUp |= keyb.IsKeyDown(Keys.Up);
+            //    PlayerDown |= keyb.IsKeyDown(Keys.Down);
 
-            // move the paddle
-            if (PlayerUp)
-            {
-                m_paddle2.Y -= PADDLE_STRIDE;
-                if (m_paddle2.Y < MIN_Y)
-                {
-                    m_paddle2.Y = MIN_Y;
-                }
-            }
-            else if (PlayerDown)
-            {
-                m_paddle2.Y += PADDLE_STRIDE;
-                if (m_paddle2.Y > MAX_Y)
-                {
-                    m_paddle2.Y = MAX_Y;
-                }
-            }
+            //    // move the paddle
+            //    if (PlayerUp)
+            //    {
+            //        m_paddle2.Y -= PADDLE_STRIDE;
+            //        if (m_paddle2.Y < MIN_Y)
+            //        {
+            //            m_paddle2.Y = MIN_Y;
+            //        }
+            //    }
+            //    else if (PlayerDown)
+            //    {
+            //        m_paddle2.Y += PADDLE_STRIDE;
+            //        if (m_paddle2.Y > MAX_Y)
+            //        {
+            //            m_paddle2.Y = MAX_Y;
+            //        }
+            //    }
         }
 
         /// <summary>
@@ -526,7 +551,7 @@ namespace Ping_Pong
             spriteBatch.DrawString(scoreFont, 
                 $"{score}", 
                 new Vector2(x, y), 
-                Color.Black);
+                Color.White);
         }
 
         /// <summary>

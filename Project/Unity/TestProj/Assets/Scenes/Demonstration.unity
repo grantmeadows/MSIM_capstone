@@ -382,6 +382,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 920788550412044288, guid: 91e3f8d282c36224b9cdddad9381ba90, type: 3}
+      propertyPath: tag1ID
+      value: 7000
+      objectReference: {fileID: 0}
+    - target: {fileID: 920788550412044288, guid: 91e3f8d282c36224b9cdddad9381ba90, type: 3}
+      propertyPath: tag2ID
+      value: 6982
+      objectReference: {fileID: 0}
+    - target: {fileID: 920788550412044288, guid: 91e3f8d282c36224b9cdddad9381ba90, type: 3}
+      propertyPath: filename
+      value: Assets/Scripts/VMASC.txt
+      objectReference: {fileID: 0}
     - target: {fileID: 920788550412044291, guid: 91e3f8d282c36224b9cdddad9381ba90, type: 3}
       propertyPath: m_Name
       value: Cart
